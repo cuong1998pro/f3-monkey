@@ -1,3 +1,6 @@
+var btnThemNCC = document.querySelector('#themNCC');
+
+
 var sub_mn = document.querySelector('#sub-mn');
 var hethong = document.querySelector('#hethong');
 var quanlynhap = document.querySelector('#quanlynhap');

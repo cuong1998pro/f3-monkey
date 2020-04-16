@@ -1,7 +1,7 @@
 <?php require_once(SESSION); ?>
 <?php require_once(HEADER); ?>
 <div class="row">
-    <div class="col-md-5 mx-auto mt-5">
+    <div class="col-md-4 mx-auto mt-5">
     <?php flash('dang_ky_thanh_cong')?>
         <div class="card card-body bg-light">
             <h2>Đăng nhập</h2>
@@ -20,7 +20,7 @@
                         <input type="submit" value="Đăng nhập" class="btn btn-success btn-block">
                     </div>
                     <div class="col">
-                        <a href="<?php echo URLROOT; ?>/admin/register" class="btn btn-light btn-block">Chưa có tài khoản? Đăng ký</a>
+                        <a href="<?php echo URLROOT; ?>/admin/register" class="float-right">Chưa có tài khoản? Đăng ký</a>
                     </div>
                 </div>
             </form>

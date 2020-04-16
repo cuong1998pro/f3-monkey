@@ -2,11 +2,12 @@
     <nav class="navbar navbar-expand-md navbar-dark mynav">
         <div class="container">
 
-            <a class="navbar-brand"  id="dashboard" href="<?php echo URLROOT . '/admin' ?>"><img class="logo" src="<?php echo URLROOT.'/backend/images/logo.png' ?>" >F3-MONKEY SHOP</a>
+            <a class="navbar-brand"  id="dashboard" href="<?php echo URLROOT . '/admin' ?>"><img class="logo"  src="<?php echo URLROOT.'/backend/images/logo.png' ?>"  ></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
+                <?php if(!empty($_SESSION['tentaikhoan'])): ?>
                 <ul class="navbar-nav mr-auto">
                     <li id="hethong" class="nav-item">
                         <a class="nav-link menu" href="#">Hệ thống<span class="sr-only">(current)</span></a>
@@ -21,6 +22,7 @@
                         <a class="nav-link" href="#">Báo cáo<span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
+                <?php endif ?>
                 <?php if (empty($_SESSION['tentaikhoan'])) : ?>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">

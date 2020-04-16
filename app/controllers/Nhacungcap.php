@@ -9,7 +9,8 @@ class Nhacungcap extends Controller
 
     public function danhsach()
     {
-        $this->view('backend/pages/nhacungcap/danhsach');
+        $this->view('backend/pages/quanly/nhacungcap');
     }
+    
 
 }

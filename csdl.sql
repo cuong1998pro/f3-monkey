@@ -3,8 +3,19 @@ use hungmobile;
 create table cuahang(
     ten varchar(100),
     diachi text,
-    sodienthoai varchar(20)
+    sodienthoai varchar(20),
+    email text
 );
+
+create table nhacungcap(
+	ma int primary key not null auto_increment,
+    ten varchar(100),
+    sodienthoai varchar(20),
+    diachi text,
+    email text,
+    nguoilienhe text
+);
+
 create table banner(
 	ma int primary key not null auto_increment,
     anh varchar(100),

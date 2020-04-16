@@ -1,4 +1,12 @@
 var btnThemNCC = document.querySelector('#themNCC');
+var btnCloseThemNCC = document.querySelector('#closeThemNCC');
+
+btnThemNCC.addEventListener('click', function(){
+    document.querySelector("#modalThemNCC").style.display="block";
+});
+btnCloseThemNCC.addEventListener('click', function(){
+    document.querySelector("#modalThemNCC").style.display="none";
+});
 
 
 var sub_mn = document.querySelector('#sub-mn');

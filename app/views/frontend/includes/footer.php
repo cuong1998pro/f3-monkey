@@ -87,6 +87,8 @@
 </footer>
 </div>
 
+<script src="<?php echo URLROOT ?>/frontend/js/modal.js"></script>
+
 </body>
 
 </html>

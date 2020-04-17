@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="<?php echo URLROOT ?>/frontend/css/base.css">
     <link rel="stylesheet" href="<?php echo URLROOT ?>/frontend/css/main.css">
     <link rel="stylesheet" href="<?php echo URLROOT ?>/frontend/fonts/fontawesome/fontawesome-free-5.13.0-web/css/all.min.css">
-    <script src="<?php echo URLROOT ?>/frontend/js/modal.js"></script>
 </head>
 
 <body>

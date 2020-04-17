@@ -19,11 +19,28 @@ class Nhacungcap extends Controller
     {
 
         $data['ten'] = $_POST['ten'];
+        $data['diachi'] = $_POST['diachi'];
+        $data['sodienthoai'] = $_POST['sodienthoai'];
+        $data['email'] = $_POST['email'];
+        $this->nhacungcapmodel->themNCC($data);
+        redirect('nhacungcap/index');
+    }
+
+    public function sua()
+    {
+        $data['ma'] = $_POST['ma'];
+        $data['ten'] = $_POST['ten'];
         $data['sodienthoai'] = $_POST['sodienthoai'];
         $data['diachi'] = $_POST['diachi'];
         $data['email'] = $_POST['email'];
         $data['nguoilienhe'] = $_POST['nguoilienhe'];
-        $this->nhacungcapmodel->themNCC($data);
+        $this->nhacungcapmodel->suaNCC($data);
+        redirect('nhacungcap/index');
+    }
+
+    public function xoa($ma)
+    {
+        $this->nhacungcapmodel->xoaNCC($ma);
         redirect('nhacungcap/index');
     }
 }

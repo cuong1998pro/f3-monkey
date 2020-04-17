@@ -45,11 +45,12 @@
     </div>
 
     <!-- Modal cap nhat nha cung cap -->
-    <div class="modal" id="modalCapnhatNCC">
+    <div class="modal" id="modalCapNhatNCC">
         <div class="modal-content">
             <div class="form-header">Cập nhật nhà cung cấp</div>
-            <form class="myform" action="<?php echo URLROOT ?>/nhacungcap/capnhat" method="post">
+            <form class="myform" action="<?php echo URLROOT ?>/nhacungcap/sua" method="post">
                 <div class="form-group">
+                    <input type="hidden" id="ma" name="ma">
                     <label class="mylabel">Tên nhà cung cấp <sup>*</sup></label>
                     <input class="form-control myinput" type="text" name="ten" placeholder="Nhập tên nhà cung cấp" value="">
                 </div>
@@ -72,7 +73,7 @@
 
                 <div class="myform-button">
                     <button type="submit" class="btn btn-success"><i class="fas fa-plus"></i>Cập nhật NCC</button>
-                    <button id="close-form" class="btn btn-default"><i class="fas fa-times"style="background:transparent; color:black"></i>Đóng</button>
+                    <button id="closeCapNhatNCC" class="btn btn-default"><i class="fas fa-times"style="background:transparent; color:black"></i>Đóng</button>
                 </div>
 
             </form>
@@ -111,8 +112,8 @@
                     <td><?php echo $ncc->diachi?></td>
                     <td><?php echo $ncc->email?></td>
                     <td><?php echo $ncc->nguoilienhe?>  </td>
-                    <td width="90px"><a href="" class="edit-button"><i class="fas fa-pencil-alt"></i></a>
-                        <a href="" class="edit-button"><i class="fas fa-times"></i></a>
+                    <td width="90px"><a href="#" class="edit-button" value="<?php echo $ncc->ma?>"><i class="fas fa-pencil-alt"></i></a>
+                        <a href="<?php echo URLROOT?>/nhacungcap/xoa/<?php echo $ncc->ma?>" onclick="return confirm('Bạn có chắc chắn muốn xóa nhà cung cấp?');" class="delete-button"><i class="fas fa-times"></i></a>
                     </td>
                 </tr>
             <?php endforeach; ?>

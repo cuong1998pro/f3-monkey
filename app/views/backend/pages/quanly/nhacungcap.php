@@ -13,7 +13,7 @@
     <div class="modal" id="modalThemNCC">
         <div class="modal-content">
             <div class="form-header">Thêm nhà cung cấp</div>
-            <form class="myform" action="<?php echo URLROOT ?>/nhacungcap/them" method="post">
+            <form class="myform" action="<?php echo URLROOT ?>/nhacungcap/them" method="POST">
                 <div class="form-group">
                     <label class="mylabel">Tên nhà cung cấp <sup>*</sup></label>
                     <input class="form-control myinput" type="text" name="ten" placeholder="Nhập tên nhà cung cấp">
@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="myform-button">
-                    <button type="submit" class="btn btn-success"><i class="fas fa-plus"></i>Thêm NCC</button>
+                    <button type="submit" class="btn btn-success"><i class="fas fa-plus" name="themNCC"></i>Thêm NCC</button>
                     <button type="button" id="closeThemNCC" class="btn btn-default"><i class="fas fa-times"style="background:transparent; color:black"></i>Đóng</button>
                 </div>
 
@@ -102,17 +102,20 @@
                 </tr>
             </thead>
             <tbody>
+            <?php $stt=1 ?>
+            <?php foreach($data as $ncc): ?>
                 <tr>
-                    <td>1</td>
-                    <td>Hưng Thịnh Company</td>
-                    <td>0333212341</td>
-                    <td>Số 69, Móng Cái, Quảng Ninh</td>
-                    <td>cuong1998pro@gmail.com</td>
-                    <td>Phạm Quang Cường</td>
+                    <td><?php echo $stt++?></td>
+                    <td><?php echo $ncc->ten?></td>
+                    <td><?php echo $ncc->sodienthoai?></td>
+                    <td><?php echo $ncc->diachi?></td>
+                    <td><?php echo $ncc->email?></td>
+                    <td><?php echo $ncc->nguoilienhe?>  </td>
                     <td width="90px"><a href="" class="edit-button"><i class="fas fa-pencil-alt"></i></a>
                         <a href="" class="edit-button"><i class="fas fa-times"></i></a>
                     </td>
                 </tr>
+            <?php endforeach; ?>
 
             </tbody>
         </table>

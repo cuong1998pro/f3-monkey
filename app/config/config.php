@@ -17,4 +17,4 @@ define('SESSION', APPROOT.'/session.php');
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASSWORD', '');
-define('DB_NAME', 'hungmobile');
+define('DB_NAME', 'f3_monkey');

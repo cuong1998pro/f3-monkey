@@ -2,15 +2,28 @@
 class Nhacungcap extends Controller
 {
 
+    private $nhacungcapmodel;
     public function __construct()
     {
-        // $this->usermodel = $this->model('NhacungcapModel');
+        $this->nhacungcapmodel = $this->model('NhacungcapModel');
     }
 
-    public function danhsach()
+    public function index()
     {
-        $this->view('backend/pages/quanly/nhacungcap');
+        $data =  $this->nhacungcapmodel->layDanhSach();
+        // var_dump($data);die();
+        $this->view('backend/pages/quanly/nhacungcap',  $data);
     }
-    
 
+    public function them()
+    {
+
+        $data['ten'] = $_POST['ten'];
+        $data['sodienthoai'] = $_POST['sodienthoai'];
+        $data['diachi'] = $_POST['diachi'];
+        $data['email'] = $_POST['email'];
+        $data['nguoilienhe'] = $_POST['nguoilienhe'];
+        $this->nhacungcapmodel->themNCC($data);
+        redirect('nhacungcap/index');
+    }
 }

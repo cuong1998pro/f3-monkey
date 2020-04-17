@@ -26,6 +26,7 @@ create table danhmuc(
     ten varchar(100),
     anh varchar(100),
     link varchar(100)
+
 );
 -- create table danhmuccon(
 -- 	ma int primary key not null auto_increment,

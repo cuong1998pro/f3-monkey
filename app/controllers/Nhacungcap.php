@@ -22,6 +22,7 @@ class Nhacungcap extends Controller
         $data['diachi'] = $_POST['diachi'];
         $data['sodienthoai'] = $_POST['sodienthoai'];
         $data['email'] = $_POST['email'];
+        $data['nguoilienhe'] = $_POST['nguoilienhe'];
         $this->nhacungcapmodel->themNCC($data);
         redirect('nhacungcap/index');
     }

@@ -129,6 +129,7 @@ create table loaitaikhoan(
 	tenloai varchar(100)
 );
 insert into loaitaikhoan(tenloai) values ('admin');
+
 create table user(
 	ma int primary key not null auto_increment,
 	ten varchar(100),

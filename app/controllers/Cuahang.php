@@ -31,10 +31,9 @@
         redirect('nhacungcap/index');
     }
 
-    public function xoa()
+    public function xoa($ma)
     {
-        $data['ma'] = $_POST['ma'];
-        $this->CuahangModel->xoaCuahang();
+        $this->nhacungcapmodel->xoaCuahang($ma);
         redirect('nhacungcap/index');
     }
     }

@@ -1066,7 +1066,7 @@
 .home-product-item__price-new {
     font-size: 1.6rem;
     color: var(--primary-color);
-    margin-left: 10px;
+    margin-left: 21px;
 }
 
 .home-product-item__action {
@@ -1435,6 +1435,8 @@ i.home-product-item__like-icon-on {
     border-top: 5px solid #4834d4;
     margin-right: 30px;
     display: flex;
+    margin-bottom: 10px;
+    /*! background: #fff; */
 }
 
 .category-title {
@@ -1465,11 +1467,12 @@ i.home-product-item__like-icon-on {
     text-decoration: none;
     font-weight: 800;
     color: black;
-    width: 100px;
+    width: 120px;
     display: inline-block;
     margin: 5px 10px;
     border-left: 2px solid #c8ced2;
     text-align: center;
+    padding: 5px;
 }
 
 .category-nav-container {

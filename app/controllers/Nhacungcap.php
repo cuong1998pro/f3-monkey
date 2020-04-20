@@ -37,6 +37,10 @@ class Nhacungcap extends Controller
         $this->nhacungcapmodel->suaNCC($data);
         redirect('nhacungcap/index');
     }
+    public function capnhat($ma){
+        $data = $this->nhacungcapmodel->layNhaCungCap($ma);
+        $this->view('backend/pages/quanly/capnhatncc',  $data);
+    }
 
     public function xoa($ma)
     {

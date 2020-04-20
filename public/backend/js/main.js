@@ -10,19 +10,19 @@ if (btnThemNCC != null) {
 }
 
 
-var editbuttons = document.querySelectorAll('.edit-button');
-var btnCloseCapNhatNCC = document.querySelector('#closeCapNhatNCC');
-editbuttons.forEach(editbutton => {
-    if (editbutton != null) {
-        editbutton.addEventListener('click', function() {
-            document.querySelector("#modalCapNhatNCC").style.display = "block";
-            document.querySelector('#ma').value = this.getAttribute('value');
-        });
-        btnCloseCapNhatNCC.addEventListener('click', function() {
-            document.querySelector("#modalCapNhatNCC").style.display = "none";
-        });
-    }
-});
+// var editbuttons = document.querySelectorAll('.edit-button');
+// var btnCloseCapNhatNCC = document.querySelector('#closeCapNhatNCC');
+// editbuttons.forEach(editbutton => {
+//     if (editbutton != null) {
+//         editbutton.addEventListener('click', function() {
+//             document.querySelector("#modalCapNhatNCC").style.display = "block";
+//             document.querySelector('#ma').value = this.getAttribute('value');
+//         });
+//         btnCloseCapNhatNCC.addEventListener('click', function() {
+//             document.querySelector("#modalCapNhatNCC").style.display = "none";
+//         });
+//     }
+// });
 
 
 var sub_mn = document.querySelector('#sub-mn');

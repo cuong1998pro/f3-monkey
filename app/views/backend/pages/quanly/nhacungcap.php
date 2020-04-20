@@ -45,40 +45,7 @@
     </div>
 
     <!-- Modal cap nhat nha cung cap -->
-    <div class="modal" id="modalCapNhatNCC">
-        <div class="modal-content">
-            <div class="form-header">Cập nhật nhà cung cấp</div>
-            <form class="myform" action="<?php echo URLROOT ?>/nhacungcap/sua" method="post">
-                <div class="form-group">
-                    <input type="hidden" id="ma" name="ma">
-                    <label class="mylabel">Tên nhà cung cấp <sup>*</sup></label>
-                    <input class="form-control myinput" type="text" name="ten" placeholder="Nhập tên nhà cung cấp" value="">
-                </div>
-                <div class="form-group ">
-                    <label class="mylabel">Số điện thoại <sup>*</sup></label>
-                    <input class="form-control myinput" type="text" name="sodienthoai" placeholder="Nhập số điện thoại" value="">
-                </div>
-                <div class="form-group ">
-                    <label class="mylabel" >Địa chỉ <sup>*</sup></label>
-                    <textarea id="my-textarea" class="form-control" name="diachi" rows="2" placeholder="Nhập địa chỉ"></textarea>
-                </div>
-                <div class="form-group ">
-                    <label class="mylabel" style="margin-top:0px">Email</label>
-                    <input class="form-control myinput" type="text" name="email" placeholder="Nhập email" value="">
-                </div>
-                <div class="form-group ">
-                    <label class="mylabel">Người liên hệ <sup>*</sup></label>
-                    <input class="form-control myinput" type="text" name="nguoilienhe" placeholder="Nhập người liên hệ" value="">
-                </div>
-
-                <div class="myform-button">
-                    <button type="submit" class="btn btn-success"><i class="fas fa-plus"></i>Cập nhật NCC</button>
-                    <button type="button" id="closeCapNhatNCC" class="btn btn-default"><i class="fas fa-times"style="background:transparent; color:black"></i>Đóng</button>
-                </div>
-
-            </form>
-        </div>
-    </div>
+    
 
     <a class="btn btn-info" href="<?php echo URLROOT . '/nhacungcap/in' ?>"><i class="fas fa-print"></i> In</a>
     <div class="float-right">
@@ -93,7 +60,7 @@
         <table>
             <thead>
                 <tr>
-                    <th>STT</th>
+                    <th>Mã số</th>
                     <th>Tên NCC</th>
                     <th>Số điện thoại</th>
                     <th>Địa chỉ</th>
@@ -103,26 +70,14 @@
                 </tr>
             </thead>
             <tbody>
-            <?php $stt=1 ?>
-            <?php foreach($data as $ncc): ?>
-                <tr>
-                    <td><?php echo $stt++?></td>
-                    <td><?php echo $ncc->ten?></td>
-                    <td><?php echo $ncc->sodienthoai?></td>
-                    <td><?php echo $ncc->diachi?></td>
-                    <td><?php echo $ncc->email?></td>
-                    <td><?php echo $ncc->nguoilienhe?>  </td>
-                    <td width="90px"><a href="#" class="edit-button" value="<?php echo $ncc->ma?>"><i class="fas fa-pencil-alt"></i></a>
-                        <a href="<?php echo URLROOT?>/nhacungcap/xoa/<?php echo $ncc->ma?>" onclick="return confirm('Bạn có chắc chắn muốn xóa nhà cung cấp?');" class="delete-button"><i class="fas fa-times"></i></a>
-                    </td>
-                </tr>
-            <?php endforeach; ?>
+            <?php echo $data?>
+            
 
             </tbody>
         </table>
 
     </div>
-    <div class="right">
+    <!-- <div class="right">
         <div class="pagination">
             <a href="#">&laquo;</a>
             <a href="#">1</a>
@@ -133,6 +88,6 @@
             <a href="#">6</a>
             <a href="#">&raquo;</a>
         </div>
-    </div>
+    </div> -->
 </div>
 <?php require_once(FOOTER); ?>

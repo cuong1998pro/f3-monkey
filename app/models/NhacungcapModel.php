@@ -41,7 +41,12 @@ class NhacungcapModel {
     public function layDanhSach(){
         $sql = 'select * from nhacungcap';
         $this->db->query($sql);
-        return $this->db->fetchAll();
-        
+        return $this->db->fetchTable('nhacungcap');
+    }
+
+    public function layNhaCungCap($maNCC){
+        $sql = 'select * from nhacungcap where ma = '. $maNCC. ';';
+        $this->db->query($sql);
+        return $this->db->first();
     }
 }

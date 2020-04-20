@@ -11,7 +11,6 @@ class Nhacungcap extends Controller
     public function index()
     {
         $data =  $this->nhacungcapmodel->layDanhSach();
-        // var_dump($data);die();
         $this->view('backend/pages/quanly/nhacungcap',  $data);
     }
 
@@ -37,6 +36,10 @@ class Nhacungcap extends Controller
         $data['nguoilienhe'] = $_POST['nguoilienhe'];
         $this->nhacungcapmodel->suaNCC($data);
         redirect('nhacungcap/index');
+    }
+    public function capnhat($ma){
+        $data = $this->nhacungcapmodel->layNhaCungCap($ma);
+        $this->view('backend/pages/quanly/capnhatncc',  $data);
     }
 
     public function xoa($ma)

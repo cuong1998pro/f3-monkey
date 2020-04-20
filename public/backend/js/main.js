@@ -15,9 +15,8 @@ var btnCloseCapNhatNCC = document.querySelector('#closeCapNhatNCC');
 editbuttons.forEach(editbutton => {
     if (editbutton != null) {
         editbutton.addEventListener('click', function() {
-            console.log(this.getAttribute('value'));
-            // document.querySelector("#modalCapNhatNCC").style.display = "block";
-            // document.querySelector('#ma').value = this.getAttribute('value');
+            document.querySelector("#modalCapNhatNCC").style.display = "block";
+            document.querySelector('#ma').value = this.getAttribute('value');
         });
         btnCloseCapNhatNCC.addEventListener('click', function() {
             document.querySelector("#modalCapNhatNCC").style.display = "none";

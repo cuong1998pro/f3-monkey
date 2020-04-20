@@ -11,7 +11,6 @@ class Nhacungcap extends Controller
     public function index()
     {
         $data =  $this->nhacungcapmodel->layDanhSach();
-        // var_dump($data);die();
         $this->view('backend/pages/quanly/nhacungcap',  $data);
     }
 

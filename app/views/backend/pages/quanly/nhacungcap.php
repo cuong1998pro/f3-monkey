@@ -73,7 +73,7 @@
 
                 <div class="myform-button">
                     <button type="submit" class="btn btn-success"><i class="fas fa-plus"></i>Cập nhật NCC</button>
-                    <button id="closeCapNhatNCC" class="btn btn-default"><i class="fas fa-times"style="background:transparent; color:black"></i>Đóng</button>
+                    <button type="button" id="closeCapNhatNCC" class="btn btn-default"><i class="fas fa-times"style="background:transparent; color:black"></i>Đóng</button>
                 </div>
 
             </form>

@@ -14,8 +14,20 @@
                     <img id="current-image" src="" alt="">
                 
                 <div class="list-thumb-image">
-                    <div class="grid__column-2-4">
-                        <img id="current-image" height="40px" src="" alt="">
+                    <div class="grid__column-2-4 thumb">
+                        <img class="thumb-image" src="" alt="">
+                    </div>
+                    <div class="grid__column-2-4 thumb">
+                        <img class="thumb-image" src="" alt="">
+                    </div>
+                    <div class="grid__column-2-4 thumb">
+                        <img class="thumb-image" src="" alt="">
+                    </div>
+                    <div class="grid__column-2-4 thumb">
+                        <img class="thumb-image" src="" alt="">
+                    </div>
+                    <div class="grid__column-2-4 thumb">
+                        <img class="thumb-image" src="" alt="">
                     </div>
                 </div>
                 </div>

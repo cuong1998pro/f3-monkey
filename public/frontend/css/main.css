@@ -862,6 +862,10 @@
     padding-top: 36px;
 }
 
+.app__content:nth-child(2) {
+    justify-content: space-between;
+}
+
 .category {
     background-color: var(--white-color);
     border-radius: 2px;
@@ -1427,13 +1431,13 @@ i.home-product-item__like-icon-on {
 
 .banner-image {
     max-width: 33%;
-    padding: 18px 20px 18px 0px;
+    padding: 18px 0px 18px 0px;
 }
 
 .category-view {
     position: relative;
     border-top: 5px solid #4834d4;
-    margin-right: 30px;
+    margin-right: 0px;
     display: flex;
     margin-bottom: 10px;
     /*! background: #fff; */

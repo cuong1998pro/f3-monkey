@@ -1397,7 +1397,6 @@ i.home-product-item__like-icon-on {
     from {
         opacity: .4
     }
-
     to {
         opacity: 1
     }
@@ -1407,7 +1406,6 @@ i.home-product-item__like-icon-on {
     from {
         opacity: .4
     }
-
     to {
         opacity: 1
     }
@@ -1483,59 +1481,4 @@ i.home-product-item__like-icon-on {
     margin-left: auto;
     /*! margin-right: 20px; */
     font-size: 15px;
-}
-
-ul.breadcrumb {
-    padding: 10px 16px;
-    list-style: none;
-}
-
-ul.breadcrumb li {
-    display: inline;
-    font-size: 14px;
-}
-
-ul.breadcrumb li+li:before {
-    padding: 5px;
-    color: black;
-    content: "/\00a0";
-}
-
-ul.breadcrumb li a {
-    color: #0275d8;
-    text-decoration: none;
-}
-
-ul.breadcrumb li a:hover {
-    color: #01447e;
-    text-decoration: underline;
-}
-
-.image-galery {
-    background: #fff;
-    padding: 10px 30px;
-    height: auto;
-}
-
-#current-image {
-    width: 100%;
-    height: 350px;
-    display: block;
-}
-
-.list-thumb-image {
-    margin: 10px auto;
-    background: red;
-    height: 80px;
-    width: 100%;
-    display: flex;
-}
-.thumb{
-    height:100%
-}
-.thumb-image {
-    padding: 5px;
-    height: 100%;
-    display: block;
-    width: 100%;
 }

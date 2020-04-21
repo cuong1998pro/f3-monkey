@@ -41,17 +41,17 @@
         <div class="grid__row app__content">
                     <div class="banner-image">
                         <a href="http://google.com">
-                            <img src="<?php echo URLROOT ?>/frontend/img/slide-4.png" width="100%" alt="">
+                            <img src="https://www.hanoicomputer.vn/media/banner/04_Aprfbf03e7a4f54882cb3333181fabf147a.png" width="100%" alt="">
                         </a>
                     </div>
                     <div class="banner-image">
                         <a href="http://google.com">
-                            <img src="<?php echo URLROOT ?>/frontend/img/slide-4.png" width="100%" alt="">
+                            <img src="https://www.hanoicomputer.vn/media/banner/06_Apr085a9cad14acd4850f0ee6277bf7769d.png" width="100%" alt="">
                         </a>
                     </div>
                     <div class="banner-image">
                         <a href="http://google.com">
-                            <img src="<?php echo URLROOT ?>/frontend/img/slide-4.png" width="100%" alt="">
+                            <img src="https://www.hanoicomputer.vn/media/banner/04_Apr9f6bb65d07809da32f3ae2a71849d935.png" width="100%" alt="">
                         </a>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
                             <!-- Product Item -->
                             <div class="grid__column-2-4">
                                 <a class="home-product-item" href="#">
-                                    <div class="home-product-item__img" style="background-image: url(<?php echo URLROOT ?>/frontend/img/s20.jpg) ;"></div>
+                                    <div class="home-product-item__img" style="background-image: url(https://img.vnshop.vn/height/350/media/catalog_v2/media/2/64/1579227644.457645_Samsung_Galaxy_Fold_CosmosBlack_1.jpg) ;"></div>
                                     <h5 class="home-product-item__name">Điện Thoại Samsung Galaxy A71 8GB/128GB - Hàng Chính Hãng</h5>
                                     <div class="home-product-item__price">
                                         <span class="home-product-item__price-old">10.490.000đ</span>
@@ -107,7 +107,330 @@
                                     </div>
                                 </a>
                             </div>
-
+                            <div class="grid__column-2-4">
+                                <a class="home-product-item" href="#">
+                                    <div class="home-product-item__img" style="background-image: url(https://lh3.googleusercontent.com/_5lqMJhnkHPcio5yjdqBpqwfb1wr4EZDCkPnykJm7yhXsTb_1_vdPP68CJX0QOD_BXurt-Z5Jfpylcu-2jI) ;"></div>
+                                    <h5 class="home-product-item__name">Điện Thoại Samsung Galaxy A71 8GB/128GB - Hàng Chính Hãng</h5>
+                                    <div class="home-product-item__price">
+                                        <span class="home-product-item__price-old">10.490.000đ</span>
+                                        <span class="home-product-item__price-new">9.690.000đ</span>
+                                    </div>
+                                    <div class="home-product-item__action">
+                                        <span class="home-product-item__like home-product-item__like--liked">
+                                            <i class="home-product-item__like-icon-off far fa-heart"></i>
+                                            <i class="home-product-item__like-icon-on fas fa-heart"></i>
+                                        </span>
+                                        <div class="home-product-item__rating">
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span class="home-product-item__sold">88 đã bán</span>
+                                    </div>
+                                    <div class="home-product-item__origin">
+                                        <span class="home-product-item__brand">Whoo</span>
+                                        <span class="home-product-item__origin-name">Hàn Quốc</span>
+                                    </div>
+                                    <div class="home-product-item__favourite">
+                                        <i class="fas fa-check"></i>
+                                        <span>Yêu thích</span>
+                                    </div>
+                                    <div class="home-product-item__sale-off">
+                                        <span class="home-product-item__sale-off-percent">8%</span>
+                                        <span class="home-product-item__sale-off-label">GIẢM</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="grid__column-2-4">
+                                <a class="home-product-item" href="#">
+                                    <div class="home-product-item__img" style="background-image: url(https://lh3.googleusercontent.com/_5jJzoA4rlqKjr99RsENVFs9JOBGt8QX62hFfZCFVXy_pdk1PRcR_x7PQ5DW_dXnxuV3d0V8PbDSYBgs0i8) ;"></div>
+                                    <h5 class="home-product-item__name">Điện Thoại Samsung Galaxy A71 8GB/128GB - Hàng Chính Hãng</h5>
+                                    <div class="home-product-item__price">
+                                        <span class="home-product-item__price-old">10.490.000đ</span>
+                                        <span class="home-product-item__price-new">9.690.000đ</span>
+                                    </div>
+                                    <div class="home-product-item__action">
+                                        <span class="home-product-item__like home-product-item__like--liked">
+                                            <i class="home-product-item__like-icon-off far fa-heart"></i>
+                                            <i class="home-product-item__like-icon-on fas fa-heart"></i>
+                                        </span>
+                                        <div class="home-product-item__rating">
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span class="home-product-item__sold">88 đã bán</span>
+                                    </div>
+                                    <div class="home-product-item__origin">
+                                        <span class="home-product-item__brand">Whoo</span>
+                                        <span class="home-product-item__origin-name">Hàn Quốc</span>
+                                    </div>
+                                    <div class="home-product-item__favourite">
+                                        <i class="fas fa-check"></i>
+                                        <span>Yêu thích</span>
+                                    </div>
+                                    <div class="home-product-item__sale-off">
+                                        <span class="home-product-item__sale-off-percent">8%</span>
+                                        <span class="home-product-item__sale-off-label">GIẢM</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="grid__column-2-4">
+                                <a class="home-product-item" href="#">
+                                    <div class="home-product-item__img" style="background-image: url(https://lh3.googleusercontent.com/wL-hPRYm-YR-Q0SBr1iOtvCbEoezBhcPg1t-a-64wrGT69Nt6L4LCbjd322mMDywYeK3_BHDDjZl06zhdqo) ;"></div>
+                                    <h5 class="home-product-item__name">Điện Thoại Samsung Galaxy A71 8GB/128GB - Hàng Chính Hãng</h5>
+                                    <div class="home-product-item__price">
+                                        <span class="home-product-item__price-old">10.490.000đ</span>
+                                        <span class="home-product-item__price-new">9.690.000đ</span>
+                                    </div>
+                                    <div class="home-product-item__action">
+                                        <span class="home-product-item__like home-product-item__like--liked">
+                                            <i class="home-product-item__like-icon-off far fa-heart"></i>
+                                            <i class="home-product-item__like-icon-on fas fa-heart"></i>
+                                        </span>
+                                        <div class="home-product-item__rating">
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span class="home-product-item__sold">88 đã bán</span>
+                                    </div>
+                                    <div class="home-product-item__origin">
+                                        <span class="home-product-item__brand">Whoo</span>
+                                        <span class="home-product-item__origin-name">Hàn Quốc</span>
+                                    </div>
+                                    <div class="home-product-item__favourite">
+                                        <i class="fas fa-check"></i>
+                                        <span>Yêu thích</span>
+                                    </div>
+                                    <div class="home-product-item__sale-off">
+                                        <span class="home-product-item__sale-off-percent">8%</span>
+                                        <span class="home-product-item__sale-off-label">GIẢM</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="grid__column-2-4">
+                                <a class="home-product-item" href="#">
+                                    <div class="home-product-item__img" style="background-image: url(https://img.vnshop.vn/height/350/media/catalog_v2/media/14/1/1566006602.9511392_190800499.jpg)"></div>
+                                    <h5 class="home-product-item__name">Điện Thoại Samsung Galaxy A71 8GB/128GB - Hàng Chính Hãng</h5>
+                                    <div class="home-product-item__price">
+                                        <span class="home-product-item__price-old">10.490.000đ</span>
+                                        <span class="home-product-item__price-new">9.690.000đ</span>
+                                    </div>
+                                    <div class="home-product-item__action">
+                                        <span class="home-product-item__like home-product-item__like--liked">
+                                            <i class="home-product-item__like-icon-off far fa-heart"></i>
+                                            <i class="home-product-item__like-icon-on fas fa-heart"></i>
+                                        </span>
+                                        <div class="home-product-item__rating">
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span class="home-product-item__sold">88 đã bán</span>
+                                    </div>
+                                    <div class="home-product-item__origin">
+                                        <span class="home-product-item__brand">Whoo</span>
+                                        <span class="home-product-item__origin-name">Hàn Quốc</span>
+                                    </div>
+                                    <div class="home-product-item__favourite">
+                                        <i class="fas fa-check"></i>
+                                        <span>Yêu thích</span>
+                                    </div>
+                                    <div class="home-product-item__sale-off">
+                                        <span class="home-product-item__sale-off-percent">8%</span>
+                                        <span class="home-product-item__sale-off-label">GIẢM</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="grid__column-2-4">
+                                <a class="home-product-item" href="#">
+                                    <div class="home-product-item__img" style="background-image: url(https://img.vnshop.vn/height/350/media/catalog_v2/media/21/81/1566874364.5884175_ien-Thoai-Di-ong-Samsung-Galaxy-A10s-SM-A107FZGDXEV-IC-1.jpg) ;"></div>
+                                    <h5 class="home-product-item__name">Điện Thoại Samsung Galaxy A71 8GB/128GB - Hàng Chính Hãng</h5>
+                                    <div class="home-product-item__price">
+                                        <span class="home-product-item__price-old">10.490.000đ</span>
+                                        <span class="home-product-item__price-new">9.690.000đ</span>
+                                    </div>
+                                    <div class="home-product-item__action">
+                                        <span class="home-product-item__like home-product-item__like--liked">
+                                            <i class="home-product-item__like-icon-off far fa-heart"></i>
+                                            <i class="home-product-item__like-icon-on fas fa-heart"></i>
+                                        </span>
+                                        <div class="home-product-item__rating">
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span class="home-product-item__sold">88 đã bán</span>
+                                    </div>
+                                    <div class="home-product-item__origin">
+                                        <span class="home-product-item__brand">Whoo</span>
+                                        <span class="home-product-item__origin-name">Hàn Quốc</span>
+                                    </div>
+                                    <div class="home-product-item__favourite">
+                                        <i class="fas fa-check"></i>
+                                        <span>Yêu thích</span>
+                                    </div>
+                                    <div class="home-product-item__sale-off">
+                                        <span class="home-product-item__sale-off-percent">8%</span>
+                                        <span class="home-product-item__sale-off-label">GIẢM</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="grid__column-2-4">
+                                <a class="home-product-item" href="#">
+                                    <div class="home-product-item__img" style="background-image: url(https://img.vnshop.vn/height/350/media/catalog_v2/media/18/68/1571308074.0326054_ien-Thoai-Di-ong-Samsung-Galaxy-A50s-1.jpg) ;"></div>
+                                    <h5 class="home-product-item__name">Điện Thoại Samsung Galaxy A71 8GB/128GB - Hàng Chính Hãng</h5>
+                                    <div class="home-product-item__price">
+                                        <span class="home-product-item__price-old">10.490.000đ</span>
+                                        <span class="home-product-item__price-new">9.690.000đ</span>
+                                    </div>
+                                    <div class="home-product-item__action">
+                                        <span class="home-product-item__like home-product-item__like--liked">
+                                            <i class="home-product-item__like-icon-off far fa-heart"></i>
+                                            <i class="home-product-item__like-icon-on fas fa-heart"></i>
+                                        </span>
+                                        <div class="home-product-item__rating">
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span class="home-product-item__sold">88 đã bán</span>
+                                    </div>
+                                    <div class="home-product-item__origin">
+                                        <span class="home-product-item__brand">Whoo</span>
+                                        <span class="home-product-item__origin-name">Hàn Quốc</span>
+                                    </div>
+                                    <div class="home-product-item__favourite">
+                                        <i class="fas fa-check"></i>
+                                        <span>Yêu thích</span>
+                                    </div>
+                                    <div class="home-product-item__sale-off">
+                                        <span class="home-product-item__sale-off-percent">8%</span>
+                                        <span class="home-product-item__sale-off-label">GIẢM</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="grid__column-2-4">
+                                <a class="home-product-item" href="#">
+                                    <div class="home-product-item__img" style="background-image: url(https://img.vnshop.vn/height/350/media/catalog_v2/media/13/39/1568277002.4584746_1.jpg) ;"></div>
+                                    <h5 class="home-product-item__name">Điện Thoại Samsung Galaxy A71 8GB/128GB - Hàng Chính Hãng</h5>
+                                    <div class="home-product-item__price">
+                                        <span class="home-product-item__price-old">10.490.000đ</span>
+                                        <span class="home-product-item__price-new">9.690.000đ</span>
+                                    </div>
+                                    <div class="home-product-item__action">
+                                        <span class="home-product-item__like home-product-item__like--liked">
+                                            <i class="home-product-item__like-icon-off far fa-heart"></i>
+                                            <i class="home-product-item__like-icon-on fas fa-heart"></i>
+                                        </span>
+                                        <div class="home-product-item__rating">
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span class="home-product-item__sold">88 đã bán</span>
+                                    </div>
+                                    <div class="home-product-item__origin">
+                                        <span class="home-product-item__brand">Whoo</span>
+                                        <span class="home-product-item__origin-name">Hàn Quốc</span>
+                                    </div>
+                                    <div class="home-product-item__favourite">
+                                        <i class="fas fa-check"></i>
+                                        <span>Yêu thích</span>
+                                    </div>
+                                    <div class="home-product-item__sale-off">
+                                        <span class="home-product-item__sale-off-percent">8%</span>
+                                        <span class="home-product-item__sale-off-label">GIẢM</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="grid__column-2-4">
+                                <a class="home-product-item" href="#">
+                                    <div class="home-product-item__img" style="background-image: url(https://img.vnshop.vn/height/350/media/catalog_v2/media/79/84/1572257006.8445141_Realme-5-Pro-8GB128GB-1.jpg) ;"></div>
+                                    <h5 class="home-product-item__name">Điện Thoại Samsung Galaxy A71 8GB/128GB - Hàng Chính Hãng</h5>
+                                    <div class="home-product-item__price">
+                                        <span class="home-product-item__price-old">10.490.000đ</span>
+                                        <span class="home-product-item__price-new">9.690.000đ</span>
+                                    </div>
+                                    <div class="home-product-item__action">
+                                        <span class="home-product-item__like home-product-item__like--liked">
+                                            <i class="home-product-item__like-icon-off far fa-heart"></i>
+                                            <i class="home-product-item__like-icon-on fas fa-heart"></i>
+                                        </span>
+                                        <div class="home-product-item__rating">
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span class="home-product-item__sold">88 đã bán</span>
+                                    </div>
+                                    <div class="home-product-item__origin">
+                                        <span class="home-product-item__brand">Whoo</span>
+                                        <span class="home-product-item__origin-name">Hàn Quốc</span>
+                                    </div>
+                                    <div class="home-product-item__favourite">
+                                        <i class="fas fa-check"></i>
+                                        <span>Yêu thích</span>
+                                    </div>
+                                    <div class="home-product-item__sale-off">
+                                        <span class="home-product-item__sale-off-percent">8%</span>
+                                        <span class="home-product-item__sale-off-label">GIẢM</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="grid__column-2-4">
+                                <a class="home-product-item" href="#">
+                                    <div class="home-product-item__img" style="background-image: url(https://img.vnshop.vn/height/350/media/catalog_v2/media/49/2/1565062519.9644933_190800033-2.jpg) ;"></div>
+                                    <h5 class="home-product-item__name">Điện Thoại Samsung Galaxy A71 8GB/128GB - Hàng Chính Hãng</h5>
+                                    <div class="home-product-item__price">
+                                        <span class="home-product-item__price-old">10.490.000đ</span>
+                                        <span class="home-product-item__price-new">9.690.000đ</span>
+                                    </div>
+                                    <div class="home-product-item__action">
+                                        <span class="home-product-item__like home-product-item__like--liked">
+                                            <i class="home-product-item__like-icon-off far fa-heart"></i>
+                                            <i class="home-product-item__like-icon-on fas fa-heart"></i>
+                                        </span>
+                                        <div class="home-product-item__rating">
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="home-product-item__start-gold fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span class="home-product-item__sold">88 đã bán</span>
+                                    </div>
+                                    <div class="home-product-item__origin">
+                                        <span class="home-product-item__brand">Whoo</span>
+                                        <span class="home-product-item__origin-name">Hàn Quốc</span>
+                                    </div>
+                                    <div class="home-product-item__favourite">
+                                        <i class="fas fa-check"></i>
+                                        <span>Yêu thích</span>
+                                    </div>
+                                    <div class="home-product-item__sale-off">
+                                        <span class="home-product-item__sale-off-percent">8%</span>
+                                        <span class="home-product-item__sale-off-label">GIẢM</span>
+                                    </div>
+                                </a>
+                            </div>
 
                         </div>
                     </div>

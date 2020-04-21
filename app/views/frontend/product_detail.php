@@ -9,6 +9,9 @@
                     <li>ABcxyz</li>
                 </ul>
             </div>
+            <div class="grid__column-12">
+                <div>Thông tin sản phẩm</div>
+            </div>
             <div class="thong-tin-chung">
                 <div class="grid__column-5">
                     <div class="image-galery">

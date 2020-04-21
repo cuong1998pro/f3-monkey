@@ -61,6 +61,18 @@ html {
     width: 79.3334%;
 }
 
+.grid__column-7 {
+    /* padding-left: 5px;
+    padding-right: 5px; */
+    width: 60%;
+}
+
+.grid__column-5 {
+    /* padding-left: 5px;
+    padding-right: 5px; */
+    width: 40%;
+}
+
 .grid__column-12 {
     width: 100%;
 }

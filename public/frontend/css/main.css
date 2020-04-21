@@ -1486,3 +1486,7 @@ i.home-product-item__like-icon-on {
     /*! margin-right: 20px; */
     font-size: 15px;
 }
+
+.padding-text {
+    padding: 15px;
+}

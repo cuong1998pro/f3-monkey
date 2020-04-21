@@ -225,4 +225,38 @@ input[type=number] {
     display: flex;
     padding-bottom: 30px;
     height: auto;
+    margin-bottom: 27px;
+}
+
+.my-label {
+    font-size: 24px;
+    font-weight: 300;
+    margin: 30px 0 15px 0;
+}
+
+.info-header {
+    background: #4834d4;
+    width: 100%;
+    display: block;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #aaaaaa;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    color: white;
+}
+
+.chu-binh-thuong {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.my-table tr th {
+    text-align: left;
+    width: 150px;
+    padding: 4px;
+}
+
+.cau-hinh {
+    padding: 20px;
 }

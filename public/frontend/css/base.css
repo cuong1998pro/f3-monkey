@@ -128,7 +128,10 @@ html {
     right: 0;
     bottom: 0;
     left: 0;
-    display: flex;
+    display: none;
+    z-index: 1;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
 }
 
 .modal__overlay {
@@ -141,7 +144,7 @@ html {
 .modal__body {
     margin: auto;
     position: relative;
-    z-index: 2;
+    z-index: 3;
     animation-name: animatetop;
     animation-duration: 0.4s
 }

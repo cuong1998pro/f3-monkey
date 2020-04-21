@@ -87,7 +87,7 @@
                             </a>
                         </li>
                         <li id="myBtn" class="header__navbar-item header__navbar-item--strong header__navbar-item--separate" onclick="">Đăng ký</li>
-                        <li class="header__navbar-item header__navbar-item--strong">Đăng nhập</li>
+                        <li id="myBtn-2"class="header__navbar-item header__navbar-item--strong">Đăng nhập</li>
                         <!-- <li class="header__navbar-item header__navbar-user">
                             <img src="<?php echo URLROOT ?>/frontend/img/s20.jpg" alt="" class="header__navbar-user-img">
                             <span class="header__navbar-user-name">Linh Nguyễn</span>

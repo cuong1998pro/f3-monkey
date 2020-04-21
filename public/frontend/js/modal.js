@@ -1,21 +1,41 @@
 //open modal
 var modal = document.getElementById("myModal");
+var modal2 = document.getElementById("myModal-2");
 var btn = document.getElementById("myBtn");
+var btn2 = document.getElementById("myBtn-2");
 var span = document.getElementsByClassName("btn btn-normal auth-form__control-back")[0];
+var btnclose = document.querySelector('#close-2');
+
 
 if (btn != null) {
     btn.onclick = function() {
         modal.style.display = "flex";
     }
 }
+
+if (btn2 != null) {
+    btn2.onclick = function() {
+        modal2.style.display = "flex";
+    }
+}
+
 if (span != null) {
     span.onclick = function() {
         modal.style.display = "none";
+        modal2.style.display = "none";
+    }
+}
+
+if (btnclose != null) {
+    btnclose.onclick = function() {
+        modal.style.display = "none";
+        modal2.style.display = "none";
     }
 }
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
+        modal2.style.display = "none";
     }
 }
 
@@ -52,37 +72,3 @@ function showSlides(n) {
 setInterval(function() {
     plusSlides(1);
 }, 3500);
-
-
-jQuery('<div class="quantity-nav"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div></div>').insertAfter('.quantity input');
-jQuery('.quantity').each(function() {
-    var spinner = jQuery(this),
-        input = spinner.find('input[type="number"]'),
-        btnUp = spinner.find('.quantity-up'),
-        btnDown = spinner.find('.quantity-down'),
-        min = input.attr('min'),
-        max = input.attr('max');
-
-    btnUp.click(function() {
-        var oldValue = parseFloat(input.val());
-        if (oldValue >= max) {
-            var newVal = oldValue;
-        } else {
-            var newVal = oldValue + 1;
-        }
-        spinner.find("input").val(newVal);
-        spinner.find("input").trigger("change");
-    });
-
-    btnDown.click(function() {
-        var oldValue = parseFloat(input.val());
-        if (oldValue <= min) {
-            var newVal = oldValue;
-        } else {
-            var newVal = oldValue - 1;
-        }
-        spinner.find("input").val(newVal);
-        spinner.find("input").trigger("change");
-    });
-
-});

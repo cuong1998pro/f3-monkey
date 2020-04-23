@@ -12,11 +12,11 @@
                     <li id="hethong" class="nav-item">
                         <a class="nav-link menu" href="#">Hệ thống<span class="sr-only">(current)</span></a>
                     </li>
-                    <li  id="quanlynhap" class="nav-item menu">
-                        <a class="nav-link" href="#">Nhập hàng<span class="sr-only">(current)</span></a>
+                    <li  id="danhmuc" class="nav-item menu">
+                        <a class="nav-link" href="#">Danh mục<span class="sr-only">(current)</span></a>
                     </li>
-                    <li  id="quanlyxuat" class="nav-item menu">
-                        <a class="nav-link" href="#">Bán hàng<span class="sr-only">(current)</span></a>
+                    <li  id="quanly" class="nav-item menu">
+                        <a class="nav-link" href="#">Quản lý<span class="sr-only">(current)</span></a>
                     </li>
                     <li  id="baocao" class="nav-item menu">
                         <a class="nav-link" href="#">Báo cáo<span class="sr-only">(current)</span></a>

@@ -235,7 +235,7 @@ input[type=number] {
 }
 
 .info-header {
-    background: #4834d4;
+    background: #e5e5e5;
     width: 100%;
     display: block;
     padding: 15px;
@@ -243,12 +243,15 @@ input[type=number] {
     border-bottom: 1px solid #aaaaaa;
     font-size: 1.1em;
     text-transform: uppercase;
-    color: white;
+    /*! color: white; */
+    font-weight: 500;
 }
 
 .chu-binh-thuong {
     font-size: 16px;
     line-height: 1.5;
+    max-height: 400px;
+    overflow: hidden;
 }
 
 .my-table tr th {
@@ -259,4 +262,13 @@ input[type=number] {
 
 .cau-hinh {
     padding: 20px;
+}
+
+fade {
+    position: absolute;
+    bottom: 0px;
+    display: block;
+    width: 100%;
+    height: 50px;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9) 100%);
 }

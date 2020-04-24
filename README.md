@@ -1,3 +1,15 @@
+# Lệnh kéo code về máy
+git add . 
+git commit -m 'nhap cai j cung duoc'
+git pull origin master
+
+# Lệnh đẩy code lên
+git add . 
+git commit -m 'nhap cai j cung duoc'
+git pull origin master
+git push origin master
+
+
 # Các bước dùng source-code f3-monkey
 1. Tải git desktop về và cài đặt.
 2. Vào thư mục htdocs và chạy lệnh: git clone https://github.com/cuong1998pro/f3-monkey

@@ -1,12 +1,17 @@
 # Lệnh kéo code về máy
 git add . 
+<br/>
 git commit -m 'nhap cai j cung duoc'
+<br/>
 git pull origin master
 
 # Lệnh đẩy code lên
 git add . 
+<br/>
 git commit -m 'nhap cai j cung duoc'
+<br/>
 git pull origin master
+<br/>
 git push origin master
 
 

@@ -80,10 +80,10 @@ class Database
                 <a href="http://localhost/f3-monkey/'.$tableName.'/capnhat/'.$row->ma.'" class="edit-button">
                 <i class="fas fa-pencil-alt"></i>
                 </a>
-                <a href="'.URLROOT.'/'.$tableName.'/xoa/'.$row->ma.'" onclick="return confirm("Bạn có chắc chắn muốn xóa?");" class="delete-button">
+                <a href="'.URLROOT.'/'.$tableName.'/xoa/'.$row->ma.('" onclick="return confirm("'.'Bạn có chắc chắn muốn xóa?'.'");" class="delete-button">
                 <i class="fas fa-times"></i>
                 </a>
-                </td>';
+                </td>');
                 $str .= '</tr>';
             }
         } else {

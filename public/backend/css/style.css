@@ -162,8 +162,10 @@ aside ul li {
 }
 
 .sub-menu {
-    display: none;
     padding: 0 15px;
+    max-height: 0;
+    transition: max-height 0.4s ease-out;
+    overflow: hidden;
 }
 
 .sub-menu li {

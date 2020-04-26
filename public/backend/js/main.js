@@ -40,15 +40,14 @@ const menuExpanders = document.querySelectorAll('.menu-expander');
 if (menuExpanders != null) {
     menuExpanders.forEach(menu => {
         menu.addEventListener('click', () => {
-            menu.style.display = 'block';
             var content = menu.nextElementSibling;
-            if (content.style.display === "block") {
-                content.style.display = "none";
+            if (!content.style.maxHeight) {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                menu.innerHTML = menu.innerHTML.replace('down', 'up');
+            } else {
+                content.style.maxHeight = null;
                 menu.innerHTML = menu.innerHTML.replace('up', 'down');
 
-            } else {
-                content.style.display = "block";
-                menu.innerHTML = menu.innerHTML.replace('down', 'up');
             }
         })
 

@@ -169,7 +169,6 @@ create table user(
 	ma int primary key not null auto_increment,
 	ten varchar(100),
     tenhienthi varchar(100),
-	email varchar(100),
 	matkhau varchar(100),
     anh varchar(100) default '/backend/images/user.png',
     maloaitaikhoan int default 1,

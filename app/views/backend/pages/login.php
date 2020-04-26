@@ -1,30 +1,36 @@
-<?php require_once(SESSION); ?>
-<?php require_once(HEADER); ?>
-<div class="row">
-    <div class="col-md-4 mx-auto mt-5">
-    <?php flash('dang_ky_thanh_cong')?>
-        <div class="card card-body bg-light">
-            <h2>Đăng nhập</h2>
-            <p>Điền thông tin tài khoản và mật khẩu của bạn</p>
-            <form action="<?php echo URLROOT; ?>/admin/login" method="post">
-                <div class="form-group">
-                    <label for="name">Tên tài khoản: <sup>*</sup></label>
-                    <input type="text" name="ten" class="form-control form-control-lg" value="<?php echo $data['ten']?>">
-                </div>
-                <div class="form-group">
-                    <label for="password">Mật khẩu: <sup>*</sup></label>
-                    <input type="password" name="matkhau" class="form-control form-control-lg">
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <input type="submit" value="Đăng nhập" class="btn btn-success btn-block">
-                    </div>
-                    <div class="col">
-                        <a href="<?php echo URLROOT; ?>/admin/register" class="float-right">Chưa có tài khoản? Đăng ký</a>
-                    </div>
-                </div>
-            </form>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<?php echo URLROOT ?>/backend/css/account.css">
+    <title>Đăng nhập </title>
+</head>
+
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <?php flash('dang_ky_thanh_cong'); ?>
+        <form class="form" action="<?php echo URLROOT?>/admin/login" method="post">
+            <h2>Đăng Nhập</h2>
+            <div class="form-control">
+                <label for="username">Tên đăng nhập</label>
+                <input name="tendangnhap" type="text" value="<?php echo $data['tendangnhap']?>"></input>
+                <small><?php echo $data['loitendangnhap']?></small>
+            </div>
+            <div class="form-control">
+                <label for="password">Mật khẩu</label>
+                <input name="matkhau" type="password" value="<?php echo $data['matkhau']?>"></input>
+                <small><?php echo $data['loimatkhau']?></small>
+            </div>
+            <button>Đăng nhập</button>
+            <div class="user-function">
+                <p>Bạn chưa có tài khoản</p>
+                <a href="<?php echo URLROOT?>/admin/register">Đăng ký ngay</a>
+            </div>
+        </form>
     </div>
-</div>
-<?php require_once(FOOTER); ?>
+</body>
+
+</html>

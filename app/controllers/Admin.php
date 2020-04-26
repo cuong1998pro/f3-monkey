@@ -15,38 +15,44 @@ class Admin extends Controller
     public function login()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $data['ten'] = $_POST['ten'];
-            $user = $this->usermodel->layNguoiDung($data['ten']);
+            $data['tendangnhap'] = $_POST['tendangnhap'];
+            $data['matkhau'] = $_POST['matkhau'];
+            $user = $this->usermodel->layNguoiDung($data['tendangnhap']);
+
             if ($user) {
-                if ($user->matkhau == $_POST['matkhau']) {
+                if (password_verify($data['matkhau'], $user->matkhau)) {
                     flash('dang_nhap_thanh_cong', 'Đăng nhập thành công');
-                    $_SESSION['tentaikhoan'] = $data['ten'];
+                    $_SESSION['tentaikhoan'] = $data['tendangnhap'];
                     $_SESSION['tenhienthi'] = $user->tenhienthi;
-                    $_SESSION['mataikhoan'] =  $user->matkhau;
+                    $_SESSION['mataikhoan'] =  $user->ma;
                     $_SESSION['avatar'] =  $user->anh;
                     redirect('admin');
                 } else {
-                    flash('dang_ky_thanh_cong', 'Sai tên đăng nhập, mật khẩu', 'alert alert-danger');
+                    $data['loimatkhau'] = "Sai mật khẩu.";
+                    $data['loitendangnhap'] = '';
                 }
             } else {
-
-                flash('dang_ky_thanh_cong', 'Sai tên đăng nhập, mật khẩu', 'alert alert-danger');
+                $data['loitendangnhap'] = "Tên đăng nhập không tồn tại.";
+                $data['loimatkhau'] = '';
             }
+            $this->view('backend/pages/login', $data);
         } else {
-            $data['ten'] = '';
+            $data['tendangnhap'] = '';
+            $data['matkhau'] = '';
+            $data['loitendangnhap'] = '';
+            $data['loimatkhau'] = '';
+            $this->view('backend/pages/login', $data);
         }
-        $this->view('backend/pages/login', $data);
     }
     public function register(){
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $data = [
                 'ten' => $_POST['ten'],
-                'email' => $_POST['email'],
                 'matkhau' => $_POST['matkhau'],
                 'nhaplaimatkhau' => $_POST['nhaplai'],
                 'tenhienthi' => $_POST['tenhienthi'],
                 'loiten' => '',
-                'loiemail' => '',
+                'loitenhienthi' => '',
                 'loimatkhau' => '',
                 'loinhaplai' => '',
             ];
@@ -59,16 +65,17 @@ class Admin extends Controller
             if ($this->usermodel->kiemTraTenNguoiDung($data['ten'])) {
                 $data['loiten'] = 'Tên người dùng đã tồn tại';
             }
-            if (!(empty($data['loiten']) || empty($data['loiemail']) || empty($data['loimatkhau']) || empty($data['loinhaplai']))) {
-                $this->view('backend/pages/register', $data);
-            } else {
+            if ((empty($data['loiten']) && empty($data['loiemail']) && empty($data['loimatkhau']) && empty($data['loinhaplai']))) 
+            {
+                $data['matkhau'] = password_hash($data['matkhau'], PASSWORD_DEFAULT);
                 if (!$this->usermodel->themTaiKhoan($data)) {
-                    flash('loi_dang_ky', 'Đăng ký thất bại', 'alert alert-danger');
                     $this->view('backend/pages/register', $data);
                 } else {
                     flash('dang_ky_thanh_cong', 'Đăng ký thành công. Đăng nhập ngay');
                     redirect('admin/login');
                 }
+            } else {
+                $this->view('backend/pages/register', $data);
             }
         } else {
             $data = [
@@ -78,7 +85,7 @@ class Admin extends Controller
                 'tenhienthi' => '',
                 'nhaplaimatkhau' => '',
                 'loiten' => '',
-                'loiemail' => '',
+                'loitenhienthi' => '',
                 'loimatkhau' => '',
                 'loinhaplai' => '',
             ];

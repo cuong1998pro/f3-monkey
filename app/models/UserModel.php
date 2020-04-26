@@ -8,10 +8,9 @@ class UserModel{
     }
 
     public function themTaiKhoan($data){
-        $sql = "insert into user(ten, email,tenhienthi, matkhau) values(:ten, :email,:tenhienthi, :matkhau)";
+        $sql = "insert into user(ten,tenhienthi, matkhau) values(:ten,:tenhienthi, :matkhau)";
         $this->db->query($sql);
         $this->db->bind(':ten', $data['ten']);
-        $this->db->bind(':email', $data['email']);
         $this->db->bind(':matkhau', $data['matkhau']);
         $this->db->bind(':tenhienthi', $data['tenhienthi']);
         return ($this->db->execute());

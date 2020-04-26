@@ -2,12 +2,12 @@
 <?php require_once(HEADER); ?>
 
 <div id="main-content" class="container">
-    <nav aria-label="breadcrumb" sty>
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page">Nhập hàng / Nhà cung cấp</li>
-        </ol>
-    </nav>
-    <button class="btn btn-info" id="themNCC"><i class="fas fa-plus"></i> Thêm</button>
+    <ul class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Quản lý</a></li>
+        <li>Nhà cung cấp</li>
+    </ul>
+    <button class="button-primary" id="themNCC"><i class="fas fa-plus"></i> Thêm</button>
 
     <!-- Modal them nha cung cap -->
     <div class="modal" id="modalThemNCC">
@@ -16,28 +16,28 @@
             <form class="myform" action="<?php echo URLROOT ?>/nhacungcap/them" method="POST">
                 <div class="form-group">
                     <label class="mylabel">Tên nhà cung cấp <sup>*</sup></label>
-                    <input class="form-control myinput" type="text" name="ten" placeholder="Nhập tên nhà cung cấp">
+                    <input type="text" name="ten" placeholder="Nhập tên nhà cung cấp">
                 </div>
                 <div class="form-group ">
                     <label class="mylabel">Số điện thoại <sup>*</sup></label>
-                    <input class="form-control myinput" type="text" name="sodienthoai" placeholder="Nhập số điện thoại">
+                    <input type="text" name="sodienthoai" placeholder="Nhập số điện thoại">
                 </div>
                 <div class="form-group ">
-                    <label class="mylabel" >Địa chỉ <sup>*</sup></label>
-                    <textarea id="my-textarea" class="form-control" name="diachi" rows="2" placeholder="Nhập địa chỉ"></textarea>
+                    <label class="mylabel">Địa chỉ <sup>*</sup></label>
+                    <textarea id="my-textarea" name="diachi" rows="2" placeholder="Nhập địa chỉ"></textarea>
                 </div>
                 <div class="form-group ">
                     <label class="mylabel" style="margin-top:0px">Email</label>
-                    <input class="form-control myinput" type="text" name="email" placeholder="Nhập email">
+                    <input type="text" name="email" placeholder="Nhập email">
                 </div>
                 <div class="form-group ">
                     <label class="mylabel">Người liên hệ <sup>*</sup></label>
-                    <input class="form-control myinput" type="text" name="nguoilienhe" placeholder="Nhập người liên hệ">
+                    <input type="text" name="nguoilienhe" placeholder="Nhập người liên hệ">
                 </div>
 
                 <div class="myform-button">
-                    <button type="submit" class="btn btn-success"><i class="fas fa-plus" name="themNCC"></i>Thêm NCC</button>
-                    <button type="button" id="closeThemNCC" class="btn btn-default"><i class="fas fa-times"style="background:transparent; color:black"></i>Đóng</button>
+                    <button type="submit" class="button-add"><i class="fas fa-plus" name="themNCC"></i>Thêm NCC</button>
+                    <button type="button" id="closeThemNCC" class="button-close">Đóng</button>
                 </div>
 
             </form>
@@ -45,17 +45,15 @@
     </div>
 
     <!-- Modal cap nhat nha cung cap -->
-    
 
-    <a class="btn btn-info" href="<?php echo URLROOT . '/nhacungcap/in' ?>"><i class="fas fa-print"></i> In</a>
-    <div class="float-right">
-        <form class="form-inline" action="">
-            <div class="form-group">
-                <input id="search-box" class="form-control" type="text" name="search" placeholder="Tìm kiếm">
-                <button class="btn btn-info">Tìm kiếm</button>
-            </div>
-        </form>
-    </div>
+
+    <a class="button-primary" href="<?php echo URLROOT . '/nhacungcap/in' ?>"><i class="fas fa-print"></i> In</a>
+    <form action="" class="search-box">
+        <div class="form-group" style="display: flex;">
+            <input id="search-box" type="text" name="search" placeholder="Tìm kiếm">
+            <button class="button-primary">Tìm kiếm</button>
+        </div>
+    </form>
     <div class="mytable">
         <table>
             <thead>
@@ -70,8 +68,8 @@
                 </tr>
             </thead>
             <tbody>
-            <?php echo $data?>
-            
+                <?php echo $data ?>
+
 
             </tbody>
         </table>

@@ -199,7 +199,7 @@ aside ul li {
 }
 
 .container {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     padding: 10px 0;
 }
@@ -212,6 +212,7 @@ aside ul li {
     height: auto;
     z-index: 0;
     position: relative;
+    border-radius: 5px;
 }
 
 table {
@@ -224,6 +225,8 @@ td,
 th {
     border: 1px solid #ddd;
     padding: 8px;
+    line-height: 2;
+    vertical-align: text-top;
 }
 
 table tr:nth-child(even) {
@@ -487,4 +490,119 @@ ul.breadcrumb li a:hover {
 
 tr td:first-of-type {
     text-align: center;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+.col-3 {
+    height: 100%;
+    width: 25%;
+    flex: 0 0 25%;
+    padding: 0 3px;
+}
+
+.col-8 {
+    height: auto;
+    width: 67%;
+    flex: 0 0 67%;
+    padding: 0 3px;
+}
+
+.col-4 {
+    height: auto;
+    width: 33%;
+    flex: 0 0 33%;
+    padding: 0 3px;
+}
+
+.box {
+    height: 170px;
+}
+
+.box-info {
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.125);
+}
+
+.box-info-content {
+    padding: 25px;
+    height: 80%;
+}
+
+.box-info-content h3 {
+    font-size: 32px;
+    padding: 0;
+    margin: 0;
+    white-space: nowrap;
+    font-weight: 700;
+}
+
+.box-info-content p {
+    text-transform: capitalize;
+    font-size: 1.1em;
+}
+
+.box-info-content i {
+    position: absolute;
+    right: 15px;
+    top: 47px;
+    color: rgba(250, 250, 250, 0.9);
+}
+
+.link-view-full {
+    background: rgba(0, 0, 0, 0.1);
+    display: flex;
+    padding: 3px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    height: 20%;
+    justify-content: center;
+    align-items: center;
+}
+
+.sale-graph {
+    height: 320px;
+    width: 100%;
+    background: #6b6c6cde;
+    margin-top: 20px;
+    padding: 10px;
+    color: white;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.125);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    margin: 20px 3px;
+}
+
+.sale-graph-header {
+    position: relative;
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+}
+
+.sale-graph-header i {
+    margin-right: 10px;
+}
+
+.table-show {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gray {
+    background-color: #2b2e60;
 }

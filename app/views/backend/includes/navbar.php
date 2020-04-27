@@ -1,7 +1,7 @@
 <nav>
     <button class="collapse-aside-button"><i class="fa fa-bars fa-2x"></i></button>
     <ul class="header-menu">
-        <li><a href="#">Tổng quan</a></li>
+        <li><a href="http://localhost/f3-monkey/admin">Tổng quan</a></li>
         <li><a href="#">Giới thiệu</a></li>
     </ul>
     <div class="user-aria">

@@ -56,117 +56,118 @@
                 </div>
             </div>
         </div>
-        <div class="sale-graph">
-            <div class="sale-graph-header">
-                <i class="fa fa-th"></i>Biểu đồ doanh thu
-            </div>
-            <div id="chart_div" style="width: 100%; height: 500px;"></div>
+    </div>
+
+    <div class="sale-graph">
+        <div class="sale-graph-header">
+            <i class="fa fa-th"></i>Biểu đồ doanh thu
         </div>
-        <h2 style="margin-bottom:0">Đơn hàng gần đây</h2>
-        <div class="table-show">
-            <div class="mytable">
-                <table>
-                    <thead>
-                        <tr>
-                            <th class="gray">Mã số</th>
-                            <th class="gray">Tên khách hàng</th>
-                            <th class="gray">Danh sách sản phẩm</th>
-                            <th class="gray">Trạng thái</th>
-                            <th class="gray">Thời gian cập nhật</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Nguyễn Văn Linh</td>
-                            <td>1 x Điện thoại Galaxy Note 9 </br>
-                                2 x Tai nghe blutooth
-                            </td>
-                            <td>Sẵn sàng giao</td>
-                            <td>20:00 19/06/2020</td>
-                        </tr>
+        <div id="chart_div" style="width: 100%; height: 500px;"></div>
+    </div>
+    <h2 style="margin-bottom:0">Đơn hàng gần đây</h2>
+    <div class="table-show">
+        <div class="mytable">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="gray">Mã số</th>
+                        <th class="gray">Tên khách hàng</th>
+                        <th class="gray">Danh sách sản phẩm</th>
+                        <th class="gray">Trạng thái</th>
+                        <th class="gray">Thời gian cập nhật</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Nguyễn Văn Linh</td>
+                        <td>1 x Điện thoại Galaxy Note 9 </br>
+                            2 x Tai nghe blutooth
+                        </td>
+                        <td>Sẵn sàng giao</td>
+                        <td>20:00 19/06/2020</td>
+                    </tr>
 
-                        <tr>
-                            <td>1</td>
-                            <td>Nguyễn Văn Linh</td>
-                            <td>1 x Điện thoại Galaxy Note 9 </br>
-                                2 x Tai nghe blutooth
-                            </td>
-                            <td>Sẵn sàng giao</td>
-                            <td>20:00 19/06/2020</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Nguyễn Văn Linh</td>
-                            <td>1 x Điện thoại Galaxy Note 9 </br>
-                                2 x Tai nghe blutooth
-                            </td>
-                            <td>Sẵn sàng giao</td>
-                            <td>20:00 19/06/2020</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Nguyễn Văn Linh</td>
-                            <td>1 x Điện thoại Galaxy Note 9 </br>
-                                2 x Tai nghe blutooth
-                            </td>
-                            <td>Sẵn sàng giao</td>
-                            <td>20:00 19/06/2020</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Nguyễn Văn Linh</td>
-                            <td>1 x Điện thoại Galaxy Note 9 </br>
-                                2 x Tai nghe blutooth
-                            </td>
-                            <td>Sẵn sàng giao</td>
-                            <td>20:00 19/06/2020</td>
-                        </tr>
-                    </tbody>
-                </table>
+                    <tr>
+                        <td>1</td>
+                        <td>Nguyễn Văn Linh</td>
+                        <td>1 x Điện thoại Galaxy Note 9 </br>
+                            2 x Tai nghe blutooth
+                        </td>
+                        <td>Sẵn sàng giao</td>
+                        <td>20:00 19/06/2020</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Nguyễn Văn Linh</td>
+                        <td>1 x Điện thoại Galaxy Note 9 </br>
+                            2 x Tai nghe blutooth
+                        </td>
+                        <td>Sẵn sàng giao</td>
+                        <td>20:00 19/06/2020</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Nguyễn Văn Linh</td>
+                        <td>1 x Điện thoại Galaxy Note 9 </br>
+                            2 x Tai nghe blutooth
+                        </td>
+                        <td>Sẵn sàng giao</td>
+                        <td>20:00 19/06/2020</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Nguyễn Văn Linh</td>
+                        <td>1 x Điện thoại Galaxy Note 9 </br>
+                            2 x Tai nghe blutooth
+                        </td>
+                        <td>Sẵn sàng giao</td>
+                        <td>20:00 19/06/2020</td>
+                    </tr>
+                </tbody>
+            </table>
 
-            </div>
         </div>
-        <h2 style="margin-bottom:0">Danh sách sản phẩm</h2>
-        <div class="table-show">
-            <div class="mytable">
-                <table>
-                    <thead>
-                        <tr>
-                            <th class="gray">Mã số</th>
-                            <th class="gray">Tên sản phẩm</th>
-                            <th class="gray">Giá</th>
-                            <th class="gray">Số lượng kho</th>
-                            <th class="gray">Lượt mua</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Điện thoại Samsung Galaxy Note 9</td>
-                            <td>200.000.000 đ</td>
-                            <td>10 chiếc</td>
-                            <td>69</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Điện thoại Samsung Galaxy Note 9</td>
-                            <td>200.000.000 đ</td>
-                            <td>10 chiếc</td>
-                            <td>69</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Điện thoại Samsung Galaxy Note 9</td>
-                            <td>200.000.000 đ</td>
-                            <td>10 chiếc</td>
-                            <td>69</td>
-                        </tr>
+    </div>
+    <h2 style="margin-bottom:0">Danh sách sản phẩm</h2>
+    <div class="table-show">
+        <div class="mytable">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="gray">Mã số</th>
+                        <th class="gray">Tên sản phẩm</th>
+                        <th class="gray">Giá</th>
+                        <th class="gray">Số lượng kho</th>
+                        <th class="gray">Lượt mua</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Điện thoại Samsung Galaxy Note 9</td>
+                        <td>200.000.000 đ</td>
+                        <td>10 chiếc</td>
+                        <td>69</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Điện thoại Samsung Galaxy Note 9</td>
+                        <td>200.000.000 đ</td>
+                        <td>10 chiếc</td>
+                        <td>69</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Điện thoại Samsung Galaxy Note 9</td>
+                        <td>200.000.000 đ</td>
+                        <td>10 chiếc</td>
+                        <td>69</td>
+                    </tr>
 
-                    </tbody>
-                </table>
+                </tbody>
+            </table>
 
-            </div>
         </div>
     </div>
 </div>

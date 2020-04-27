@@ -10,11 +10,11 @@ function checklogin()
     redirect('admin/login');
   }
 }
-function uploadImage($tenThuMuc)
+function uploadImage()
 {
-  $Image = $_FILES["Image"]["name"];
-  $Target = URLROOT . '/backend/images/' . $tenThuMuc . '/' . basename($Image);
-  return move_uploaded_file($_FILES["Image"]["tmp_name"], $Target);
+  $Image = $_FILES["anh"]["name"];
+  $Target =   'images/'   . basename($Image);
+  return move_uploaded_file($_FILES["anh"]["tmp_name"], $Target);
 }
 function getCurrentTime()
 {

@@ -250,6 +250,10 @@ th {
     color: white;
 }
 
+th:first-of-type {
+    width: 100px
+}
+
 .fa-pencil-alt {
     width: 30px;
     height: 30px;

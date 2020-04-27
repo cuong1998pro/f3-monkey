@@ -1,22 +1,26 @@
 <?php
-    class Danhmuc extends Controller{
+    class Loaisanpham extends Controller{
         public function __construct()
         {
-            $this->DanhmucModel = $this->model('DanhmucModel');
+            $this->LoaisanphamModel = $this->model('LoaisanphamModel');
         }
     
         public function index()
         {
-            $data =  $this->DanhmucModel->layDanhSach();
+            $data =  $this->LoaisanphamModel->layDanhSach();
             // var_dump($data);die();
-            $this->view('backend/pages/quanly/Danhmuc',  $data);
+            $this->view('backend/pages/quanly/Loaisanpham',  $data);
         }
         public function them()
         {
+            
             $data['ten'] = $_POST['ten'];
-            $data['anh'] = $_POST['anh'];
+            $data['anh'] = $_FILES['anh']['name'];
             $data['link'] = $_POST['link'];
-            $this->DanhmucModel->themDanhmuc($data);
+            if(uploadImage()){
+                die('them anh thanh cong');
+            }
+            $this->LoaisanphamModel->themLoaisanpham($data);
             redirect('nhacungcap/index');
         }
 
@@ -25,13 +29,13 @@
             $data['ten'] = $_POST['ten'];
             $data['anh'] = $_POST['anh'];
             $data['link'] = $_POST['link'];
-            $this->DanhmucModel->themDanhmuc($data);
+            $this->LoaisanphamModel->themLoaisanpham($data);
             redirect('nhacungcap/index');
         }
 
         public function xoa($ma)
         {
-            $this->DanhmucModel->themDanhmuc($ma);
+            $this->LoaisanphamModel->themLoaisanpham($ma);
             redirect('nhacungcap/index');
         }
      }

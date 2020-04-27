@@ -1,5 +1,5 @@
 <?php 
-class DanhmucModel{
+class LoaisanphamModel{
     private $db;
 
     public function __construct()

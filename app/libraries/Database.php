@@ -58,12 +58,13 @@ class Database
             die($e->getMessage());
         }
     }
-
+// truy vấn về một mảng đối tượng
     public function fetchAll()
     {
         $this->execute();
         return $this->stmt->fetchALL(PDO::FETCH_OBJ);
     }
+    // hàm này ông viết này
     public function fetchTable($tableName)
     {
         $this->execute();

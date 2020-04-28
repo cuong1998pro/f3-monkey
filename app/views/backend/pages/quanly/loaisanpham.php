@@ -19,8 +19,10 @@
     <div class="modal" id="modalThemNCC">
         <div class="modal-content">
             <div class="form-header">Thêm nhà cung cấp</div>
+            <!-- chinh enctype de upload duoc file -->
+            <!-- form tra ve localhost/f3../loaisanpham/them -->
             <form class="myform" action="<?php echo URLROOT ?>/loaisanpham/them" method="POST" enctype="multipart/form-data">
-                
+         
                 <div class="form-group">
                     <label class="mylabel">Tên nhà cung cấp <sup>*</sup></label>
                     <input type="text" name="ten" placeholder="Nhập tên nhà cung cấp">
@@ -28,6 +30,7 @@
                 <div class="form-group ">
                     <label class="mylabel">Hình ảnh <sup>*</sup></label>
                     <input type="File" name="anh">
+                    <!-- input kieu file de up file -->
                 </div>
                 <div class="form-group ">
                     <label class="mylabel">Đường dẫn <sup>*</sup></label>
@@ -38,7 +41,7 @@
                     <button type="submit" class="button-add"><i class="fas fa-plus" name="themNCC"></i>Thêm NCC</button>
                     <button type="button" id="closeThemNCC" class="button-close">Đóng</button>
                 </div>
-
+<!-- nut gui nhu binh thuong -->
             </form>
         </div>
     </div>
@@ -66,12 +69,28 @@
                 </tr>
             </thead>
             <tbody>
+                <!-- foreach + mở ngặc -->
                 <?php foreach ($data as $loaisanpham) { ?>
                     <tr>
                         <td><?php echo $loaisanpham->ma ?></td>
                         <td><?php echo $loaisanpham->ten ?></td>
-                        <td><img src="<?php echo URLROOT . '/backend/images/' . $loaisanpham->anh ?>" </td> <td><?php echo $loaisanpham->link ?></td>
+                        <td>
+                            <img src="<?php echo URLROOT . '/backend/images/' . $loaisanpham->anh ?>"> 
+                            <!-- h the nay
+                            ong sua may ong cho ok 1 form di r t lam them
+                            formcos anhr lamf 1 cais fomr ko cos anh lamf 1 cai
+                            r pull leen 
+                            xoas het cai thua di
+                            con lai de t lamf 
+                            cuoi tuan laf xong bachend .ok  hieu roi dung k :)
+                            so so
+                            co j ko biet t goij ong
+                            lam nv cho nhanh chu h nhin ong fix dau ddau lamws @@. t chua lam bao h nen loi . t chi biet lam chu chua lam
+                            fix xong 1 cai di r cac cai con lai thuong tuw thoi? -->
+                        </td>
+                         <td><?php echo $loaisanpham->link ?></td>
                         <td width="90px">
+                            <!-- chỉnh lại link -->
                             <a href="http://localhost/f3-monkey/loaisanpham/capnhat/<?php echo $loaisanpham->ma ?>" class="edit-button">
                                 <i class="fas fa-pencil-alt"></i>
                             </a>

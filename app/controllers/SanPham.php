@@ -4,15 +4,20 @@
         public function __construct()
         {
             $this->SanPhamModel = $this->model('SanphamModel');
+            $this->DanhmucModel = $this->model('LoaisanphamModel');
+
         }
-    
         public function index()
         {
-            $data =  $this->SanPhamModel->layDanhSach();
-            // var_dump($data);die();
-            $this->view('backend/pages/quanly/Sanpham',  $data);
+            $sanpham =  $this->SanPhamModel->layDanhSach();
+            $danhmuc = $this->DanhmucModel->layDanhSach();
+            $this->view('backend/pages/quanly/danhsachsanpham',  [ 'sanpham'=>$sanpham, 'danhmuc'=>$danhmuc]);
         }
-        
+        //may cai nay de  no lam di chi cho t cach ap dung vaof form 
+        //ong sua 1 cai form hoan chinh di. de t fix cai bug nay cho cai form no hien len thi moi xem duoc 
+        // lam may ong di r chi cho t cach sua
+        //t ngoi viet do cho 1 its
+
         public function them()
         {
             $data['ten'] = $_POST['ten'];

@@ -27,7 +27,7 @@ class LoaisanphamModel{
     {
         $sql = "DELETE FROM danhmuc WHERE ma = :ma";
         $this->db->query($sql);
-        $this->db->bind(':macuahang', $maDanhmuc);
+        $this->db->bind(':ma', $maDanhmuc);
         return ($this->db->execute());
     }
     
@@ -35,5 +35,11 @@ class LoaisanphamModel{
         $sql = 'select * from danhmuc';
         $this->db->query($sql);
         return $this->db->fetchAll();
+    }
+
+    public function layDanhmuc($ma){
+        $sql = 'select * from danhmuc where ma = '. $ma;
+        $this->db->query($sql);
+        return $this->db->first();
     }
 }

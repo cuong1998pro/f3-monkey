@@ -65,7 +65,7 @@ class UserModel{
     }
 
     public function layNguoiDung($name){
-        $sql = "select * from user where ten like N'.$name.' or ma =  ". $name;
+        $sql = "select * from user where ten like N'$name' or ma like N'$name' ";
         $this->db->query($sql);
         return $this->db->first();
     }

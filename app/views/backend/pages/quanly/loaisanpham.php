@@ -5,7 +5,7 @@
     <!-- tên trang -->
     <ul class="breadcrumb">
         <li><a href="#">Home</a></li>
-        <li><a href="#">Quản lý</a></li> 
+        <li><a href="#">Danh Mục</a></li> 
         <li>Loại sản phẩm</li>
     </ul>
     <!-- nút thên  sản phẩm -->

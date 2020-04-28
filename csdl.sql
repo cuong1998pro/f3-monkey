@@ -1,12 +1,6 @@
 create database f3_monkey;
 use f3_monkey;
 
--- create table cuahang(
---     ten varchar(100),
---     diachi text,
---     sodienthoai varchar(20),
---     email text
--- )
 
 create table khachhang(
 	ma int primary key not null auto_increment,
@@ -26,20 +20,28 @@ create table nhacungcap(
     nguoilienhe text
 );
 
--- Ba cái ảnh trên giao diện
 create table banner(
 	ma int primary key not null auto_increment,
     anh varchar(100),
     link varchar(100)
 );
 
+-- Đây là bangr loại sản phẩm 
 -- Tạo danh mục trên website
 create table danhmuc(
 	ma int primary key not null auto_increment,
     ten varchar(100),
-    anh varchar(100),
+    ghichu varchar(100),
     link varchar(100)
+);
 
+create table thuonghieu(
+	ma int primary key not null auto_increment,
+    ten varchar(100),
+    ghichu varchar(100),
+    link varchar(100),
+    madanhmuc int,
+	foreign key (madanhmuc) references danhmuc(ma)
 );
 
 create table sanpham(
@@ -47,17 +49,15 @@ create table sanpham(
     ten varchar(100),
     anh varchar(100),
     madanhmuc int,
-    mota varchar(100),
-    mausac varchar(100),
-    luachon varchar(100),
-    gianiemyet int,
-    -- giảm giá float.
-    noidung text,
-    tinhtrang int,
-    khuyenmai text,
-    thongtinchitiet text,
-    thongsokythuat text,
+    mathuonghieu int,
+
+    motasanpham text default '',
+    -- 1 la` moi, 0 la cu
+    tinhtrang int default 1,
+    soluong int default 0,
+	foreign key (mathuonghieu) references thuonghieu(ma),
 	foreign key (madanhmuc) references danhmuc(ma)
+
 );
 
 --  các ảnh của sản phầm load lên giao diện
@@ -68,53 +68,43 @@ create table anhsanpham(
 	foreign key (masanpham) references sanpham(ma)
 );
 
--- create table thongsosanpham(
---     ma int primary key not null auto_increment,
---     ten varchar(100),
---     giatri varchar(100),
---     masanpham int,
--- 	foreign key (masanpham) references sanpham(ma)
--- );
-
--- create table luachon(
--- 	ma int primary key not null auto_increment,
---     masanpham int,
---     chitiet varchar(100),
---     gianiemyet int,
--- 	foreign key (masanpham) references sanpham(ma)
--- );
-
--- create table mausac(
--- 	ma int primary key not null auto_increment,
---     masanpham int,
---     mau varchar(100),
---     gianiemyet int,
--- 	foreign key (masanpham) references sanpham(ma)
--- );
-
---  sửa tên thành bàng giá 
--- create table giamgia(
--- 	ma int primary key not null auto_increment,
--- 	phantram int,
---     ngaybatdau datetime,
---     ngayketthuc datetime
--- );
-
--- create table chitietgiamgia(
---     magiamgia int,
---     masanpham int,
---     foreign key (masanpham) references sanpham(ma),
---     foreign key (magiamgia) references giamgia(ma)
--- );
+create table thongsosanpham(
+    ma int primary key not null auto_increment,
+    ten varchar(100),
+    giatri varchar(100),
+    masanpham int,
+	foreign key (masanpham) references sanpham(ma)
+);
 
 
--- create table magiamgia(
--- 	ma int primary key not null auto_increment,
--- 	phantram int,
---     ngaybatdau datetime,
---     ngayketthuc datetime
--- );
 
+create table banggia(
+	ma int primary key not null auto_increment,
+	gia int,
+    ngaycapnhat datetime default CURDATE(),
+    masanpham int,
+    phantramgiamgia int default 0,
+	foreign key (masanpham) references sanpham(ma)
+);
+
+
+create table phieunhap (
+    ma int primary key not null auto_increment,
+    ngaynhap datetime default CURDATE(),
+    manhacungcap int,
+    mauser int, 
+    foreign key (manhacungcap) references nhacungcap(ma),
+    foreign key (mauser) references user(ma)
+)
+create table chitietphieunhap (
+    maphieunhap  int,
+    masanpham int,
+    soluong int,
+    dongia float,
+    foreign key (maphieunhap) references phieunhap(ma),
+    foreign key (masanpham) references sanpham(ma),
+
+)
 
 -- Xem người nhận đã thanh toán hay chưa
 create table thanhtoan(

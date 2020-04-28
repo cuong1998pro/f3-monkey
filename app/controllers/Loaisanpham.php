@@ -21,7 +21,7 @@
                 die('them anh thanh cong');
             }
             $this->LoaisanphamModel->themLoaisanpham($data);
-            redirect('nhacungcap/index');
+            redirect('loaisanpham/index');
         }
 
         public function sua()
@@ -30,13 +30,12 @@
             $data['anh'] = $_POST['anh'];
             $data['link'] = $_POST['link'];
             $this->LoaisanphamModel->themLoaisanpham($data);
-            redirect('nhacungcap/index');
+            redirect('loaisanpham/index');
         }
-
         public function xoa($ma)
         {
-            $this->LoaisanphamModel->themLoaisanpham($ma);
-            redirect('nhacungcap/index');
+            $this->LoaisanphamModel->xoaDanhmuc($ma);
+            redirect('loaisanpham/index');
         }
      }
 ?>

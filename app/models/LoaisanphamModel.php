@@ -27,7 +27,7 @@ class LoaisanphamModel{
     {
         $sql = "DELETE FROM danhmuc WHERE ma = :ma";
         $this->db->query($sql);
-        $this->db->bind(':macuahang', $maDanhmuc);
+        $this->db->bind(':ma', $maDanhmuc);
         return ($this->db->execute());
     }
     

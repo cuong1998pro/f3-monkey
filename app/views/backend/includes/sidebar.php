@@ -18,10 +18,10 @@
             <div class="menu-expander">Danh mục <i class="fa fa-chevron-down"></i></div>
             <ul class="sub-menu">
                 <li><a href="<?php echo URLROOT?>/loaisanpham/index"><i class="fa fa-list-ul"></i> Loại sản phẩm</a></li>
-                <li><a href=""><i class="fa fa-copyright"></i> Thương hiệu sản phẩm</a></li>
-                <li><a href=""><i class="fa fa-box"></i> Sản phẩm</a></li>
+                <li><a href="<?php echo URLROOT?>/thuonghieu/index"><i class="fa fa-copyright"></i> Thương hiệu sản phẩm</a></li>
+                <li><a href="<?php echo URLROOT?>/sanpham/index"><i class="fa fa-box"></i> Sản phẩm</a></li>
                 <li><a href="<?php echo URLROOT?>/nhacungcap/index"><i class="fa fa-warehouse"></i> Nhà cung cấp</a></li>
-                <li><a href=""><i class="fa fa-user-tie"></i> Khách hàng</a></li>
+                <li><a href="<?php echo URLROOT?>/khachhang/index"><i class="fa fa-user-tie"></i> Khách hàng</a></li>
             </ul>
         </li>
         <li>

@@ -22,9 +22,9 @@ class Khachhang extends Controller
         $data['hoten'] = $_POST['hoten'];
         $data['diachi'] = $_POST['diachi'];
         $data['sodienthoai'] = $_POST['sodienthoai'];
-        $data['matkhau'] = $_POST['matkhau'];
-        $this->nhacungcapmodel->themKhachhang($data);
-        redirect('nhacungcap/index');
+        $data['matkhau'] = password_hash($data['matkhau'], PASSWORD_DEFAULT);
+        $this->KhachhangModel->themKhachhang($data);
+        redirect('Khachhang/index');
     }
 
     public function sua()
@@ -34,13 +34,13 @@ class Khachhang extends Controller
         $data['diachi'] = $_POST['diachi'];
         $data['sodienthoai'] = $_POST['sodienthoai'];
         $data['matkhau'] = $_POST['matkhau'];
-        $this->nhacungcapmodel->suaKhachhang($data);
-        redirect('nhacungcap/index');
+        $this->KhachhangModel->suaKhachhang($data);
+        redirect('Khachhang/index');
     }
 
     public function xoa($ma)
     {
-        $this->nhacungcapmodel->xoaKhachhang($ma);
-        redirect('nhacungcap/index');
+        $this->KhachhangModel->xoaKhachhang($ma);
+        redirect('Khachhang/index');
     }
 }

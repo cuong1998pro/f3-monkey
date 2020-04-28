@@ -17,7 +17,7 @@
 
             <div class="form-group ">
                     <label class="mylabel">Địa chỉ <sup>*</sup></label>
-                    <textarea id="my-textarea" name="diachi" rows="2" placeholder="Nhập địa chỉ" value="<?php echo $data->diachi?>"></textarea>
+                    <textarea id="my-textarea" name="diachi" rows="2" placeholder="Nhập địa chỉ" ><?php echo $data->diachi?></textarea>
              </div>
 
             <div class="form-group ">

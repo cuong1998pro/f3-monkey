@@ -43,8 +43,8 @@ class KhachhangModel {
         return $this->db->fetchTable('khachhang');
     }
 
-    public function layNhaCungCap($ma){
-        $sql = 'select * from khahchang where ma = '. $ma. ';';
+    public function layKhachhang($ma){
+        $sql = 'select * from khachhang where ma = '. $ma. ';';
         $this->db->query($sql);
         return $this->db->first();
     }

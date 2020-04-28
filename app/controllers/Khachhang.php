@@ -43,4 +43,8 @@ class Khachhang extends Controller
         $this->KhachhangModel->xoaKhachhang($ma);
         redirect('Khachhang/index');
     }
+    public function capnhat($ma){
+        $data = $this->KhachhangModel->layKhachhang($ma);
+        $this->view('backend/pages/quanly/capnhatkhachhang',  $data);
+    }
 }

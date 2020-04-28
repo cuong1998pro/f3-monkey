@@ -11,12 +11,13 @@
         {
             $sanpham =  $this->SanPhamModel->layDanhSach();
             $danhmuc = $this->DanhmucModel->layDanhSach();
-            $this->view('backend/pages/quanly/danhsachsanpham',  [ 'sanpham'=>$sanpham, 'danhmuc'=>$danhmuc]);
+            $data = [
+                'sanpham'=>$sanpham,
+                'danhmuc'=>$danhmuc
+            ];
+            $this->view('backend/pages/quanly/danhsachsanpham', $data);
         }
-        //may cai nay de  no lam di chi cho t cach ap dung vaof form 
-        //ong sua 1 cai form hoan chinh di. de t fix cai bug nay cho cai form no hien len thi moi xem duoc 
-        // lam may ong di r chi cho t cach sua
-        //t ngoi viet do cho 1 its
+        
 
         public function them()
         {

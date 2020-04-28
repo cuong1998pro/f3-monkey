@@ -379,6 +379,7 @@ th:last-of-type {
 }
 
 input,
+select,
 textarea {
     border: 2px solid #f0f0f0;
     border-radius: 4px;
@@ -388,7 +389,9 @@ textarea {
     font-size: 14px;
 }
 
-input:focus {
+input:focus,
+select:focus,
+textarea:focus {
     outline: 0;
     border-color: #777;
 }

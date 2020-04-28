@@ -5,14 +5,9 @@
     <!-- tên trang -->
    
     <!-- nút thên  sản phẩm -->
-    
-
-    <!-- Modal them nha cung cap. phần này là phần form Cập nhật, mặc định ẩn đi, khi nào ấn nút nó hiện ra. sửa phần action-->
     <div class="modal" id="modalThemNCC" style="display:block">
         <div class="modal-content">
             <div class="form-header">Cập nhật nhà cung cấp</div>
-            <!-- chinh enctype de upload duoc file -->
-            <!-- form tra ve localhost/f3../loaisanpham/them -->
             <form class="myform" action="<?php echo URLROOT ?>/loaisanpham/them" method="POST" enctype="multipart/form-data">
          
                 <div class="form-group">
@@ -34,7 +29,6 @@
                     <button type="submit" class="button-add"><i class="fas fa-plus" name="themNCC"></i>Cập nhật NCC</button>
                     <button type="button" id="closeThemNCC" class="button-close">Đóng</button>
                 </div>
-<!-- nut gui nhu binh thuong -->
             </form>
         </div>
     </div>

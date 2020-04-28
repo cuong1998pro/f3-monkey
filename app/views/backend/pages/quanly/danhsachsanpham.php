@@ -1,7 +1,4 @@
-<?php
-var_dump($data);
-die();
-?>
+
 <?php checklogin() ?>
 <?php require_once(HEADER); ?>
 
@@ -13,7 +10,6 @@ die();
     </ul>
     <button class="button-primary" id="themNCC"><i class="fas fa-plus"></i> Thêm</button>
 
-    <!-- Modal them nha cung cap -->
     <div class="modal" id="modalThemNCC">
         <div class="modal-content">
             <div class="form-header">Thêm sản phẩm</div>
@@ -28,10 +24,10 @@ die();
                 </div>
                 <div class="form-group ">
                     <label class="mylabel">Danh mục <sup>*</sup></label>
-                    <select name="madanhmuc" >
-                        <?php foreach($dsdm as $data->danhmuc) ?>
-                        <option value="<?php echo $danhmuc->value?>"><?php echo $danhmuc->ten?></option>
-                        <?php ?>
+                    <select name="madanhmuc">
+                        <?php foreach( $data['danhmuc'] as $dsdm) {?>
+                        <option value="<?php echo $dsdm->ma?>"><?php echo $dsdm->ten?></option>
+                        <?php }?>
                     </select>
                 </div>
                 <div class="form-group ">
@@ -80,7 +76,7 @@ die();
                 </tr>
             </thead>
             <tbody>
-                <?php echo $data ?>
+                <?php echo $         ?>
 
 
             </tbody>

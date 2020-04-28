@@ -17,10 +17,10 @@
             $data['ten'] = $_POST['ten'];
             $data['anh'] = $_FILES['anh']['name'];
             $data['link'] = $_POST['link'];
-            if(uploadImage()){
-                die('them anh thanh cong');
+            if(!uploadImage()){
+                die('Có lỗi sảy ra khi thêm ảnh.');
             }
-            $this->LoaisanphamModel->themLoaisanpham($data);
+            $this->LoaisanphamModel->themDanhmuc($data);
             redirect('nhacungcap/index');
         }
 

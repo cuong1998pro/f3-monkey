@@ -59,7 +59,7 @@
                 <tr>
                     <th>Mã số</th>
                     <th>Tên loại</th>
-                    <th>Hình ảnh</th>
+                    <th style ="width:auto">Hình ảnh</th>
                     <th>Đường dẫn</th>
 
                     <th width="90px">Chức năng</th>
@@ -82,6 +82,7 @@
                     </tr>
                 <?php } ?>
             </tbody>
+            
         </table>
 
     </div>

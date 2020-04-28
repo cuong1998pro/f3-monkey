@@ -27,7 +27,7 @@
             </div>
 
             <div class="myform-button">
-                <button type="submit" class="button-add"><i class="fas fa-plus"></i>Cập nhật NCC</button>
+                <button type="submit" class="button-add"><i class="fas fa-plus"></i>Cập nhật</button>
                 <a href="<?php echo URLROOT?>/nhacungcap/index" class="button-close">Đóng</a>
             </div>
         </form>

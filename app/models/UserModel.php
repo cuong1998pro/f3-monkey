@@ -28,7 +28,7 @@ class UserModel{
 
     public function sua($data)
     {
-        $sql = "update user set tenhienthi = :tenhienthi, matkhau = :matkhau, maloaitaikhoan = :maloaitaikhoan where ma =";
+        $sql = "update user set tenhienthi = :tenhienthi, matkhau = :matkhau, maloaitaikhoan = :maloaitaikhoan where ma = :ma";
         $this->db->query($sql);
         $this->db->bind(':matkhau', $data['matkhau']);
         $this->db->bind(':tenhienthi', $data['tenhienthi']);

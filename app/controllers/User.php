@@ -15,10 +15,9 @@ class User extends Controller
     }
     public function them()
     {
-
         $data['ten'] = $_POST['ten'];
         $data['tenhienthi'] = $_POST['tenhienthi'];
-        $data['matkhau'] = $_POST['matkhau'];
+        $data['matkhau'] = password_hash($_POST['matkhau'], PASSWORD_DEFAULT);
         $data['maloaitaikhoan'] = $_POST['maloaitaikhoan'];
         $this->usermodel->them($data);
         redirect('user/index');
@@ -27,24 +26,24 @@ class User extends Controller
     public function sua()
     {
         $data['ten'] = $_POST['ten'];
+        $data['ma'] = $_POST['ma'];
         $data['tenhienthi'] = $_POST['tenhienthi'];
-        $data['matkhau'] = $_POST['matkhau'];
+        $data['matkhau'] = password_hash($_POST['matkhau'], PASSWORD_DEFAULT);
         $data['maloaitaikhoan'] = $_POST['maloaitaikhoan'];
-        $this->usermodel->them($data);
+        $this->usermodel->sua($data);
         redirect('user/index');
     }
     public function capnhat($ma)
     {
-        $data = $this->usermodel->layNguoiDung($ma);
-        var_dump($data);
-        die();
-        $this->view('backend/pages/quanly/capnhatncc',  $data);
+        $data['taikhoan'] = $this->usermodel->layNguoiDung($ma);
+        $data['loaitaikhoan'] = $this->usermodel->layDanhSachLoaiTaiKhoan();
+        $this->view('backend/pages/quanly/capnhattaikhoan',  $data);
     }
 
     public function xoa($ma)
     {
-        $this->nhacungcapmodel->xoaNCC($ma);
-        redirect('nhacungcap/index');
+        $this->usermodel->xoa($ma);
+        redirect('user/index');
     }
 
 }

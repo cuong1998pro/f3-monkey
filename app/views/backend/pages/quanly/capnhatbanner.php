@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="myform-button">
-                    <button type="submit" class="button-add"><i class="fas fa-plus" name="themNCC"></i>Cập nhật NCC</button>
+                    <button type="submit" class="button-add"><i class="fas fa-plus" name="themNCC"></i>Cập nhật</button>
                     <button type="button" id="closeThemNCC" class="button-close">Đóng</button>
                 </div>
             </form>

@@ -36,4 +36,10 @@ class LoaisanphamModel{
         $this->db->query($sql);
         return $this->db->fetchAll();
     }
+
+    public function layDanhmuc($ma){
+        $sql = 'select * from danhmuc where ma = '. $ma;
+        $this->db->query($sql);
+        return $this->db->first();
+    }
 }

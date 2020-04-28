@@ -13,7 +13,7 @@ function checklogin()
 function uploadImage()
 {
   $Image = $_FILES["anh"]["name"];
-  $Target =   'images/'   . basename($Image);
+  $Target =   'backend/images/'. basename($Image);
   return move_uploaded_file($_FILES["anh"]["tmp_name"], $Target);
 }
 function getCurrentTime()

@@ -175,3 +175,4 @@ create table danhgia(
 	foreign key (masanpham) references sanpham(ma),
     foreign key (makhachhang) references khachhang(ma)
 );
+

@@ -231,7 +231,7 @@ th {
     border: 1px solid #ddd;
     padding: 8px;
     line-height: 2;
-    vertical-align: text-top;
+    vertical-align: top;
 }
 
 table tr:nth-child(even) {
@@ -251,7 +251,11 @@ th {
 }
 
 th:first-of-type {
-    width: 100px
+    width: 80px;
+}
+
+th:last-of-type {
+    width: 110px;
 }
 
 .fa-pencil-alt {
@@ -614,4 +618,9 @@ tr td:first-of-type {
 
 .gray {
     background-color: #2b2e60;
+}
+
+td img {
+    width: 200px;
+    height: 100px;
 }

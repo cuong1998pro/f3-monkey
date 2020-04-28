@@ -1,28 +1,44 @@
 <?php checklogin() ?>
 <?php require_once(HEADER); ?>
-<div class="modal" id="modalCapNhatNCC" style="display:block">
-    <div class="modal-content">
-        <div class="form-header">Cập nhật loại sản phẩm</div>
-        <form class="myform" action="<?php echo URLROOT ?>/Loaisanpham/sua" method="post">
-            <div class="form-group">
-                <input type="hidden" name="ma" value="<?php echo $data->ma?>">
-                <label class="mylabel">Tên loại sản phẩm <sup>*</sup></label>
-                <input  type="text" name="ten" placeholder="Nhập tên loại sản phẩm" value="<?php echo $data->ten?>">
-            </div>
-            <div class="form-group ">
-                <label class="mylabel">ảnh loại sản phẩm <sup>*</sup></label>
-                <input  type="text" name="sodienthoai" placeholder="Nhập ảnh loại sản phẩm" value="<?php echo $data->anh?>">
-            </div>
-            <div class="form-group ">
-                <label class="mylabel">đường dẫn<sup>*</sup></label>
-                <textarea id="my-textarea" name="diachi" rows="2" placeholder="Nhập đường dẫn"><?php echo $data->link?></textarea>
-            </div>
 
-            <div class="myform-button">
-                <button type="submit" class="button-add"><i class="fas fa-plus"></i>Cập nhật loại sản phẩm</button>
-                <a href="<?php echo URLROOT?>/Loaisanpham/index" class="button-close">Đóng</a>
-            </div>
-        </form>
+
+<div id="main-content" class="container">
+    <!-- tên trang -->
+   
+    <!-- nút thên  sản phẩm -->
+    
+
+    <!-- Modal them nha cung cap. phần này là phần form Cập nhật, mặc định ẩn đi, khi nào ấn nút nó hiện ra. sửa phần action-->
+    <div class="modal" id="modalThemNCC" style="display:block">
+        <div class="modal-content">
+            <div class="form-header">Cập nhật nhà cung cấp</div>
+            <!-- chinh enctype de upload duoc file -->
+            <!-- form tra ve localhost/f3../loaisanpham/them -->
+            <form class="myform" action="<?php echo URLROOT ?>/loaisanpham/them" method="POST" enctype="multipart/form-data">
+         
+                <div class="form-group">
+                    <label class="mylabel">Tên nhà cung cấp <sup>*</sup></label>
+                    <input type="text" name="ten" placeholder="Nhập tên nhà cung cấp" value="<?php echo $data->ten?>">
+                </div>
+                <img src="<?php echo URLROOT.'/backend/images'.$data->anh?>" alt="">
+                <div class="form-group ">
+                    <label class="mylabel">Hình ảnh <sup>*</sup></label>
+                    <input type="File" name="anh">
+                    <!-- input kieu file de up file -->
+                </div>
+                <div class="form-group ">
+                    <label class="mylabel">Đường dẫn <sup>*</sup></label>
+                    <input type="text" name="link" placeholder="Nhập người liên hệ" value="<?php echo $data->link?>">
+                </div>
+
+                <div class="myform-button">
+                    <button type="submit" class="button-add"><i class="fas fa-plus" name="themNCC"></i>Cập nhật NCC</button>
+                    <button type="button" id="closeThemNCC" class="button-close">Đóng</button>
+                </div>
+            </form>
+        </div>
     </div>
+
+   
 </div>
 <?php require_once(FOOTER); ?>

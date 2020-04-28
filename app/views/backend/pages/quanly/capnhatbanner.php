@@ -4,18 +4,14 @@
 
 <div id="main-content" class="container">
     <!-- tên trang -->
-   
+
     <!-- nút thên  sản phẩm -->
     <div class="modal" id="modalThemNCC" style="display:block">
         <div class="modal-content">
-            <div class="form-header">Cập nhật nhà cung cấp</div>
-            <form class="myform" action="<?php echo URLROOT ?>/loaisanpham/them" method="POST" enctype="multipart/form-data">
-         
-                <div class="form-group">
-                    <label class="mylabel">Tên nhà cung cấp <sup>*</sup></label>
-                    <input type="text" name="ten" placeholder="Nhập tên nhà cung cấp" value="<?php echo $data->ten?>">
-                </div>
-                <img src="<?php echo URLROOT.'/backend/images'.$data->anh?>" alt="">
+            <div class="form-header">Cập nhật Banner</div>
+            <form class="myform" action="<?php echo URLROOT ?>/banner/sua/<?php echo $data->ma?>" method="POST" enctype="multipart/form-data">
+                
+                <img src="<?php echo URLROOT . '/backend/images' . $data->anh ?>" alt="">
                 <div class="form-group ">
                     <label class="mylabel">Hình ảnh <sup>*</sup></label>
                     <input type="File" name="anh">
@@ -23,7 +19,7 @@
                 </div>
                 <div class="form-group ">
                     <label class="mylabel">Đường dẫn <sup>*</sup></label>
-                    <input type="text" name="link" placeholder="Nhập người liên hệ" value="<?php echo $data->link?>">
+                    <input type="text" name="link" placeholder="Nhập người liên hệ" value="<?php echo $data->link ?>">
                 </div>
 
                 <div class="myform-button">
@@ -34,6 +30,6 @@
         </div>
     </div>
 
-   
+
 </div>
 <?php require_once(FOOTER); ?>

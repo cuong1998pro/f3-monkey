@@ -52,6 +52,12 @@ class SanphamModel{
     public function layDanhSach(){
         $sql = 'select * from sanpham';
         $this->db->query($sql);
-        return $this->db->fetchAll();
+        return $this->db->fetchTable('sanpham');
+    }
+
+    public function laySanPham($ma){
+        $sql = 'select * from sanpham where ma = '. $ma. ';';
+        $this->db->query($sql);
+        return $this->db->first();
     }
 }

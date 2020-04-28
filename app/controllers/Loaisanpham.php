@@ -26,6 +26,10 @@
             if(!uploadImage()){
                 die('Có lỗi sảy ra khi thêm ảnh.');
             }
+// <<<<<<< HEAD
+//             $this->LoaisanphamModel->themLoaisanpham($data);
+//             redirect('loaisanpham/index');
+// =======
             // them vaof csdl
             $this->LoaisanphamModel->themDanhmuc($data);
             // quay lai trang danh sach
@@ -35,6 +39,7 @@
         public function capnhat($ma){
             $data = $this->LoaisanphamModel->layDanhmuc($ma);
             $this->view('backend/pages/quanly/capnhatloaisanpham', $data);
+// >>>>>>> 319d62e84a72597f521810c911af0d583ae958cd
         }
 
         public function sua()
@@ -45,7 +50,6 @@
             $this->LoaisanphamModel->themLoaisanpham($data);
             redirect('loaisanpham/index');
         }
-
         public function xoa($ma)
         {
             $this->LoaisanphamModel->xoaDanhmuc($ma);

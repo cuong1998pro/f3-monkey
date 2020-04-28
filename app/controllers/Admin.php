@@ -98,4 +98,6 @@ class Admin extends Controller
         session_destroy();
         redirect('admin/login');
     }
+
+    
 }

@@ -34,7 +34,7 @@
             $data['thongtinchitiet'] = $_POST['thongtinchitiet'];
             $data['thongsokythuat'] = $_POST['thongsokythuat'];
             $this->TintucModel->themSanPham($data);
-            redirect('nhacungcap/index');
+            redirect('sanpham/index');
         }
 
         public function sua()
@@ -52,13 +52,13 @@
             $data['thongtinchitiet'] = $_POST['thongtinchitiet'];
             $data['thongsokythuat'] = $_POST['thongsokythuat'];
             $this->TintucModel->suaSanPham($data);
-            redirect('nhacungcap/index');
+            redirect('sanpham/index');
         }
 
         public function xoa($ma)
         {
             $this->TintucModel->xoaSanpham($ma);
-            redirect('nhacungcap/index');
+            redirect('sanpham/index');
         }
      }
 ?>

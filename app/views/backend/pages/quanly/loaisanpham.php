@@ -4,7 +4,7 @@
 <div id="main-content" class="container">
     <ul class="breadcrumb">
         <li><a href="#">Home</a></li>
-        <li><a href="#">Quản lý</a></li> 
+        <li><a href="#">Danh Mục</a></li> 
         <li>Loại sản phẩm</li>
     </ul>
     <button class="button-primary" id="themNCC">
@@ -66,7 +66,7 @@
                         <td><?php echo $loaisanpham->ten ?></td>
                         <td>
                             <img src="<?php echo URLROOT . '/backend/images/' . $loaisanpham->anh ?>"> 
-                            
+                        
                         </td>
                          <td><?php echo $loaisanpham->link ?></td>
                         <td width="90px">

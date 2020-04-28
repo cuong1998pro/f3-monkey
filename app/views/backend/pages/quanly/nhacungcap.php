@@ -4,7 +4,7 @@
 <div id="main-content" class="container">
     <ul class="breadcrumb">
         <li><a href="#">Home</a></li>
-        <li><a href="#">Quản lý</a></li>
+        <li><a href="#">Danh Mục</a></li>
         <li>Nhà cung cấp</li>
     </ul>
     <button class="button-primary" id="themNCC"><i class="fas fa-plus"></i> Thêm</button>

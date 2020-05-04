@@ -19,14 +19,14 @@ body {
 
 nav {
     background: #fff;
-    position: fixed;
+    position: relative;
     width: 100%;
     padding: 10px;
     color: rgba(0, 0, 0, 0.6);
     display: flex;
     justify-content: space-between;
     /*! z-index: ; */
-    z-index: 100;
+    /*! z-index: 100; */
 }
 
 ul {
@@ -322,13 +322,16 @@ th:last-of-type {
 
 .modal-content {
     color: #fefefe;
-    margin: 5% auto;
+    margin: 3% auto;
     border: 1px solid #888;
-    width: 700px;
+    width: 850px;
     position: relative;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     animation-name: animatetop;
     animation-duration: 0.3s;
+    /*! vertical-align: center; */
+    /*! display: flex; */
+    /*! justify-content: center; */
 }
 
 .form-header {

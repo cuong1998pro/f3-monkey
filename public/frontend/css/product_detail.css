@@ -250,8 +250,9 @@ input[type=number] {
 .chu-binh-thuong {
     font-size: 16px;
     line-height: 1.5;
-    max-height: 400px;
+    max-height: 1000px;
     overflow: hidden;
+    position: relative;
 }
 
 .my-table tr th {

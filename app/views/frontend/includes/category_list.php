@@ -4,21 +4,11 @@
             <i class="fas fa-list-ul"></i> DANH MỤC
         </h3>
         <ul class="category-list">
+            <?php foreach($data['danhmuc'] as $danhmuc):?>
             <li class="category-item">
-                <a href="" class="category-item-link">Điện thoại</a>
+                <a href="<?php echo URLROOT.'/page/danh-muc/'.$danhmuc->link?>" class="category-item-link"><?php echo $danhmuc->ten?></a>
             </li>
-            <li class="category-item category-item">
-                <a href="" class="category-item-link">Máy tính sách tay</a>
-            </li>
-            <li class="category-item category-item--active">
-                <a href="" class="category-item-link">Máy tính để bàn</a>
-            </li>
-            <li class="category-item">
-                <a href="" class="category-item-link">Phụ kiện điện thoại</a>
-            </li>
-            <li class="category-item">
-                <a href="" class="category-item-link">Thiết bị văn phòng</a>
-            </li>
+            <?php endforeach;?>
         </ul>
     </nav>
 </div>

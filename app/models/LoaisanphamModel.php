@@ -1,10 +1,17 @@
 <?php 
+    require_once('ThuonghieuModel.php');
+    require_once('SanphamModel.php');
+
 class LoaisanphamModel{
+
     private $db;
 
     public function __construct()
     {
         $this->db = new Database;
+        $this->ThuonghieuModel = new ThuonghieuModel();
+        $this->SanphamModel = new SanphamModel();
+
     }
 
     public function suaDanhmuc($data){
@@ -41,5 +48,15 @@ class LoaisanphamModel{
         $sql = 'select * from danhmuc where ma = '. $ma;
         $this->db->query($sql);
         return $this->db->first();
+    }
+    public function layDanhSachChiTiet(){
+        $sql = 'select * from danhmuc';
+        $this->db->query($sql);
+        $danhSachDanhMuc =  $this->db->fetchAll();
+        foreach($danhSachDanhMuc as $danhmuc){
+            $danhmuc->dsthuonghieu = $this->ThuonghieuModel->layThuongHieuTheoDanhMuc($danhmuc->ma);
+            $danhmuc->dssanpham = $this->SanphamModel->laySanphamTheoDanhMuc($danhmuc->ma);
+        }
+        return $danhSachDanhMuc;
     }
 }

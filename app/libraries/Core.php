@@ -15,8 +15,10 @@ class Core{
         $this->currentController = new $this->currentController;
         
         if(isset($url[1])){
+            $url[1] = str_replace('-', '_',  $url[1]);
             if(method_exists($this->currentController, $url[1])){
                 $this->currentMethod = $url[1];
+
                 unset($url[1]);
             }
         }
@@ -28,7 +30,6 @@ class Core{
         if(isset($_GET['url'])){
             $url = rtrim($_GET['url'], '/');
             $url = filter_var($url, FILTER_SANITIZE_URL);
-            $url = str_replace('-', '_', $url);
             $url = explode('/', $url);
             return $url;
         }

@@ -1,5 +1,5 @@
 <?php
-class ThongtinsanphamModel {
+class ThongsosanphamModel {
     private $db;
     public function __construct()
     {
@@ -33,10 +33,11 @@ class ThongtinsanphamModel {
         $this->db->execute();
     }
     
-    public function layDanhSach(){
-        $sql = 'select * from thongsosanpham';
+    public function layDanhSach($masanpham){
+        $sql = 'select * from thongsosanpham where masanpham = ' . $masanpham;
         $this->db->query($sql);
         return $this->db->fetchAll();
-        
     }
+
+    
 }

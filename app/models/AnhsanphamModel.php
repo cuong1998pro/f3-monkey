@@ -29,9 +29,14 @@ class AnhsanphamModel{
         return ($this->db->execute());
     }
     
-    public function layDanhSach(){
-        $sql = 'select * from Anhsanpham';
+    public function layDanhSach($masanpham){
+        $sql = 'select * from anhsanpham where masanpham = '. $masanpham;
         $this->db->query($sql);
         return $this->db->fetchAll();
+    }
+    public function layMotAnh($masanpham){
+        $sql = 'select * from anhsanpham where masanpham = '.$masanpham;
+        $this->db->query($sql);
+        return $this->db->first();
     }
 }

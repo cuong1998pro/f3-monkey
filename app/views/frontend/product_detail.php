@@ -84,7 +84,7 @@
                         <div class="chu-binh-thuong padding-text">
                             <?php echo $data->motasanpham ?>
                         </div>
-                        <fade />
+                        <!-- <fade /> -->
 
                     </div>
                     <div class="grid__column-5">

@@ -1,6 +1,6 @@
 <?php
 class Core{
-    protected $currentController = "Page";
+    protected $currentController = "Webshop";
     protected $currentMethod = "index";
     protected $params = [];
 

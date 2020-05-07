@@ -1,5 +1,5 @@
 <?php
-class Page extends Controller{
+class Webshop extends Controller{
 
     public function __construct()
     {
@@ -27,5 +27,10 @@ class Page extends Controller{
         $this->view('frontend/index', $data);
     }
     
+    public function loc_san_pham(){
+        $data = [];
+        $this->view('frontend/product_filter', $data);
+
+    }
    
 }

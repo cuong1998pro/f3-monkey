@@ -1,5 +1,5 @@
-<?php checklogin() ?>
-<?php require_once(HEADER); ?>
+<?php checklogin()?>
+<?php require_once HEADER;?>
 
 <div id="main-content" class="container">
     <ul class="breadcrumb">
@@ -19,53 +19,42 @@
                     <input type="text" name="ten" placeholder="Nhập sản phẩm ">
                 </div>
                 <div class="form-group">
-                    <label class="mylabel"> Ảnh<sup>*</sup></label>
-                    <input type="text" name="anh" placeholder="Nhập ảnh">
+                    <label class="mylabel">Danh mục <sup>*</sup></label>
+                    <select name="madanhmuc" id="">
+                        <?php foreach ($data['danhmuc'] as $danhmuc): ?>
+                            <option value="<?php echo $danhmuc->ma ?>">
+                                <?php echo $danhmuc->ten ?>
+                            </option>
+                        <?php endforeach;?>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label class="mylabel">Mã danh mục <sup>*</sup></label>
-                    <input type="text" name="madanhmuc" placeholder="Nhập mã danh mục">
+                    <label class="mylabel">Thương hiệu <sup>*</sup></label>
+                    <select name="mathuonghieu" id="">
+                    <?php foreach ($data['thuonghieu'] as $thuonghieu): ?>
+                            <option value="<?php echo $thuonghieu->ma ?>">
+                                <?php echo $thuonghieu->ten ?>
+                            </option>
+                        <?php endforeach;?>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label class="mylabel">Mô tả <sup>*</sup></label>
-                    <input type="text" name="mota" placeholder="Nhập Mô tả">
-                </div>
-                <div class="form-group">
-                    <label class="mylabel">Màu sắc<sup>*</sup></label>
-                    <input type="text" name="mausac" placeholder="Nhập màu săc ">
-                </div>
-                <div class="form-group">
-                    <label class="mylabel">Lựa chọn<sup>*</sup></label>
-                    <input type="text" name="luachon" placeholder="Nhập lựa chọn">
-                </div>
-                <div class="form-group">
-                    <label class="mylabel">Giá niên yết<sup>*</sup></label>
-                    <input type="text" name="gianienyet" placeholder="Nhập giá niên yết">
-                </div>
-
-                <div class="form-group">
-                    <label class="mylabel">Nội dung <sup>*</sup></label>
-                    <input type="text" name="noidung" placeholder="Nhập Nội dung">
+                    <textarea id="my-textarea" name="mota" rows="2" placeholder="Nhập địa chỉ"><?php echo $data->motasanpham ?></textarea>
+                <script>
+                    CKEDITOR.replace('mota');
+                </script>
                 </div>
 
                 <div class="form-group">
                     <label class="mylabel">Tình trạng <sup>*</sup></label>
-                    <input type="text" name="tingtrang" placeholder="Nhập Tình trạng">
+                    <select name="tinhtrang" id="">
+                        <option value="1">Mới</option>
+                        <option value="2">Cũ 99%</option>
+                        <option value="3">Cũ 80%</option>
+                    </select>
                 </div>
-                <div class="form-group">
-                    <label class="mylabel">Khuyến mãi  <sup>*</sup></label>
-                    <input type="text" name="khuyenmai" placeholder="Nhập Khuyến mãi ">
-                </div>
-                <div class="form-group">
-                    <label class="mylabel">thông tin chi tiết <sup>*</sup></label>
-                    <input type="text" name="thongtinchitiet" placeholder="Nhập thông tin chi tiết">
-                </div>
-                <div class="form-group">
-                    <label class="mylabel">thông số kĩ thuật<sup>*</sup></label>
-                    <input type="text" name="thongsokythuat" placeholder="Nhập thông số kĩ thuật">
-                </div>
-                
-    
+
                 <div class="myform-button">
                     <button type="submit" class="button-add"><i class="fas fa-plus" name="themNCC"></i>Thêm sản phẩm </button>
                     <button type="button" id="closeThemNCC" class="button-close">Đóng</button>
@@ -90,24 +79,32 @@
             <thead>
                 <tr>
                     <th>Mã số</th>
-                    <th>Tên</th>
-                    <th>Ảnh</th>
-                    <th>Mã danh mục</th>
-                    <th>Mô tả</th>
-                    <th>màu sắc</th>
-                    <th>lựa chọn</th>
-                    <th>Giá niên yết</th>
-                    <th>Nội dung </th>
+                    <th>Tên sản phẩm</th>
+                    <th>Danh mục</th>
+                    <th>Thương hiệu</th>
                     <th>Tình trạng</th>
-                    <th>Khuyến mãi</th>
-                    <th>Thông tin chi tiết </th>
-                    <th>Thông số kỹ thuật</th>
                     <th width="90px">Chức năng</th>
                 </tr>
             </thead>
             <tbody>
-                <?php echo $data ?>
+                <?php foreach ($data['sanpham'] as $sanpham):?>
+                    <tr>
+                        <td><?php echo $sanpham->ma ?></td>
+                        <td><?php echo $sanpham->ten ?></td>
+                        <td><?php echo $sanpham->danhmuc ?></td>
+                         <td><?php echo $sanpham->thuonghieu ?></td>
+                         <td><?php echo $sanpham->tinhtrang ?></td>
 
+                        <td width="90px">
+                            <a href="<?php echo URLROOT. '/sanpham/capnhat/'. $sanpham->ma?>"
+                                <i class="fas fa-pencil-alt"></i>
+                            </a>
+                            <a href="<?php echo URLROOT.'/sanpham/xoa/'.$sanpham->ma?>"
+                                <i class="fas fa-times"></i>
+                            </a>
+                        </td>
+                    </tr>
+                <?php endforeach?>
 
             </tbody>
         </table>
@@ -126,4 +123,4 @@
         </div>
     </div> -->
 </div>
-<?php require_once(FOOTER); ?>
+<?php require_once FOOTER;?>

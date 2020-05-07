@@ -38,10 +38,10 @@ class KhuyenmaiModel {
         $this->db->execute();
     }
     
-    public function layDanhSach(){
-        $sql = 'select * from khuyenmai';
+    public function layDanhSach($masanpham ){
+        $sql = 'select * from khuyenmaisanpham where masanpham = '. $masanpham;
         $this->db->query($sql);
-        return $this->db->fetchTable('khuyenmai');
+        return $this->db->fetchAll();
     }
 
     public function layNhaCungCap($maNCC){

@@ -49,7 +49,7 @@ ul.breadcrumb li a:hover {
 .thumb {
     height: 100%;
     margin: 5px;
-    border: 1px solid black;
+    /*! border: 1px solid black; */
 }
 
 .thumb:hover {
@@ -58,7 +58,7 @@ ul.breadcrumb li a:hover {
 
 .thumb-image {
     padding: 5px;
-    height: 100%;
+    min-height: 65%;
     display: block;
     width: 100%;
 }
@@ -250,7 +250,7 @@ input[type=number] {
 .chu-binh-thuong {
     font-size: 16px;
     line-height: 1.5;
-    max-height: 1000px;
+    /*! max-height: 1000px; */
     overflow: hidden;
     position: relative;
 }

@@ -206,7 +206,7 @@ aside ul li {
 .container {
     width: 90%;
     margin: 0 auto;
-    padding: 80px 0 10px;
+    padding: 20px 0 10px;
 }
 
 .mytable {
@@ -481,9 +481,10 @@ a.button-close {
 }
 
 ul.breadcrumb {
-    padding: 10px 16px;
+    padding: 13px 16px;
     list-style: none;
     background-color: #eee;
+    margin:20px 0;
 }
 
 ul.breadcrumb li {

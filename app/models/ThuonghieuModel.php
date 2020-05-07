@@ -47,4 +47,10 @@ class ThuonghieuModel
         $this->db->query($sql);
         return $this->db->first();
     }
+
+    public function layThuongHieuTheoDanhMuc($madanhmuc){
+        $sql = 'select * from thuonghieu where madanhmuc = '.$madanhmuc;
+        $this->db->query($sql);
+        return $this->db->fetchAll();
+    }
 }

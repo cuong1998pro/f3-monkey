@@ -15,6 +15,6 @@ define('SIDEBAR', APPROOT.'/views/backend/includes/sidebar.php');
 define('SESSION', APPROOT.'/session.php');
 
 define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASSWORD', '');
+define('DB_USER', 'admin');
+define('DB_PASSWORD', 'password');
 define('DB_NAME', 'f3_monkey');

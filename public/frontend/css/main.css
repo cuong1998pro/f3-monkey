@@ -1070,7 +1070,7 @@
 .home-product-item__price-new {
     font-size: 1.6rem;
     color: var(--primary-color);
-    margin-left: 21px;
+    margin: 5px 7px;
 }
 
 .home-product-item__action {
@@ -1119,6 +1119,7 @@ i.home-product-item__like-icon-on {
     color: #595959;
     font-size: 1.2rem;
     font-weight: 300;
+    height: 10px;
 }
 
 .home-product-item__origin-name {
@@ -1195,7 +1196,7 @@ i.home-product-item__like-icon-on {
     list-style: 1.4rem;
     font-weight: 600;
     position: relative;
-    top: -10px;
+    top: -3px;
 }
 
 .home-product__pagination {
@@ -1416,7 +1417,7 @@ i.home-product-item__like-icon-on {
 }
 
 .slide-button {
-    width: 24.8%;
+    width: 24.7%;
     height: 50px;
     text-align: center;
 }

@@ -6,35 +6,31 @@
                 <ul class="breadcrumb">
                     <li><a href="#">Trang chủ</a></li>
                     <li><a href="#">Sản phẩm</a></li>
-                    <li>ABcxyz</li>
+                    <li><?php echo $data->ten?></li>
                 </ul>
             </div>
 
             <div class="thong-tin-chung">
                 <div class="grid__column-5">
                     <div class="image-galery">
-                        <img id="current-image" src="https://hanoicomputercdn.com/media/product/48195_tai_nghe_zidli_zh20_led_rgb_usb_1.jpg" alt="">
+                        <img id="current-image" src="<?php echo URLROOT.'/backend/images/sanpham/'. $data->anh[0]->anh?>" alt="">
 
                         <div class="list-thumb-image">
+                            <?php for($i=0; $i<sizeof($data->anh); $i++):?>
                             <div class="grid__column-2-4 thumb">
-                                <img class="thumb-image" src="https://hanoicomputercdn.com/media/product/120_48195_tai_nghe_zidli_zh20_led_rgb_usb_1.jpg" alt="">
+                                <img class="thumb-image" src="<?php echo URLROOT.'/backend/images/sanpham/'. $data->anh[$i]->anh?>" alt="">
                             </div>
-                            <div class="grid__column-2-4 thumb">
-                                <img class="thumb-image" src="https://hanoicomputercdn.com/media/product/120_48195_tai_nghe_zidli_zh20_led_rgb_usb_2.jpg" alt="">
-                            </div>
-                            <div class="grid__column-2-4 thumb">
-                                <img class="thumb-image" src="https://hanoicomputercdn.com/media/product/120_48195_tai_nghe_zidli_zh20_led_rgb_usb_3.jpg" alt="">
-                            </div>
+                            <?php endfor?>
                         </div>
                     </div>
                 </div>
 
                 <div class="grid__column-7 thong-tin-san-pham">
                     <p class="ten-san-pham">
-                        Tai nghe Zidli ZH20 Led RGB USB
+                        <?php echo $data->ten?>
                     </p>
                     <ul class="thong-tin-chi-tiet">
-                        <li>Mã số: <span class="red">123</span></li>
+                        <li>Mã số: <span class="red"><?php echo $data->ma?></span></li>
                         <li>
                             Đánh giá:
                             <span class="home-product-item__rating" style="margin-right:2px">
@@ -49,18 +45,19 @@
                     </ul>
                     <div class="thong-tin-gia">
                         <div class="flex thong-tin-chi-tiet-gia">
-                            <span class="thong-tin">Giá niên yết:</span> <span class="gia">2.000.000 đ</span>
+                            <span class="thong-tin">Giá niên yết:</span> <span class="gia"><?php echo $data->giagoc?></span>
                         </div>
                         <div class="flex thong-tin-chi-tiet-gia">
-                            <span class="thong-tin">Giá bán:</span> <span class="gia-ban">2.000.000 đ</span>
+                            <span class="thong-tin">Giá bán:</span> <span class="gia-ban"><?php echo $data->giaban?></span>
                         </div>
                         <hr class="my-hr">
 
                         <div class="flex thong-tin-chi-tiet-gia" style="display:flex; height:auto">
                             <span class="thong-tin">Khuyến mại:</span>
                             <ul class="khuyen-mai">
-                                <li class="chi-tiet-khuyen-mai">Đăng ký sớm! Nhận mã giảm giá tất cả sản phẩm đến 3 triệu! Duy nhất 21.02.2020. Áp dụng 2 ngày 22 - 23.04.2020</li>
-                                <li class="chi-tiet-khuyen-mai">Giảm thêm 5% tối đa 200k khi thanh toán trực tuyến qua VNPAY-QR với mã F3-MONKEY</li>
+                                <?php foreach($data->khuyenmai as $km):?>
+                                <li class="chi-tiet-khuyen-mai"><?php echo $km->khuyenmai?></li>
+                                <?php endforeach;?>
                             </ul>
                         </div>
                     </div>
@@ -87,38 +84,20 @@
                         <div class="chu-binh-thuong padding-text">
                             <?php echo $data->motasanpham ?>
                         </div>
-                        <fade />
+                        <!-- <fade /> -->
 
                     </div>
                     <div class="grid__column-5">
                         <span class="info-header">Thông số sản phẩm</span>
                         <div class="cau-hinh">
-                            <h3 class="msg__header">Điện thoại SamSung Galaxy s20 UltralHD</h3>
+                            <h3 class="msg__header"><?php echo $data->ten?></h3>
                             <table class="my-table">
+                            <?php foreach($data->dsthongsokythuat as $thongso):?>
                                 <tr>
-                                    <th>Thương hiệu:</th>
-                                    <td>SamSung</td>
-                                </tr>
-                                <tr>
-                                    <th>Model:</th>
-                                    <td>SamSung s20+</td>
-                                </tr>
-                                <tr>
-                                    <th>RAM:</th>
-                                    <td>8GB</td>
-                                </tr>
-                                <tr>
-                                    <th>Bộ nhớ trong:</th>
-                                    <td>128GB</td>
-                                </tr>
-                                <tr>
-                                    <th>Camera:</th>
-                                    <td>48MP</td>
-                                </tr>
-                                <tr>
-                                    <th>Giá:</th>
-                                    <td>12 000 0000đ</td>
-                                </tr>
+                                    <th><?php echo $thongso->ten?></th>
+                                    <td><?php echo $thongso->giatri?></td>
+                               </tr>
+                               <?php endforeach;?>
                             </table>
                         </div>
                     </div>

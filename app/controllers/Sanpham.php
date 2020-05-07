@@ -1,29 +1,33 @@
 
 <?php
-class SanPham extends Controller
+class Sanpham extends Controller
 {
     public function __construct()
     {
-        $this->SanPhamModel = $this->model('SanphamModel');
+        $this->SanphamModel = $this->model('SanphamModel');
         $this->DanhmucModel = $this->model('LoaisanphamModel');
+        $this->ThuonghieuModel = $this->model('ThuonghieuModel');
+
     }
 
 
-    public function chi_tiet($id = 1)
+    public function chi_tiet_san_pham($id)
     {
-        $data = $this->SanPhamModel->laySanPham($id);
+        $data = $this->SanphamModel->layChiTietSanPham($id);
         $this->view('frontend/product_detail', $data);
     }
 
     public function index()
     {
-        $sanpham =  $this->SanPhamModel->layDanhSach();
+        $sanpham =  $this->SanphamModel->layDanhSach();
         $danhmuc = $this->DanhmucModel->layDanhSach();
+        $thuonghieu = $this->ThuonghieuModel->layDanhSach();
         $data = [
             'sanpham' => $sanpham,
-            'danhmuc' => $danhmuc
+            'danhmuc' => $danhmuc,
+            'thuonghieu' => $thuonghieu
         ];
-        $this->view('backend/pages/quanly/danhsachsanpham', $data);
+        $this->view('backend/pages/quanly/sanpham', $data);
     }
 
 

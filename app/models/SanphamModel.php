@@ -1,10 +1,24 @@
 <?php 
+
+require_once('AnhsanphamModel.php');
+require_once('BanggiaModel.php');
+require_once('KhuyenmaiModel.php');
+require_once('ThongsosanphamModel.php');
+
+
 class SanphamModel{
+
+
     private $db;
 
     public function __construct()
     {
         $this->db = new Database;
+        $this->AnhsanphamModel = new AnhsanphamModel();
+        $this->BanggiaModel = new BanggiaModel();
+        $this->KhuyenmaiModel = new KhuyenmaiModel();
+        $this->ThongsosanphamModel = new ThongsosanphamModel();
+
     }
         //ten , anh, madanhmuc, mota, mausac, luachon, gianiemyet, noidung, tinhtrang, khuyenmai, thongtinchitiet, thongsokythuat 
     public function suaSanpham($data){
@@ -50,14 +64,43 @@ class SanphamModel{
     }
     
     public function layDanhSach(){
-        $sql = 'select * from sanpham';
+        $sql = 'select sanpham.ma, sanpham.ten, danhmuc.ten as danhmuc, thuonghieu.ten as \'thuonghieu\', tinhtrang 
+        from sanpham inner join thuonghieu on thuonghieu.ma = sanpham.mathuonghieu
+        inner join danhmuc on danhmuc.ma = sanpham.madanhmuc';
         $this->db->query($sql);
-        return $this->db->fetchTable('sanpham');
+        return $this->db->fetchAll();
     }
 
-    public function laySanPham($ma){
-        $sql = 'select * from sanpham where ma = '. $ma. ';';
+
+    public function laySanPhamTheoThuongHieu($mathuonghieu){
+        $sql = 'select * from sanpham where mathuonghieu = '.$mathuonghieu;
         $this->db->query($sql);
-        return $this->db->first();
+        return $this->db->fetchAll();
+    }
+    public function laySanphamTheoDanhMuc($madanhmuc){
+        $sql = 'select * from sanpham where madanhmuc = '.$madanhmuc .' limit 10';
+        // $sql = 'select * from sanpham where madanhmuc = '.$madanhmuc . 'limit 10';
+        $this->db->query($sql);
+        $dssanpham = $this->db->fetchAll();
+        foreach($dssanpham as $sanpham){
+            $sanpham->anh = $this->AnhsanphamModel->layMotAnh($sanpham->ma)->anh;
+            $sanpham->giagoc =strval( number_format($this->BanggiaModel->layGia($sanpham->ma)->gia)).'đ' ;
+        $sanpham->giaban = number_format($this->BanggiaModel->layGia($sanpham->ma)->gia - $this->BanggiaModel->layGia($sanpham->ma)->giamgia).'đ';
+
+        }
+        return $dssanpham;
+    }
+
+    public function layChiTietSanPham($masanpham){
+        $sql = 'select * from f3_monkey.sanpham where ma = '.$masanpham ;
+        // $sql = 'select * from sanpham where madanhmuc = '.$madanhmuc . 'limit 10';
+        $this->db->query($sql);
+        $sanpham = $this->db->first();
+        $sanpham->anh = $this->AnhsanphamModel->layDanhSach($sanpham->ma);
+        $sanpham->giagoc =strval( number_format($this->BanggiaModel->layGia($sanpham->ma)->gia)).'đ' ;
+        $sanpham->giaban = number_format($this->BanggiaModel->layGia($sanpham->ma)->gia - $this->BanggiaModel->layGia($sanpham->ma)->giamgia).'đ';
+        $sanpham->khuyenmai = $this->KhuyenmaiModel->layDanhSach($sanpham->ma);
+        $sanpham->dsthongsokythuat = $this->ThongsosanphamModel->layDanhSach($sanpham->ma);
+        return $sanpham;
     }
 }

@@ -6,10 +6,10 @@
         <li>
             <div class="menu-expander">Hệ thống <i class="fa fa-chevron-down"></i></div>
             <ul class="sub-menu">
-                <li><a href="<?php echo URLROOT?>/admin"><i class="fa fa-cog"></i> Khai báo hệ thống</a></li>
+                <!-- <li><a href="<?php echo URLROOT?>/admin"><i class="fa fa-cog"></i> Khai báo hệ thống</a></li> -->
                 <li><a href="<?php echo URLROOT?>/banner"><i class="fa fa-ad"></i> Cập nhật banner</a></li>
                 <li><a href="<?php echo URLROOT?>/slider"><i class="fas fa-sliders-h"></i> Cập nhật slider</a></li>
-                <li><a href="<?php echo URLROOT?>/user/capnhat/<?php echo $_SESSION['mataikhoan']?>"><i class="fa fa-key"></i> Đổi mật khẩu</a></li>
+                <!-- <li><a href="<?php echo URLROOT?>/user/capnhat/<?php echo $_SESSION['mataikhoan']?>"><i class="fa fa-key"></i> Đổi mật khẩu</a></li> -->
                 <li><a href="<?php echo URLROOT?>/user"><i class="fa fa-users"></i> Danh sách người dùng</a></li>
                 <li><a href="<?php echo URLROOT?>/admin"><i class="fa fa-user-check"></i> Phân quyền</a></li>
             </ul>

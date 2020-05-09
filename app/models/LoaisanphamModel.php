@@ -15,18 +15,19 @@ class LoaisanphamModel{
     }
 
     public function suaDanhmuc($data){
-        $sql = "UPDATE danhmuc SET ten = :ten, anh = :anh, link = :link WHERE ma = :ma";
+        $sql = "UPDATE danhmuc SET ten = :ten, ghichu = :ghichu, link = :link WHERE ma = :ma";
         $this->db->query($sql);
         $this->db->bind(':ten', $data['ten']);
-        $this->db->bind(':anh', $data['anh']);
+        $this->db->bind(':ghichu', $data['ghichu']);
         $this->db->bind(':link', $data['link']);
+        $this->db->bind(':ma', $data['ma']);
         return ($this->db->execute());
     }
     public function themDanhmuc($data){
-        $sql = "INSERT INTO danhmuc (ten, anh, link) VALUES (:ten, :anh, :link)";
+        $sql = "INSERT INTO danhmuc (ten, ghichu, link) VALUES (:ten, :ghichu, :link)";
         $this->db->query($sql);
         $this->db->bind(':ten', $data['ten']);
-        $this->db->bind(':anh', $data['anh']);
+        $this->db->bind(':ghichu', $data['ghichu']);
         $this->db->bind(':link', $data['link']);
         return ($this->db->execute());
     }

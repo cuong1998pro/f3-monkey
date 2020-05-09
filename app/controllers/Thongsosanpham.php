@@ -7,9 +7,9 @@ class Thongsosanpham extends Controller
         $this->ThongsosanphamModel = $this->model('ThongsosanphamModel');
     }
 
-    public function index($masanpham)
+    public function index($masanpham = 1)
     {
-        $data =  $this->ThongsosanphamModel->layDanhSach($masanpham);
+        $data['danhsachthongso'] =  $this->ThongsosanphamModel->layDanhSach($masanpham);
         $data['masanpham'] = $masanpham;
         $this->view('backend/pages/quanly/thongsosanpham',  $data);
     }

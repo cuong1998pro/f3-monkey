@@ -10,20 +10,23 @@ class ThuonghieuModel
 
     public function suaThuongHieu($data)
     {
-        $sql = "UPDATE thuonghieu SET ten = :ten, anh = :anh, link = :link WHERE ma = :ma";
+        $sql = "UPDATE thuonghieu SET ten = :ten, ghichu = :ghichu, link = :link, madanhmuc = :madanhmuc WHERE ma = :ma";
         $this->db->query($sql);
         $this->db->bind(':ten', $data['ten']);
-        $this->db->bind(':anh', $data['anh']);
+        $this->db->bind(':ghichu', $data['ghichu']);
         $this->db->bind(':link', $data['link']);
+        $this->db->bind(':madanhmuc', $data['madanhmuc']);
+        $this->db->bind(':ma', $data['ma']);
         return ($this->db->execute());
     }
     public function themThuongHieu($data)
     {
-        $sql = "INSERT INTO thuonghieu (ten, anh, link) VALUES (:ten, :anh, :link)";
+        $sql = "INSERT INTO thuonghieu (ten, ghichu, link, madanhmuc) VALUES (:ten, :ghichu, :link, :madanhmuc)";
         $this->db->query($sql);
         $this->db->bind(':ten', $data['ten']);
-        $this->db->bind(':anh', $data['anh']);
+        $this->db->bind(':ghichu', $data['ghichu']);
         $this->db->bind(':link', $data['link']);
+        $this->db->bind(':madanhmuc', $data['madanhmuc']);
         return ($this->db->execute());
     }
     public function xoaThuongHieu($maThuongHieu)
@@ -36,20 +39,20 @@ class ThuonghieuModel
 
     public function layDanhSach()
     {
-        $sql = 'select * from thuonghieu';
+        $sql = 'select thuonghieu.*, danhmuc.ten as danhmuc from thuonghieu inner join danhmuc on danhmuc.ma = thuonghieu.madanhmuc';
         $this->db->query($sql);
         return $this->db->fetchAll();
     }
 
     public function layThuongHieu($ma)
     {
-        $sql = 'select * from thuonghieu where ma = ' . $ma;
+        $sql = 'select thuonghieu.*, danhmuc.ten as danhmuc from thuonghieu inner join danhmuc on danhmuc.ma = thuonghieu.madanhmuc where thuonghieu.ma = ' . $ma;
         $this->db->query($sql);
         return $this->db->first();
     }
 
-    public function layThuongHieuTheoDanhMuc($madanhmuc){
-        $sql = 'select * from thuonghieu where madanhmuc = '.$madanhmuc;
+    public function layThuongHieuTheoDghichuMuc($madghichumuc){
+        $sql = 'select * from thuonghieu where madghichumuc = '.$madghichumuc;
         $this->db->query($sql);
         return $this->db->fetchAll();
     }

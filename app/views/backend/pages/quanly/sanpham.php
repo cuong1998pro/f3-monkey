@@ -80,11 +80,11 @@
                     <th>Mã số</th>
                     <th>Hình ảnh</th>
                     <th>Tên sản phẩm</th>
-                    <th>Danh mục</th>
-                    <th>Thương hiệu</th>
-                    <th>Tình trạng</th>
+                    <th style="width:107px">Danh mục</th>
+                    <th style="width:107px">Thương hiệu</th>
+                    <th style="width:107px">Tình trạng</th>
                     <th>Mô tả sản phẩm</th>
-                    <th style="width:160px">Chức năng</th>
+                    <th style="width:140px">Chức năng</th>
                 </tr>
             </thead>
             <tbody>
@@ -96,15 +96,17 @@
                         <td><?php echo $sanpham->danhmuc ?></td>
                         <td><?php echo $sanpham->thuonghieu ?></td>
                         <td><?php echo $sanpham->tinhtrang == 1 ? "Mới" : "Cũ" ?></td>
-                        <td><?php echo htmlentities(substr($sanpham->motasanpham, 0, 120)).'...'?></td>
+                        <td><?php echo htmlentities(substr($sanpham->motasanpham, 0, 120)) . '...' ?></td>
                         <td width="90px">
                             <a target="_blank" href="<?php echo URLROOT . '/sanpham/chi-tiet-san-pham/' . $sanpham->ma ?>" <i class="fas fa-eye"></i>
                             </a>
                             <a href="<?php echo URLROOT . '/sanpham/capnhat/' . $sanpham->ma ?>" <i class="fas fa-pencil-alt"></i>
                             </a>
+                            <a href="<?php echo URLROOT . '/sanpham/xoa/' . $sanpham->ma ?>" <i class="fas fa-times"></i>
+                            </a>
                             <a href="<?php echo URLROOT . '/thongsosanpham/index/' . $sanpham->ma ?>" <i class="fas fa-info"></i>
                             </a>
-                            <a href="<?php echo URLROOT . '/sanpham/xoa/' . $sanpham->ma ?>" <i class="fas fa-times"></i>
+                            <a href="<?php echo URLROOT . '/anhsanpham/index/' . $sanpham->ma ?>" <i class="fas fa-images"></i>
                             </a>
                         </td>
                     </tr>

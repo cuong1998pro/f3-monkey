@@ -5,20 +5,19 @@
     <ul class="breadcrumb">
         <li><a href="#">Home</a></li>
         <li><a href="#">Danh Mục</a></li>
-        <li>Loại sản phẩm</li>
+        <li>Thương hiệu</li>
     </ul>
     <button class="button-primary" id="themNCC">
-
         Thêm
     </button>
 
     <div class="modal" id="modalThemNCC">
         <div class="modal-content">
-            <div class="form-header">Thêm loại sản phẩm</div>
-            <form class="myform" action="<?php echo URLROOT ?>/loaisanpham/them" method="POST" enctype="multipart/form-data">
+            <div class="form-header">Thêm thương hiệu</div>
+            <form class="myform" action="<?php echo URLROOT ?>/thuonghieu/them" method="POST" enctype="multipart/form-data">
 
                 <div class="form-group">
-                    <label class="mylabel">Tên loại <sup>*</sup></label>
+                    <label class="mylabel">Tên thương hiệu <sup>*</sup></label>
                     <input type="text" name="ten" placeholder="Nhập tên">
                 </div>
                 <div class="form-group ">
@@ -28,6 +27,14 @@
                 <div class="form-group ">
                     <label class="mylabel">Đường dẫn <sup>*</sup></label>
                     <input type="text" name="link" placeholder="Nhập đường dẫn">
+                </div>
+                <div class="form-group ">
+                    <label class="mylabel">Chọn danh mục <sup>*</sup></label>
+                    <select name="madanhmuc" id="">
+                        <?php foreach ($data['danhmuc'] as $danhmuc) : ?>
+                            <option value="<?php echo $danhmuc->ma ?>"><?php echo $danhmuc->ten ?></option>
+                        <?php endforeach; ?>
+                    </select>
                 </div>
 
                 <div class="myform-button">
@@ -55,22 +62,23 @@
                     <th>Tên loại</th>
                     <th style="width:auto">Ghi chú</th>
                     <th>Đường dẫn</th>
-
+                    <th>Danh mục</th>
                     <th width="90px">Chức năng</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($data as $loaisanpham) { ?>
+                <?php foreach ($data['thuonghieu'] as $thuonghieu) { ?>
                     <tr>
-                        <td><?php echo $loaisanpham->ma ?></td>
-                        <td><?php echo $loaisanpham->ten ?></td>
-                        <td><?php echo $loaisanpham->ghichu ?></td>
-                        <td><?php echo $loaisanpham->link ?></td>
+                        <td><?php echo $thuonghieu->ma ?></td>
+                        <td><?php echo $thuonghieu->ten ?></td>
+                        <td><?php echo $thuonghieu->ghichu ?></td>
+                        <td><?php echo $thuonghieu->link ?></td>
+                        <td><?php echo $thuonghieu->danhmuc ?></td>
                         <td width="90px">
-                            <a href="<?php echo URLROOT . '/loaisanpham/capnhat/' . $loaisanpham->ma ?>">
+                            <a href="<?php echo URLROOT . '/thuonghieu/capnhat/' . $thuonghieu->ma ?>">
                                 <i class=" fas fa-pencil-alt"></i>
                             </a>
-                            <a href="<?php echo URLROOT . '/loaisanpham/xoa/' . $loaisanpham->ma ?>">
+                            <a href="<?php echo URLROOT . '/thuonghieu/xoa/' . $thuonghieu->ma ?>">
                                 <i class=" fas fa-times"></i>
                             </a>
                         </td>

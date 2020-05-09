@@ -5,31 +5,26 @@
     <ul class="breadcrumb">
         <li><a href="#">Home</a></li>
         <li><a href="#">Danh Mục</a></li>
-        <li>Loại sản phẩm</li>
+        <li><a href="<?php echo URLROOT . '/sanpham/index' ?>">Sản phẩm</a></li>
+        <li>Hình ảnh sản phẩm</li>
     </ul>
     <button class="button-primary" id="themNCC">
-
         Thêm
     </button>
 
     <div class="modal" id="modalThemNCC">
         <div class="modal-content">
-            <div class="form-header">Thêm loại sản phẩm</div>
-            <form class="myform" action="<?php echo URLROOT ?>/loaisanpham/them" method="POST" enctype="multipart/form-data">
+            <div class="form-header">Thêm</div>
+            <form class="myform" action="<?php echo URLROOT ?>/anhsanpham/them" method="POST" enctype="multipart/form-data">
 
-                <div class="form-group">
-                    <label class="mylabel">Tên loại <sup>*</sup></label>
-                    <input type="text" name="ten" placeholder="Nhập tên">
+                <div class="form-group ">
+                    <label class="mylabel">Chọn hình ảnh <sup>*</sup></label>
+                    <input type="file" name="anh">
                 </div>
                 <div class="form-group ">
-                    <label class="mylabel"> Ghi chú<sup>*</sup></label>
-                    <input type="text" name="ghichu" placeholder="Nhập ghi chú">
+                    <label class="mylabel">Mã sản phẩm <sup>*</sup></label>
+                    <input type="text" name="masanpham" value="<?php echo $data['masanpham'] ?>" readonly>
                 </div>
-                <div class="form-group ">
-                    <label class="mylabel">Đường dẫn <sup>*</sup></label>
-                    <input type="text" name="link" placeholder="Nhập đường dẫn">
-                </div>
-
                 <div class="myform-button">
                     <button type="submit" class="button-add">Thêm</button>
                     <button type="button" id="closeThemNCC" class="button-close">Đóng</button>
@@ -52,26 +47,21 @@
             <thead>
                 <tr>
                     <th>Mã số</th>
-                    <th>Tên loại</th>
-                    <th style="width:auto">Ghi chú</th>
+                    <th>Hình ảnh</th>
                     <th>Đường dẫn</th>
-
                     <th width="90px">Chức năng</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($data as $loaisanpham) { ?>
+                <?php foreach ($data['danhsachanh'] as $anh) { ?>
                     <tr>
-                        <td><?php echo $loaisanpham->ma ?></td>
-                        <td><?php echo $loaisanpham->ten ?></td>
-                        <td><?php echo $loaisanpham->ghichu ?></td>
-                        <td><?php echo $loaisanpham->link ?></td>
+                        <td><?php echo $anh->ma ?></td>
+                        <td><img src="<?php echo URLROOT . '/backend/images/sanpham/' . $anh->anh ?>" alt="Lỗi tải ảnh"></td>
+                        <td><?php echo URLROOT . '/backend/images/sanpham/' . $anh->anh ?></td>
                         <td width="90px">
-                            <a href="<?php echo URLROOT . '/loaisanpham/capnhat/' . $loaisanpham->ma ?>">
-                                <i class=" fas fa-pencil-alt"></i>
+                            <a href="<?php echo URLROOT . '/anhsanpham/capnhat/' . $anh->ma ?>" <i class="fas fa-pencil-alt"></i>
                             </a>
-                            <a href="<?php echo URLROOT . '/loaisanpham/xoa/' . $loaisanpham->ma ?>">
-                                <i class=" fas fa-times"></i>
+                            <a href="<?php echo URLROOT . '/anhsanpham/xoa/' . $anh->ma ?>" <i class="fas fa-times"></i>
                             </a>
                         </td>
                     </tr>

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="<?php echo URLROOT ?>/backend/css/style.css">
     <link rel="stylesheet" href="<?php echo URLROOT ?>/frontend/fonts/fontawesome/fontawesome-free-5.13.0-web/css/all.min.css">
     <script src="<?php echo URLROOT ?>/backend/js/ckeditor.js"></script>
+
 <body>
     <?php require_once(SIDEBAR); ?>
     <?php require_once(NAVBAR); ?>

@@ -16,7 +16,7 @@
                 </div>
                 <div class="form-group ">
                     <label class="mylabel">Mã sản phẩm <sup>*</sup></label>
-                    <input type="text" disabled name="masanpham" value="<?php echo $data->masanpham?>">
+                    <input type="text" readonly name="masanpham" value="<?php echo $data->masanpham?>">
                 </div>
                 <input type="hidden" name="ma" value="<?php echo $data->ma?>">
 

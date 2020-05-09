@@ -11,7 +11,6 @@
                 <span class="username"><?php echo $_SESSION['tenhienthi'] ?></span>
             </div>
             <ul class="user-menu">
-                <li><a href="<?php echo URLROOT ?>/user/capnhat/<?php echo $_SESSION['mataikhoan'] ?>">Thông tin tài khoản</a></li>
                 <li><a href="<?php echo URLROOT ?>/user/capnhat/<?php echo $_SESSION['mataikhoan'] ?>">Đổi mật khẩu</a></li>
                 <li><a href="<?php echo URLROOT ?>/admin/logout">Đăng xuất</a></li>
             </ul>

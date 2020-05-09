@@ -5,7 +5,7 @@
     <ul class="breadcrumb">
         <li><a href="#">Home</a></li>
         <li><a href="#">Danh Mục</a></li> 
-        <li><a href="#">Sản phẩm</a></li> 
+        <li><a href="<?php echo URLROOT.'/sanpham/index'?>">Sản phẩm</a></li> 
         <li>Thông số sản phẩm</li>
     </ul>
     <button class="button-primary" id="themNCC">
@@ -27,7 +27,7 @@
                 </div>
                 <div class="form-group ">
                     <label class="mylabel">Mã sản phẩm <sup>*</sup></label>
-                    <input type="text" disabled name="masanpham" value="<?php echo $data['masanpham']?>">
+                    <input type="text" name="masanpham" value="<?php echo $data['masanpham']?>" readonly>
                 </div>
                 <div class="myform-button">
                     <button type="submit" class="button-add">Thêm</button>
@@ -57,7 +57,7 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($data as $thongso) { ?>
+                <?php foreach ($data['danhsachthongso'] as $thongso) { ?>
                     <tr>
                         <td><?php echo $thongso->ma ?></td>
                         <td><?php echo $thongso->ten ?></td>

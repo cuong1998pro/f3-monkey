@@ -15,7 +15,7 @@ class AnhsanphamModel{
         return ($this->db->execute());
     }
     public function themAnhsanpham($data){
-        $sql = "INSERT INTO Anhsanpham (anh, masanpham) VALUES (:anh, :masanpham)";
+        $sql = "INSERT INTO anhsanpham (anh, masanpham) VALUES (:anh, :masanpham)";
         $this->db->query($sql);
         $this->db->bind(':anh', $data['anh']);
         $this->db->bind(':masanpham', $data['masanpham']);
@@ -25,7 +25,7 @@ class AnhsanphamModel{
     {
         $sql = "DELETE FROM Anhsanpham WHERE ma = :ma";
         $this->db->query($sql);
-        $this->db->bind(':macuahang', $maAnhsanpham);
+        $this->db->bind(':ma', $maAnhsanpham);
         return ($this->db->execute());
     }
     
@@ -38,5 +38,19 @@ class AnhsanphamModel{
         $sql = 'select * from anhsanpham where masanpham = '.$masanpham;
         $this->db->query($sql);
         return $this->db->first();
+    }
+
+    public function layHinhAnh($ma)
+    {
+        $sql = 'select * from anhsanpham where ma = ' . $ma;
+        $this->db->query($sql);
+        return $this->db->first();
+    }
+    public function layMaAnhMoi($masanpham){
+        $sql = 'select * from anhsanpham where masanpham = ' . $masanpham;
+        $this->db->query($sql);
+        $this->db->execute();
+        $temp = $this->db->count();
+        return ++$temp;
     }
 }

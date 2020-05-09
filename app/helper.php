@@ -10,10 +10,14 @@ function checklogin()
     redirect('admin/login');
   }
 }
-function uploadImage()
+function uploadImage($tenanh="", $tenthumuc="")
 {
   $Image = $_FILES["anh"]["name"];
-  $Target =   'backend/images/'. basename($Image);
+  if($tenanh==""){
+    $Target =   'backend/images/'. basename($Image);
+  }else{
+    $Target =   'backend/images/'.$tenthumuc.'/' . $tenanh;
+  }
   return move_uploaded_file($_FILES["anh"]["tmp_name"], $Target);
 }
 function getCurrentTime()

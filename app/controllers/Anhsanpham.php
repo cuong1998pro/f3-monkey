@@ -1,36 +1,43 @@
 <?php
-    class Anhsanpham extends Controller{
-        public function __construct()
-        {
-            $this->AnhsanphamModel = $this->model('AnhsanphamModel');
-        }
-    
-        public function index()
-        {
-            $data =  $this->AnhsanphamModel->layDanhSach();
-            // var_dump($data);die();
-            $this->view('backend/pages/quanly/Anhsanpham',  $data);
-        }
-        public function them()
-        {
-            $data['anh'] = $_POST['anh'];
-            $data['masanpham'] = $_POST['masanpham'];
-            $this->AnhsanphamModel->theAnhsanpham($data);
-            redirect('nhacungcap/index');
-        }
+class Anhsanpham extends Controller
+{
+    public function __construct()
+    {
+        $this->AnhsanphamModel = $this->model('AnhsanphamModel');
+    }
 
-        public function sua()
-        {
-            $data['anh'] = $_POST['anh'];
-            $data['masanpham'] = $_POST['masanpham'];
-            $this->AnhsanphamModel->suaAnhsanpham($data);
-            redirect('nhacungcap/index');
-        }
+    public function index($masanpham = 1)
+    {
 
-        public function xoa($ma)
-        {
-            $this->nhacungcapmodel->xoaAnhsanpham($ma);
-            redirect('nhacungcap/index');
-        }
-     }
-?>
+        $data['danhsachanh'] =  $this->AnhsanphamModel->layDanhSach($masanpham);
+        $data['masanpham'] = $masanpham;
+        $this->view('backend/pages/quanly/anhsanpham',  $data);
+    }
+    public function them()
+    {
+        $data['masanpham'] = $_POST['masanpham'];
+        $data['anh'] = $data['masanpham'] . '-' . $this->AnhsanphamModel->layMaAnhMoi($data['masanpham']) . '.jpg';
+        uploadImage($data['anh'], 'sanpham/');
+        $this->AnhsanphamModel->themAnhsanpham($data);
+        redirect('anhsanpham/index/' . $data['masanpham']);
+    }
+
+    public function capnhat($maanh)
+    {
+        $data =  $this->AnhsanphamModel->layHinhAnh($maanh);
+        $this->view('backend/pages/quanly/capnhatanhsanpham',  $data);
+    }
+
+    public function sua()
+    {
+        $data['anh'] = $_POST['tenanhcu'];
+        uploadImage($data['anh'], 'sanpham/');
+        redirect('anhsanpham/index');
+    }
+
+    public function xoa($ma)
+    {
+        $this->AnhsanphamModel->xoaAnhsanpham($ma);
+        redirect('anhsanpham/index');
+    }
+}

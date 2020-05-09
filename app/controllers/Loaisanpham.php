@@ -1,4 +1,3 @@
-<!-- cũng php class xong extedn  -->
 <?php
     class Loaisanpham extends Controller{
         public function __construct()
@@ -8,19 +7,14 @@
     
         public function index()
         {
-            
             $data =  $this->LoaisanphamModel->layDanhSach();
             $this->view('backend/pages/quanly/Loaisanpham',  $data);
         }
         public function them()
         {
             $data['ten'] = $_POST['ten'];
-            $data['anh'] = $_FILES['anh']['name'];
+            $data['ghichu'] = $_POST['ghichu'];
             $data['link'] = $_POST['link'];
-            if(!uploadImage()){
-                die('Có lỗi sảy ra khi thêm ảnh.');
-            }
-
             $this->LoaisanphamModel->themDanhmuc($data);
             redirect('loaisanpham/index');
         }
@@ -32,9 +26,10 @@
         public function sua()
         {
             $data['ten'] = $_POST['ten'];
-            $data['anh'] = $_POST['anh'];
+            $data['ghichu'] = $_POST['ghichu'];
             $data['link'] = $_POST['link'];
-            $this->LoaisanphamModel->themLoaisanpham($data);
+            $data['ma'] = $_POST['ma'];
+            $this->LoaisanphamModel->suaDanhmuc($data);
             redirect('loaisanpham/index');
         }
         public function xoa($ma)

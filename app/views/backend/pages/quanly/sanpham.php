@@ -102,7 +102,7 @@
                             </a>
                             <a href="<?php echo URLROOT . '/sanpham/capnhat/' . $sanpham->ma ?>" <i class="fas fa-pencil-alt"></i>
                             </a>
-                            <a href="<?php echo URLROOT . '/sanpham/capnhatthongso/' . $sanpham->ma ?>" <i class="fas fa-info"></i>
+                            <a href="<?php echo URLROOT . '/thongsosanpham/index/' . $sanpham->ma ?>" <i class="fas fa-info"></i>
                             </a>
                             <a href="<?php echo URLROOT . '/sanpham/xoa/' . $sanpham->ma ?>" <i class="fas fa-times"></i>
                             </a>

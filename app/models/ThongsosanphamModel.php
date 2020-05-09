@@ -17,11 +17,12 @@ class ThongsosanphamModel {
 
     public function suaThongtinsanpham($data)
     {
-        $sql = "UPDATE thongsosanpham SET ten = :ten, giatri = :giatri, masanpham =:masanpham where ma =:ma";
+        $sql = "UPDATE thongsosanpham SET ten = :ten, giatri = :giatri where ma =:ma";
         $this->db->query($sql);
         $this->db->bind(':ten', $data['ten']);
         $this->db->bind(':giatri', $data['giatri']);
-        $this->db->bind(':masanpham', $data['masanpham']);
+        $this->db->bind(':ma', $data['ma']);
+
         $this->db->execute();
     }
 
@@ -38,6 +39,12 @@ class ThongsosanphamModel {
         $this->db->query($sql);
         return $this->db->fetchAll();
     }
+    public function layThongSo($mathongso){
+        $sql = 'select * from thongsosanpham where ma = ' . $mathongso;
+        $this->db->query($sql);
+        return $this->db->first();
+    }
+
 
     
 }

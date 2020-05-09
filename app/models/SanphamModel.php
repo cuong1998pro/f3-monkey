@@ -84,7 +84,7 @@ class SanphamModel{
         return $this->db->fetchAll();
     }
     public function laySanphamTheoDanhMuc($madanhmuc){
-        $sql = 'select * from sanpham where madanhmuc = '.$madanhmuc .' limit 10';
+        $sql = 'select * from sanpham where madanhmuc = '.$madanhmuc .' order by ma desc limit 10 ';
         $this->db->query($sql);
         $dssanpham = $this->db->fetchAll();
         foreach($dssanpham as $sanpham){
@@ -120,4 +120,5 @@ class SanphamModel{
         $sanpham->dsthongsokythuat = $this->ThongsosanphamModel->layDanhSach($sanpham->ma);
         return $sanpham;
     }
+    
 }

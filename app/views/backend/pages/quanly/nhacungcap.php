@@ -16,7 +16,7 @@
             <form class="myform" action="<?php echo URLROOT ?>/nhacungcap/them" method="POST">
                 <div class="form-group">
                     <label class="mylabel">Tên nhà cung cấp <sup>*</sup></label>
-                    <input type="text" name="ten" placeholder="Nhập tên nhà cung cấp">
+                    <input type="text" name="ten" placeholder="Nhập tên">
                 </div>
                 <div class="form-group ">
                     <label class="mylabel">Số điện thoại <sup>*</sup></label>

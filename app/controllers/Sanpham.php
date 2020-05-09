@@ -7,7 +7,7 @@ class Sanpham extends Controller
         $this->SanphamModel = $this->model('SanphamModel');
         $this->DanhmucModel = $this->model('LoaisanphamModel');
         $this->ThuonghieuModel = $this->model('ThuonghieuModel');
-
+        $this->ThongsosanphamModel = $this->model('ThongsosanphamModel');
     }
 
 
@@ -81,6 +81,5 @@ class Sanpham extends Controller
         ];
         $this->view('backend/pages/quanly/capnhatsanpham', $data);
     }
-
 }
 ?>

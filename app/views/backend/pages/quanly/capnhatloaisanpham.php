@@ -13,7 +13,7 @@
          
                 <div class="form-group">
                     <label class="mylabel">Tên nhà cung cấp <sup>*</sup></label>
-                    <input type="text" name="ten" placeholder="Nhập tên nhà cung cấp" value="<?php echo $data->ten?>">
+                    <input type="text" name="ten" placeholder="Nhập tên" value="<?php echo $data->ten?>">
                 </div>
                 <img src="<?php echo URLROOT.'/backend/images'.$data->anh?>" alt="">
                 <div class="form-group ">

@@ -7,7 +7,7 @@
             <div class="form-group">
                 <input type="hidden" name="ma" value="<?php echo $data->ma?>">
                 <label class="mylabel">Tên nhà cung cấp <sup>*</sup></label>
-                <input  type="text" name="ten" placeholder="Nhập tên nhà cung cấp" value="<?php echo $data->ten?>">
+                <input  type="text" name="ten" placeholder="Nhập tên" value="<?php echo $data->ten?>">
             </div>
             <div class="form-group ">
                 <label class="mylabel">Số điện thoại <sup>*</sup></label>

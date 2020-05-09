@@ -1,0 +1,111 @@
+.san-pham {
+    display: flex;
+    height: 120px;
+    width: 97%;
+    background: #fff;
+    padding: 20px;
+    margin: 10px;
+    position: relative
+}
+
+.san-pham img {
+    height: 100%;
+}
+
+.san-pham .ten-san-pham {
+    margin-left: 10px;
+}
+
+.san-pham a {
+    position: absolute;
+    left: 115px;
+    top: 70px;
+    font-size: 12px;
+    text-decoration: none;
+    color: #f44336;
+}
+
+.chon-so-luong {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    float: right;
+    width: 400px;
+}
+
+.label-to {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.hinh-thuc-thanh-toan {
+    font-size: 14px;
+    line-height: 2.7;
+    background: #fff;
+    padding: 20px;
+}
+
+.hinh-thuc-thanh-toan img {
+    width: 700px;
+    height: 500px;
+}
+
+.form-thong-tin-nhan-hang {
+    background: #fff;
+    margin-bottom: 20px;
+    padding: 20px;
+    height: 610px;
+}
+
+.form-thong-tin-nhan-hang input,
+textarea {
+    display: block;
+    padding: 8px;
+    margin: 10px 0;
+    width: 100%;
+    font-size: 14px;
+}
+
+.form-thong-tin-nhan-hang label {
+    display: block;
+    margin: 10px 0;
+    font-size: 15px
+}
+
+.thong-tin-san-pham-2 {
+    width: 100%;
+    background: #fff;
+    display: flex;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.thong-tin-san-pham-2 .ten-san-pham {
+    display: block;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.thong-tin-san-pham-2 .thanh-tien {
+    font-size: 14px;
+    position: absolute;
+    top: 55px;
+    right: 10px;
+}
+
+.thong-tin-san-pham-2 img {
+    width: 90px;
+}
+
+.tong-gia {
+    position: relative;
+}
+
+.tong-gia a {
+    font-size: 11px;
+    position: absolute;
+    top: 36px;
+    right: 30px;
+}

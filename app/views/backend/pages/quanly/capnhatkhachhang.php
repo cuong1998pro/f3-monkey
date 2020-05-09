@@ -31,7 +31,7 @@
             </div>
         
             <div class="myform-button">
-                <button type="submit" class="button-add"><i class="fas fa-plus"></i>Cập nhật khách hàng</button>
+                <button type="submit" class="button-add">Cập nhật khách hàng</button>
                 <a href="<?php echo URLROOT?>/Khachhang/index" class="button-close">Đóng</a>
             </div>
         </form>

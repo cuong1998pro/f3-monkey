@@ -7,7 +7,7 @@
         <li><a href="#">Danh Mục</a></li>
         <li>Nhà cung cấp</li>
     </ul>
-    <button class="button-primary" id="themNCC"><i class="fas fa-plus"></i> Thêm</button>
+    <button class="button-primary" id="themNCC"> Thêm</button>
 
     <!-- Modal them nha cung cap -->
     <div class="modal" id="modalThemNCC">
@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="myform-button">
-                    <button type="submit" class="button-add"><i class="fas fa-plus" name="themNCC"></i>Thêm</button>
+                    <button type="submit" class="button-add">Thêm</button>
                     <button type="button" id="closeThemNCC" class="button-close">Đóng</button>
                 </div>
 

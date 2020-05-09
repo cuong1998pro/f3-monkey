@@ -7,7 +7,7 @@
         <li><a href="#">Danh Mục</a></li>
         <li>Khách hàng</li>
     </ul>
-    <button class="button-primary" id="themNCC"><i class="fas fa-plus"></i> Thêm</button>
+    <button class="button-primary" id="themNCC"> Thêm</button>
 
     <!-- Modal them nha cung cap -->
     <div class="modal" id="modalThemNCC">
@@ -32,11 +32,11 @@
                 </div>
                 <div class="form-group ">
                     <label class="mylabel">Mật khẩu<sup>*</sup></label>
-                    <input type="text" name="matkhau" placeholder="Nhập mật khẩu">
+                    <input type="password" name="matkhau" placeholder="Nhập mật khẩu">
                 </div>
 
                 <div class="myform-button">
-                    <button type="submit" class="button-add"><i class="fas fa-plus" name="themNCC"></i>Thêm Khách hàng</button>
+                    <button type="submit" class="button-add">Thêm</button>
                     <button type="button" id="closeThemNCC" class="button-close">Đóng</button>
                 </div>
 
@@ -63,7 +63,6 @@
                     <th>Họ tên </th>
                     <th>Địa chỉ</th>
                     <th>Số điện thoại</th>
-                    <th>Mật khẩu</th>
                     <th width="90px">Chức năng</th>
                 </tr>
             </thead>

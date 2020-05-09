@@ -9,8 +9,8 @@
     <div class="modal" id="modalThemNCC" style="display:block">
         <div class="modal-content">
             <div class="form-header">Cập nhật Banner</div>
-            <form class="myform" action="<?php echo URLROOT ?>/banner/sua/<?php echo $data->ma?>" method="POST" enctype="multipart/form-data">
-                
+            <form class="myform" action="<?php echo URLROOT ?>/banner/sua/<?php echo $data->ma ?>" method="POST" enctype="multipart/form-data">
+
                 <img src="<?php echo URLROOT . '/backend/images' . $data->anh ?>" alt="">
                 <div class="form-group ">
                     <label class="mylabel">Hình ảnh <sup>*</sup></label>
@@ -23,8 +23,8 @@
                 </div>
 
                 <div class="myform-button">
-                    <button type="submit" class="button-add"><i class="fas fa-plus" name="themNCC"></i>Cập nhật</button>
-                    <button type="button" id="closeThemNCC" class="button-close">Đóng</button>
+                    <button type="submit" class="button-add">Cập nhật</button>
+                    <a href="<?php echo URLROOT ?>/banner/index" class="button-close">Đóng</a>
                 </div>
             </form>
         </div>

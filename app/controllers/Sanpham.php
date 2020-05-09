@@ -51,14 +51,11 @@ class Sanpham extends Controller
 
     public function sua()
     {
+        $data['ma'] = $_POST['ma'];
         $data['ten'] = $_POST['ten'];
-        $data['anh'] = $_POST['anh'];
         $data['madanhmuc'] = $_POST['madanhmuc'];
-        $data['mota'] = $_POST['mota'];
-        $data['mausac'] = $_POST['mausac'];
-        $data['luachon'] = $_POST['luachon'];
-        $data['gianienyet'] = $_POST['gianienyet'];
-        $data['noidung'] = $_POST['noidung'];
+        $data['mathuonghieu'] = $_POST['mathuonghieu'];
+        $data['motasanpham'] = $_POST['noidung'];
         $data['tinhtrang'] = $_POST['tinhtrang'];
         $data['khuyenmai'] = $_POST['khuyenmai'];
         $data['thongtinchitiet'] = $_POST['thongtinchitiet'];
@@ -72,5 +69,18 @@ class Sanpham extends Controller
         $this->TintucModel->xoaSanpham($ma);
         redirect('sanpham/index');
     }
+    public function capnhat($masanpham)
+    {
+        $sanpham =  $this->SanphamModel->layChiTietSanPham($masanpham);
+        $danhmuc = $this->DanhmucModel->layDanhSach();
+        $thuonghieu = $this->ThuonghieuModel->layDanhSach();
+        $data = [
+            'sanpham' => $sanpham,
+            'danhmuc' => $danhmuc,
+            'thuonghieu' => $thuonghieu
+        ];
+        $this->view('backend/pages/quanly/capnhatsanpham', $data);
+    }
+
 }
 ?>

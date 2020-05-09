@@ -6,6 +6,7 @@ class Webshop extends Controller{
         $this->DanhmucModel = $this->model('LoaisanphamModel');
         $this->SliderModel = $this->model('SliderModel');
         $this->BannerModel = $this->model('BannerModel');
+        $this->SanphamModel = $this->model('SanphamModel');
 
     }
 
@@ -22,9 +23,14 @@ class Webshop extends Controller{
     }
     
     public function loc_san_pham(){
-        $data = [];
+        $data['sanpham'] = $this->SanphamModel->layDanhSachChiTiet();
         $this->view('frontend/product_filter', $data);
-
     }
+
+    public function thanh_toan(){
+        $data['sanpham'] = $this->SanphamModel->layDanhSachChiTiet();
+        $this->view('frontend/checkout', $data);
+    }
+  
    
 }

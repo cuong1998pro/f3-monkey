@@ -11,7 +11,7 @@ class Khachhang extends Controller
     public function index()
     {
         $data =  $this->KhachhangModel->layDanhSach();
-        // var_dump($data);die();
+        // $data->matkhau = substr($data->matkhau, 0, 10).'...';
         $this->view('backend/pages/quanly/Khachhang',  $data);
     }
     
@@ -22,7 +22,7 @@ class Khachhang extends Controller
         $data['hoten'] = $_POST['hoten'];
         $data['diachi'] = $_POST['diachi'];
         $data['sodienthoai'] = $_POST['sodienthoai'];
-        $data['matkhau'] = password_hash($data['matkhau'], PASSWORD_DEFAULT);
+        $data['matkhau'] = password_hash($_POST['matkhau'], PASSWORD_DEFAULT);
         $this->KhachhangModel->themKhachhang($data);
         redirect('Khachhang/index');
     }
@@ -33,7 +33,9 @@ class Khachhang extends Controller
         $data['hoten'] = $_POST['hoten'];
         $data['diachi'] = $_POST['diachi'];
         $data['sodienthoai'] = $_POST['sodienthoai'];
-        $data['matkhau'] = $_POST['matkhau'];
+        $data['matkhau'] = password_hash($_POST['matkhau'], PASSWORD_DEFAULT);
+        $data['ma'] = $_POST['ma'];
+
         $this->KhachhangModel->suaKhachhang($data);
         redirect('Khachhang/index');
     }

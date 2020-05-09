@@ -64,11 +64,17 @@ class SanphamModel{
     }
     
     public function layDanhSach(){
-        $sql = 'select sanpham.ma, sanpham.ten, danhmuc.ten as danhmuc, thuonghieu.ten as \'thuonghieu\', tinhtrang 
+        $sql = 'select sanpham.ma, sanpham.ten, motasanpham, danhmuc.ten as danhmuc, thuonghieu.ten as \'thuonghieu\', tinhtrang 
         from sanpham inner join thuonghieu on thuonghieu.ma = sanpham.mathuonghieu
         inner join danhmuc on danhmuc.ma = sanpham.madanhmuc';
         $this->db->query($sql);
-        return $this->db->fetchAll();
+        $dssanpham = $this->db->fetchAll();
+        foreach ($dssanpham as $sanpham) {
+            $sanpham->anh = $this->AnhsanphamModel->layMotAnh($sanpham->ma)->anh;
+            $sanpham->giagoc = strval(number_format($this->BanggiaModel->layGia($sanpham->ma)->gia)) . 'đ';
+            $sanpham->giaban = number_format($this->BanggiaModel->layGia($sanpham->ma)->gia - $this->BanggiaModel->layGia($sanpham->ma)->giamgia) . 'đ';
+        }
+        return $dssanpham;
     }
 
 
@@ -79,14 +85,25 @@ class SanphamModel{
     }
     public function laySanphamTheoDanhMuc($madanhmuc){
         $sql = 'select * from sanpham where madanhmuc = '.$madanhmuc .' limit 10';
-        // $sql = 'select * from sanpham where madanhmuc = '.$madanhmuc . 'limit 10';
         $this->db->query($sql);
         $dssanpham = $this->db->fetchAll();
         foreach($dssanpham as $sanpham){
             $sanpham->anh = $this->AnhsanphamModel->layMotAnh($sanpham->ma)->anh;
             $sanpham->giagoc =strval( number_format($this->BanggiaModel->layGia($sanpham->ma)->gia)).'đ' ;
-        $sanpham->giaban = number_format($this->BanggiaModel->layGia($sanpham->ma)->gia - $this->BanggiaModel->layGia($sanpham->ma)->giamgia).'đ';
+            $sanpham->giaban = number_format($this->BanggiaModel->layGia($sanpham->ma)->gia - $this->BanggiaModel->layGia($sanpham->ma)->giamgia).'đ';
+        }
+        return $dssanpham;
+    }
 
+    public function layDanhSachChiTiet()
+    {
+        $sql = 'select * from sanpham';
+        $this->db->query($sql);
+        $dssanpham = $this->db->fetchAll();
+        foreach ($dssanpham as $sanpham) {
+            $sanpham->anh = $this->AnhsanphamModel->layMotAnh($sanpham->ma)->anh;
+            $sanpham->giagoc = strval(number_format($this->BanggiaModel->layGia($sanpham->ma)->gia)) . 'đ';
+            $sanpham->giaban = number_format($this->BanggiaModel->layGia($sanpham->ma)->gia - $this->BanggiaModel->layGia($sanpham->ma)->giamgia) . 'đ';
         }
         return $dssanpham;
     }

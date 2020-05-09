@@ -940,6 +940,8 @@
     border-radius: 2px;
     background-color: rgba(0, 0, 0, 0.04);
     width: 100%;
+    /*! position: fixed; */
+    /*! justify-content: right; */
 }
 
 .home-filter-label {
@@ -1481,7 +1483,7 @@ i.home-product-item__like-icon-on {
     padding: 5px;
 }
 
-.category-nav-link:last-of-type{
+.category-nav-link:last-of-type {
     border-right: 2px solid #c8ced2;
     margin-right: 0px;
 }
@@ -1496,4 +1498,10 @@ i.home-product-item__like-icon-on {
 
 .padding-text {
     padding: 15px;
+}
+
+.button-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
 }

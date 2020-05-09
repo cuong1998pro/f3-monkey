@@ -72,7 +72,9 @@ ul.breadcrumb li a:hover {
 
 .ten-san-pham {
     font-size: 2rem;
-    font-weight: 800;
+    font-weight: 400;
+    /*! display: block; */
+    display: block;
 }
 
 .thong-tin-chi-tiet {
@@ -127,7 +129,7 @@ ul.breadcrumb li a:hover {
 
 .gia-ban {
     margin: 0 auto;
-    font-size: 1.3em;
+    font-size: 19px;
     font-weight: 600;
 }
 
@@ -195,19 +197,41 @@ input[type=number] {
 
 .mua-ngay {
     width: 200px;
-    height: 50px;
-    font-size: 15px;
-    font-weight: 700;
-    background: red;
-    color: #fef;
+    height: 45px;
+    font-size: 13.5px;
+    font-weight: 500;
+    background: rgb(212, 35, 51);
+    color: #fff;
+    border: none;
+    text-transform: uppercase;
+}
+
+.xoa-gio-hang {
+    width: 200px;
+    height: 45px;
+    font-size: 13.5px;
+    font-weight: 500;
+    background: rgb(170, 170, 170);
+    color: #fff;
+    border: none;
+    text-transform: uppercase;
+}
+
+.nut-xanh {
+    width: 200px;
+    height: 45px;
+    font-size: 13.5px;
+    font-weight: 500;
+    background: rgb(22, 92, 154);
+    color: #fff;
     border: none;
     text-transform: uppercase;
 }
 
 .them-vao-gio {
     width: 200px;
-    height: 50px;
-    font-size: 15px;
+    height: 45px;
+    font-size: 13.5px;
     font-weight: 700;
     background: #fff;
     color: rgb(223, 71, 71);
@@ -217,7 +241,7 @@ input[type=number] {
     vertical-align: top;
     text-align: center;
     margin-left: 20px;
-    padding-top: 17px;
+    padding-top: 13px;
 }
 
 .thong-tin-chung {
@@ -272,4 +296,34 @@ fade {
     width: 100%;
     height: 50px;
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9) 100%);
+}
+
+.tong-gia{
+    width: 125%;
+    background:#fff;
+    padding:15px;
+    margin-top: 56px;
+}
+
+.tong-gia table{
+    font-size: 15px;
+    line-height: 2.5;
+    border-collapse: collapse;
+}
+
+.tong-gia table tr th{
+    width: 200px;
+    text-align: left;
+    font-weight: 500;
+}
+
+.tong-gia table tr td{
+    text-align: right;
+    font-weight: 500;
+}
+
+.tong-gia button{
+    margin-top:20px;
+    width: 100%;
+    height: 40px;
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="<?php echo URLROOT ?>/frontend/css/base.css">
     <link rel="stylesheet" href="<?php echo URLROOT ?>/frontend/css/main.css">
     <link rel="stylesheet" href="<?php echo URLROOT ?>/frontend/css/product_detail.css">
+    <link rel="stylesheet" href="<?php echo URLROOT ?>/frontend/css/giohang.css">
     <link rel="stylesheet" href="<?php echo URLROOT ?>/frontend/fonts/fontawesome/fontawesome-free-5.13.0-web/css/all.min.css">
 </head>
 
@@ -87,7 +89,7 @@
                             </a>
                         </li>
                         <li id="myBtn" class="header__navbar-item header__navbar-item--strong header__navbar-item--separate" onclick="">Đăng ký</li>
-                        <li id="myBtn-2"class="header__navbar-item header__navbar-item--strong">Đăng nhập</li>
+                        <li id="myBtn-2" class="header__navbar-item header__navbar-item--strong">Đăng nhập</li>
                         <!-- <li class="header__navbar-item header__navbar-user">
                             <img src="<?php echo URLROOT ?>/frontend/img/s20.jpg" alt="" class="header__navbar-user-img">
                             <span class="header__navbar-user-name">Linh Nguyễn</span>
@@ -214,7 +216,7 @@
                                         </div>
                                     </li>
                                 </ul>
-                                <a href="" class="view-cart btn btn--primary" style="float: right; margin:0 12px 12px;">Xem giỏ hàng</a>
+                                <a href="<?php echo URLROOT?>/giohang" class="view-cart btn btn--primary" style="float: right; margin:0 12px 12px;">Xem giỏ hàng</a>
                             </div>
                         </div>
                     </div>

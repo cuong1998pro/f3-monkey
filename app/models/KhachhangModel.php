@@ -19,13 +19,14 @@ class KhachhangModel {
 
     public function suaKhachhang($data)
     {
-        $sql = "UPDATE khachhang SET tendangnhap = :tendangnhap, hoten = :hoten, diachi =:diachi, sodienthoai= :sodienthoai, matkhau=:matkhau where ma =:ma";
+        $sql = "UPDATE khachhang SET  hoten = :hoten, diachi =:diachi, sodienthoai= :sodienthoai, matkhau=:matkhau where ma =:ma";
         $this->db->query($sql);
-        $this->db->bind(':tendangnhap', $data['tendangnhap']);
         $this->db->bind(':hoten', $data['hoten']);
         $this->db->bind(':diachi', $data['diachi']);
         $this->db->bind(':sodienthoai', $data['sodienthoai']);
         $this->db->bind(':matkhau', $data['matkhau']);
+        $this->db->bind(':ma', $data['ma']);
+
         $this->db->execute();
     }
 
@@ -38,7 +39,7 @@ class KhachhangModel {
     }
     
     public function layDanhSach(){
-        $sql = 'select * from khachhang';
+        $sql = 'select ma, tendangnhap, hoten, diachi, sodienthoai from khachhang';
         $this->db->query($sql);
         return $this->db->fetchTable('khachhang');
     }

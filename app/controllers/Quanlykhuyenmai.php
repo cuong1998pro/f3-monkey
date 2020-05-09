@@ -8,7 +8,6 @@ class Quanlykhuyenmai extends Controller{
     public function index()
     {
         $data =  $this->AnhsanphamModel->layDanhSach();
-        // var_dump($data);die();
         $this->view('backend/pages/quanly/Anhsanpham',  $data);
     }
 }

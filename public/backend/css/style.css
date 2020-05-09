@@ -15,6 +15,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     height: 100%;
     min-height: 100vh;
+    color: black;
 }
 
 nav {
@@ -231,7 +232,7 @@ th {
     border: 1px solid #ddd;
     padding: 8px;
     line-height: 2;
-    vertical-align: top;
+    vertical-align: middle;
 }
 
 table tr:nth-child(even) {
@@ -246,8 +247,13 @@ th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #686de0;
-    color: white;
+    background-color: #3f495b;
+    color: #FEFEFF;
+    font-size: 15.5px;
+    font-weight: 100;
+    vertical-align: middle;
+    border-right: 1px solid #343a45;
+    border-bottom: 4px solid #9ea7af;
 }
 
 th:first-of-type {
@@ -272,6 +278,26 @@ th:last-of-type {
     width: 30px;
     height: 30px;
     background: #bd2d14;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 6px;
+    color: white;
+}
+
+.fa-eye {
+    width: 30px;
+    height: 30px;
+    background: #514b4b;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 6px;
+    color: white;
+}
+
+.fa-info {
+    width: 30px;
+    height: 30px;
+    background: #25348d;
     border-radius: 5px;
     text-align: center;
     padding-top: 6px;
@@ -324,11 +350,14 @@ th:last-of-type {
     color: #fefefe;
     margin: 3% auto;
     border: 1px solid #888;
-    width: 850px;
+    width: 1250px;
     position: relative;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    animation-name: animatetop;
-    animation-duration: 0.3s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    /* animation: animatetop 0.1s ease; */
     /*! vertical-align: center; */
     /*! display: flex; */
     /*! justify-content: center; */
@@ -358,11 +387,12 @@ th:last-of-type {
 .myform-button {
     margin-top: 20px;
     margin-bottom: 10px;
-    text-align: center;
+    text-align: right;
+    margin-right: 150px;
 }
 
 .myform-button button {
-    width: 30%;
+    width: 160px;
     margin: 0px 30px;
 }
 
@@ -372,12 +402,13 @@ th:last-of-type {
 
 @keyframes animatetop {
     from {
-        top: -300px;
-        opacity: 0
+        transform: scale(0.9)
+    }
+    80% {
+        transform: scale(1.01)
     }
     to {
-        top: 0;
-        opacity: 1
+        transform: scale(1)
     }
 }
 
@@ -430,6 +461,9 @@ textarea:focus {
     display: inline-block;
     font-size: 16px;
     padding: 10px;
+    /*! float: right; */
+    right: auto;
+    /*! position: absolute; */
 }
 
 .button-close {
@@ -441,6 +475,10 @@ textarea:focus {
     display: inline-block;
     font-size: 16px;
     padding: 10px;
+    width: 10px;
+    position: absolute;
+    right: 0;
+    margin-right: 30px;
 }
 
 .form-group {
@@ -470,7 +508,7 @@ a.button-primary {
 a.button-close {
     height: 40px;
     vertical-align: middle;
-    min-width: 200px;
+    min-width: 160px;
     text-align: center;
 }
 
@@ -484,7 +522,7 @@ ul.breadcrumb {
     padding: 13px 16px;
     list-style: none;
     background-color: #eee;
-    margin:20px 0;
+    margin: 20px 0;
 }
 
 ul.breadcrumb li {
@@ -628,6 +666,6 @@ tr td:first-of-type {
 }
 
 td img {
-    width: 200px;
-    height: 100px;
+    width: 100px;
+    /*! height: 100px; */
 }

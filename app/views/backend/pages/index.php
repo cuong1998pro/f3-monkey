@@ -22,7 +22,7 @@
                 <div class="box-info-content">
                     <h3>50%</h3>
                     <p>Doanh thu tăng</p>
-                    <i class="fa fa-shopping-cart fa-3x"></i>
+                    <i class="fa fa-chart-line fa-3x"></i>
                 </div>
                 <div class="link-view-full">
                     <a href="">Xem thêm <i class="fa fa-arrow-circle-right"></i>
@@ -35,7 +35,7 @@
                 <div class="box-info-content">
                     <h3>50</h3>
                     <p>Khách hàng</p>
-                    <i class="fa fa-shopping-cart fa-3x"></i>
+                    <i class="fa fa-user-tie fa-3x"></i>
                 </div>
                 <div class="link-view-full">
                     <a href="">Xem thêm <i class="fa fa-arrow-circle-right"></i>
@@ -48,7 +48,7 @@
                 <div class="box-info-content">
                     <h3>110</h3>
                     <p>Hàng tồn kho</p>
-                    <i class="fa fa-shopping-cart fa-3x"></i>
+                    <i class="fa fa-box fa-3x"></i>
                 </div>
                 <div class="link-view-full">
                     <a href="">Xem thêm <i class="fa fa-arrow-circle-right"></i>
@@ -62,7 +62,10 @@
         <div class="sale-graph-header">
             <i class="fa fa-th"></i>Biểu đồ doanh thu
         </div>
-        <div id="chart_div" style="width: 100%; height: 500px;"></div>
+        <div style="padding:20px; height:100%">
+            <div id="chart_div" style="width: 100%;height:100%; margin-top:20px"></div>
+        </div>
+
     </div>
     <h2 style="margin-bottom:0">Đơn hàng gần đây</h2>
     <div class="table-show">

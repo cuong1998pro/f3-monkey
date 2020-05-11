@@ -51,8 +51,8 @@ class ThuonghieuModel
         return $this->db->first();
     }
 
-    public function layThuongHieuTheoDghichuMuc($madghichumuc){
-        $sql = 'select * from thuonghieu where madghichumuc = '.$madghichumuc;
+    public function layThuongHieuTheoDanhMuc($madanhmuc){
+        $sql = 'select * from thuonghieu where madanhmuc = '.$madanhmuc;
         $this->db->query($sql);
         return $this->db->fetchAll();
     }

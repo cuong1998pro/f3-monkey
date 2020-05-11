@@ -1,50 +1,29 @@
 var mychart = document.getElementById('chart_div');
-var chart, data, options;
 if (mychart) {
+
     google.charts.load('current', {
-        'packages': ['corechart']
+        'packages': ['bar']
     });
     google.charts.setOnLoadCallback(drawChart);
 
     function drawChart() {
-        data = google.visualization.arrayToDataTable([
-            ['Tháng', 'Doanh thu', 'Tồn kho'],
-            ['01', 1000, 500],
-            ['02', 1170, 100],
-            ['03', 660, 300],
-            ['04', 1030, 700],
-            ['05', 500, 950],
-            ['06', 1170, 250],
-            ['07', 660, 600],
-            ['08', 1030, 100],
+        var data = google.visualization.arrayToDataTable([
+            ['Tháng', 'Doanh số', 'Chi phí nhập', 'Lợi nhận'],
+            ['01/2020', 1000, 400, 200],
+            ['02/2020', 1170, 460, 250],
+            ['03/2020', 660, 1120, 300],
+            ['04/2020', 1030, 540, 350]
         ]);
 
-        options = {
-            hAxis: {
-                title: 'Tháng',
-                titleTextStyle: {
-                    color: '#FFF'
-                },
-                textStyle: {
-                    color: '#FFF'
-                }
-
-            },
-            vAxis: {
-                minValue: 0,
-                textStyle: {
-                    color: '#FFF'
-                }
-            },
-            backgroundColor: {
-                fill: 'transparent'
-            },
-            fontSize: 14
-
+        var options = {
+            chart: {
+                // title: '',
+                // subtitle: '',
+            }
         };
 
-        chart = new google.visualization.AreaChart(mychart);
-        chart.draw(data, options);
+        var chart = new google.charts.Bar(mychart);
+        chart.draw(data, google.charts.Bar.convertOptions(options));
     }
 }
 
@@ -64,6 +43,14 @@ if (btnThemNCC != null) {
     });
     btnCloseThemNCC.addEventListener('click', function() {
         document.querySelector("#modalThemNCC").style.display = "none";
+    });
+}
+
+var btnCloseThemSanPham = document.querySelector('#closeThemSanPham');
+if (btnCloseThemSanPham != null) {
+
+    btnCloseThemSanPham.addEventListener('click', function() {
+        document.querySelector("#modalThemSanPham").style.display = "none";
     });
 }
 

@@ -45,7 +45,7 @@ class Sanpham extends Controller
         $data['khuyenmai'] = $_POST['khuyenmai'];
         $data['thongtinchitiet'] = $_POST['thongtinchitiet'];
         $data['thongsokythuat'] = $_POST['thongsokythuat'];
-        $this->TintucModel->themSanPham($data);
+        $this->SanphamModel->themSanPham($data);
         redirect('sanpham/index');
     }
 
@@ -66,7 +66,7 @@ class Sanpham extends Controller
 
     public function xoa($ma)
     {
-        $this->TintucModel->xoaSanpham($ma);
+        $this->SanphamModel->xoaSanpham($ma);
         redirect('sanpham/index');
     }
     public function capnhat($masanpham)

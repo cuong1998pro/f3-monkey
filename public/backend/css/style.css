@@ -30,6 +30,10 @@ nav {
     /*! z-index: 100; */
 }
 
+.red {
+    color: red;
+}
+
 ul {
     list-style: none;
 }
@@ -308,6 +312,16 @@ th:last-of-type {
     width: 30px;
     height: 30px;
     background: #25348d;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 6px;
+    color: white;
+}
+
+.fa-list-alt {
+    width: 30px;
+    height: 30px;
+    background: #1330d6;
     border-radius: 5px;
     text-align: center;
     padding-top: 6px;
@@ -640,12 +654,12 @@ tr td:first-of-type {
 }
 
 .sale-graph {
-    height: 320px;
+    height: 500px;
     width: 100%;
-    background: #6b6c6cde;
+    background: #fff;
     margin-top: 20px;
-    padding: 10px;
-    color: white;
+    /*! padding: 10px; */
+    color: black;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.125);
     position: relative;
     display: flex;
@@ -656,9 +670,11 @@ tr td:first-of-type {
 
 .sale-graph-header {
     position: relative;
-    padding: 10px;
+    padding: 20px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     font-size: 18px;
+    background: #3e3939;
+    color: white;
 }
 
 .sale-graph-header i {

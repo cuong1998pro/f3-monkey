@@ -61,7 +61,7 @@ class UserModel{
         $sql = "select * from user where ten like N'$name'";
         $this->db->query($sql);
         $this->db->execute();
-        return $this->db->rowCount() == 1;
+        return $this->db->count() == 1;
     }
 
     public function layNguoiDung($name){

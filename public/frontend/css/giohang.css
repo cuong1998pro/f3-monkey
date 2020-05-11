@@ -81,6 +81,12 @@ textarea {
     justify-content: space-between;
     padding: 10px 0;
 }
+td .thong-tin-san-pham-2:last-of-type{
+    border-bottom: none;
+}
+td .thong-tin-san-pham-2{
+    background: transparent;
+}
 
 .thong-tin-san-pham-2 .ten-san-pham {
     display: block;

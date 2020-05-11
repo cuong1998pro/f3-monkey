@@ -101,10 +101,12 @@ create table phieunhap (
     ngaynhap datetime default now(),
     manhacungcap int,
     tongtien int, 
+    lydonhap varchar(200),
     foreign key (manhacungcap) references nhacungcap(ma)
 );
 
 create table chitietphieunhap (
+	ma int primary key not null auto_increment,
     maphieunhap  int,
     masanpham int,
     soluong int,
@@ -457,3 +459,14 @@ INSERT INTO `f3_monkey`.`banggia` (`gia`, `giamgia`, `masanpham`) VALUES ('95900
 INSERT INTO `f3_monkey`.`banggia` (`gia`, `giamgia`, `masanpham`) VALUES ('12490000', '1000000', '18');
 INSERT INTO `f3_monkey`.`banggia` (`gia`, `giamgia`, `masanpham`) VALUES ('15900000', '500000', '19');
 INSERT INTO `f3_monkey`.`banggia` (`gia`, `giamgia`, `masanpham`) VALUES ('15490000', '2500000', '20');
+
+INSERT INTO `f3_monkey`.`phieunhap` (`manhacungcap`, `lydonhap`) VALUES ('1', 'Nhập bổ sung thêm sản phẩm cho khách');
+INSERT INTO `f3_monkey`.`phieunhap` (`manhacungcap`, `lydonhap`) VALUES ('1', 'Yêu cầu từ cấp trên');
+INSERT INTO `f3_monkey`.`phieunhap` (`manhacungcap`, `lydonhap`) VALUES ('2', 'Nhập tồn đầu kỳ');
+
+INSERT INTO `f3_monkey`.`chitietphieunhap` (`maphieunhap`, `masanpham`, `soluong`, `dongia`) VALUES ('1', '1', '100', '1000000');
+INSERT INTO `f3_monkey`.`chitietphieunhap` (`maphieunhap`, `masanpham`, `soluong`, `dongia`) VALUES ('1', '2', '50', '3000000');
+INSERT INTO `f3_monkey`.`chitietphieunhap` (`maphieunhap`, `masanpham`, `soluong`, `dongia`) VALUES ('1', '5', '80', '2000000');
+INSERT INTO `f3_monkey`.`chitietphieunhap` (`maphieunhap`, `masanpham`, `soluong`, `dongia`) VALUES ('2', '3', '120', '2500000');
+INSERT INTO `f3_monkey`.`chitietphieunhap` (`maphieunhap`, `masanpham`, `soluong`, `dongia`) VALUES ('2', '4', '110', '2500000');
+INSERT INTO `f3_monkey`.`chitietphieunhap` (`maphieunhap`, `masanpham`, `soluong`, `dongia`) VALUES ('3', '6', '210', '1000000');

@@ -18,7 +18,9 @@ function uploadImage($tenanh="", $tenthumuc="")
   }else{
     $Target =   'backend/images/'.$tenthumuc.'/' . $tenanh;
   }
-  return move_uploaded_file($_FILES["anh"]["tmp_name"], $Target);
+  if( !move_uploaded_file($_FILES["anh"]["tmp_name"], $Target)){
+    die('loi tai anh!');
+  };
 }
 function getCurrentTime()
 {

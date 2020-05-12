@@ -108,6 +108,8 @@
                             </a>
                             <a href="<?php echo URLROOT . '/anhsanpham/index/' . $sanpham->ma ?>" <i class="fas fa-images"></i>
                             </a>
+                            <a href="<?php echo URLROOT . '/khuyenmai/index/' . $sanpham->ma ?>" <i class="fas fa-gifts"></i>
+                            </a>
                         </td>
                     </tr>
                 <?php endforeach ?>

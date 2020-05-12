@@ -8,19 +8,28 @@ class BanggiaModel
         $this->db = new Database;
     }
 
-    public function suaSlider($data)
+    public function themBangGia($data)
     {
-        $sql = "UPDATE slider SET anh = :anh, link = :link WHERE ma = :ma";
+        $sql = "insert into banggia(giamgia, masanpham) value(:giamgia, :masanpham)";
         $this->db->query($sql);
-        $this->db->bind(':anh', $data['anh']);
-        $this->db->bind(':link', $data['link']);
+        $this->db->bind(':giamgia', $data['giamgia']);
+        $this->db->bind(':masanpham', $data['masanpham']);
+        return ($this->db->execute());
+    }
+
+    public function suaBangGia($data)
+    {
+        $sql = "UPDATE banggia SET giamgia = :giamgia, masanpham = :masanpham WHERE ma = :ma";
+        $this->db->query($sql);
+        $this->db->bind(':giamgia', $data['giamgia']);
+        $this->db->bind(':masanpham', $data['masanpham']);
         $this->db->bind(':ma', $data['ma']);
         return ($this->db->execute());
     }
 
     public function layDanhSach()
     {
-        $sql = 'select * from slider';
+        $sql = 'select * from banggia';
         $this->db->query($sql);
         return $this->db->fetchAll();
     }
@@ -32,12 +41,10 @@ class BanggiaModel
         return $this->db->first();
     }
 
-    public function suaDuongDan($data)
+    public function xoaBangGia($data)
     {
-        $sql = "UPDATE slider SET  link = :link, noidung = :noidung WHERE ma = :ma";
+        $sql = "delete from banggia WHERE ma = :ma";
         $this->db->query($sql);
-        $this->db->bind(':link', $data['link']);
-        $this->db->bind(':noidung', $data['noidung']);
         $this->db->bind(':ma', $data['ma']);
         return ($this->db->execute());
     }

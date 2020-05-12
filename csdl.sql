@@ -84,6 +84,7 @@ create table khuyenmaisanpham(
     ngaybatdau datetime default now(),
     khuyenmai varchar(100),
     masanpham int,
+    ngayketthuc datetime default now(),
 	foreign key (masanpham) references sanpham(ma)
 );
 

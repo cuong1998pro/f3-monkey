@@ -277,6 +277,15 @@ th:last-of-type {
     padding-top: 6px;
     color: white;
 }
+.fa-gifts{
+    width: 30px;
+    height: 30px;
+    background: #3e3d4b;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 6px;
+    color: white;
+}
 
 .fa-images {
     width: 30px;

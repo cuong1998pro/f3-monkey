@@ -7,34 +7,30 @@ class KhuyenmaiModel {
     }
 
     public function themKhuyenMai($data){
-        $sql = "insert into nhacungcap(ten, sodienthoai, diachi, email, nguoilienhe) values(:ten, :sodienthoai, :diachi,:email, :nguoilienhe)";
+        $sql = "insert into khuyenmaisanpham(khuyenmai, ngaybatdau, ngayketthuc) values(:khuyenmai, :ngaybatdau, :ngayketthuc)";
         $this->db->query($sql);
-        $this->db->bind(':ten', $data['ten']);
-        $this->db->bind(':sodienthoai', $data['sodienthoai']);
-        $this->db->bind(':diachi', $data['diachi']);
-        $this->db->bind(':email', $data['email']);
-        $this->db->bind(':nguoilienhe', $data['nguoilienhe']);
+        $this->db->bind(':khuyenmai', $data['khuyenmai']);
+        $this->db->bind(':ngaybatdau', $data['ngaybatdau']);
+        $this->db->bind(':ngayketthuc', $data['ngayketthuc']);
         $this->db->execute();
     }
 
-    public function suaNCC($data)
+    public function suaKhuyenMai($data)
     {
-        $sql = "update nhacungcap set ten = :ten, sodienthoai = :sodienthoai, diachi =:diachi, email= :email, nguoilienhe=:nguoilienhe where ma =:ma";
+        $sql = "update nhacungcap set khuyenmai = :khuyenmai, ngaybatdau = :ngaybatdau, ngayketthuc =:ngayketthuc where ma =:ma";
         $this->db->query($sql);
         $this->db->bind(':ma',$data['ma']);
-        $this->db->bind(':ten', $data['ten']);
-        $this->db->bind(':sodienthoai', $data['sodienthoai']);
-        $this->db->bind(':diachi', $data['diachi']);
-        $this->db->bind(':email', $data['email']);
-        $this->db->bind(':nguoilienhe', $data['nguoilienhe']);
+        $this->db->bind(':khuyenmai', $data['khuyenmai']);
+        $this->db->bind(':ngaybatdau', $data['ngaybatdau']);
+        $this->db->bind(':ngayketthuc', $data['ngayketthuc']);
         $this->db->execute();
     }
 
-    public function xoaNCC($maNCC)
+    public function xoaKhuyenMai($makhuyenmai)
     {
-        $sql = "DELETE FROM nhacungcap WHERE ma =:ma";
+        $sql = "DELETE FROM khuyenmaisanpham WHERE ma =:ma";
         $this->db->query($sql);
-        $this->db->bind(':ma', $maNCC);
+        $this->db->bind(':ma', $makhuyenmai);
         $this->db->execute();
     }
     
@@ -44,9 +40,10 @@ class KhuyenmaiModel {
         return $this->db->fetchAll();
     }
 
-    public function layNhaCungCap($maNCC){
-        $sql = 'select * from nhacungcap where ma = '. $maNCC. ';';
+    public function layKhuyenMai($makhuyenmai ){
+        $sql = 'select * from khuyenmaisanpham where ma = '. $makhuyenmai;
         $this->db->query($sql);
         return $this->db->first();
     }
+
 }

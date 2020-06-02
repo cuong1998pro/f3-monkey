@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="<?php echo URLROOT ?>/frontend/css/product_detail.css">
     <link rel="stylesheet" href="<?php echo URLROOT ?>/frontend/css/giohang.css">
     <link rel="stylesheet" href="<?php echo URLROOT ?>/frontend/fonts/fontawesome/fontawesome-free-5.13.0-web/css/all.min.css">
+    <script src="<?php echo URLROOT . '/backend/js/jquery-3.5.1.min.js' ?>"></script>
 </head>
 
 <body>
@@ -105,15 +106,16 @@
                 <!-- Header with search -->
                 <div class="header-with-search">
                     <div class="header__logo">
-                        <a href="indenx.html" class="header__logo-link">
+                        <a href="<?php echo URLROOT ?>" class="header__logo-link">
                             <img src="<?php echo URLROOT ?>/frontend/img/logoshop_n.png" alt="" class="header__logo-img">
                         </a>
                     </div>
                     <div class="header__search">
                         <div class="header__search-input-wrap">
                             <input type="text" class="header__search-input" placeholder="Nhập để tìm kiếm sản phẩm">
+
                             <!-- Search History -->
-                            <div class="header__search-histroy">
+                            <!-- <div class="header__search-histroy">
                                 <h3 class="header__search-history-heading">Lịch sử tìm kiếm</h3>
                                 <ul class="header__search-history-list">
                                     <li class="header__search-history-item">
@@ -126,7 +128,7 @@
                                         <a href="">SamSung</a>
                                     </li>
                                 </ul>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="header__search-selection">
                             <span class="header__search-selection-label">Trong Shop</span>
@@ -142,15 +144,22 @@
                                 </li>
                             </ul>
                         </div>
-                        <button class="header__search-btn">
+                        <button class="header__search-btn" onclick="location.href='<?php echo URLROOT . '/webshop/search/' ?>' + document.querySelector('.header__search-input').value">
                             <i class="header__search-btn-icon fas fa-search"></i>
                         </button>
+                        <script>
+                            $('.header__search-input').on('keypress', (e) => {
+                                if (e.which == 13) {
+                                    $('.header__search-btn').click();
+                                }
+                            })
+                        </script>
                     </div>
                     <!-- Cart layout -->
                     <div class="header__cart">
                         <div class="header__cart-wrap">
                             <i class="header__cart-icon fas fa-shopping-cart"></i>
-                            <span class="header__cart-notice">3</span>
+                            <span class="header__cart-notice"><?php echo isset($_SESSION['giohang']) ? sizeof($_SESSION['giohang']) : 0 ?></span>
                             <!-- No cart: header__cart-list-no-cart -->
                             <div class="header__cart-list">
                                 <img src="<?php echo URLROOT ?>/frontend/img/empty-cart.png" alt="" class="header__cart-no-cart-img">
@@ -158,65 +167,30 @@
                                 <h4 class="header__cart-heading">Sản phẩm đã thêm</h4>
                                 <ul class="header__cart-list-item">
                                     <!-- Cart item -->
-                                    <li class="header__cart-item">
-                                        <img src="<?php echo URLROOT ?>/frontend/img/s20.jpg" alt="" class="header__cart-img">
-                                        <div class="header__cart-item-info">
-                                            <div class="header__cart-item-head">
-                                                <h5 class="header__cart-item-name">Điện thoại Sam Sung galaxy s20</h5>
-                                                <div class="header__cart-item-price-wrap">
-                                                    <span class="header__cart-item-price">22 000 000đ</span>
-                                                    <span class="header__cart-item-multiply">x</span>
-                                                    <span class="header__cart-item-qnt">1</span>
+                                    <?php if (isset($data['giohang'])) : ?>
+                                        <?php foreach ($data['giohang'] as $sanpham) : ?>
+                                            <li class="header__cart-item">
+                                                <img src="<?php echo URLROOT . '/backend/images/sanpham/' . $sanpham['anh'] ?>" alt="" class="header__cart-img">
+                                                <div class="header__cart-item-info">
+                                                    <div class="header__cart-item-head">
+                                                        <h5 class="header__cart-item-name"><?php echo $sanpham['ten'] ?></h5>
+                                                        <div class="header__cart-item-price-wrap">
+                                                            <span class="header__cart-item-price"><?php echo $sanpham['dongia'] ?></span>
+                                                            <span class="header__cart-item-multiply">x</span>
+                                                            <span class="header__cart-item-qnt"><?php echo $sanpham['soluong'] ?></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="header__cart-item-body">
+                                                        <span class="header__cart-item-description">
+                                                            Phân loại: Siêu phẩm
+                                                        </span>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="header__cart-item-body">
-                                                <span class="header__cart-item-description">
-                                                    Phân loại: Siêu phẩm
-                                                </span>
-                                                <span class="header__cart-item-remove">Xóa</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="header__cart-item">
-                                        <img src="<?php echo URLROOT ?>/frontend/img/s20.jpg" alt="" class="header__cart-img">
-                                        <div class="header__cart-item-info">
-                                            <div class="header__cart-item-head">
-                                                <h5 class="header__cart-item-name">Điện thoại Sam Sung galaxy s20</h5>
-                                                <div class="header__cart-item-price-wrap">
-                                                    <span class="header__cart-item-price">22 000 000đ</span>
-                                                    <span class="header__cart-item-multiply">x</span>
-                                                    <span class="header__cart-item-qnt">1</span>
-                                                </div>
-                                            </div>
-                                            <div class="header__cart-item-body">
-                                                <span class="header__cart-item-description">
-                                                    Phân loại: Siêu phẩm
-                                                </span>
-                                                <span class="header__cart-item-remove">Xóa</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="header__cart-item">
-                                        <img src="<?php echo URLROOT ?>/frontend/img/s20.jpg" alt="" class="header__cart-img">
-                                        <div class="header__cart-item-info">
-                                            <div class="header__cart-item-head">
-                                                <h5 class="header__cart-item-name">Điện thoại Sam Sung galaxy s20</h5>
-                                                <div class="header__cart-item-price-wrap">
-                                                    <span class="header__cart-item-price">22 000 000đ</span>
-                                                    <span class="header__cart-item-multiply">x</span>
-                                                    <span class="header__cart-item-qnt">1</span>
-                                                </div>
-                                            </div>
-                                            <div class="header__cart-item-body">
-                                                <span class="header__cart-item-description">
-                                                    Phân loại: Siêu phẩm
-                                                </span>
-                                                <span class="header__cart-item-remove">Xóa</span>
-                                            </div>
-                                        </div>
-                                    </li>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
                                 </ul>
-                                <a href="<?php echo URLROOT?>/giohang" class="view-cart btn btn--primary" style="float: right; margin:0 12px 12px;">Xem giỏ hàng</a>
+                                <a href="<?php echo URLROOT ?>/giohang" class="view-cart btn btn--primary" style="float: right; margin:0 12px 12px;">Xem giỏ hàng</a>
                             </div>
                         </div>
                     </div>

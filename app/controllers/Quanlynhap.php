@@ -7,6 +7,7 @@ class Quanlynhap extends Controller{
         $this->PhieunhapModel = $this->model('PhieunhapModel');
         $this->NhacungcapModel = $this->model('NhacungcapModel');
         $this->SanphamModel = $this->model('SanphamModel');
+        $this->ChitietphieunhapModel = $this->model('ChitietphieunhapModel');
     }
 
     public function index()
@@ -22,8 +23,25 @@ class Quanlynhap extends Controller{
     {
         $data['manhacungcap'] = $_POST['manhacungcap'];
         $data['lydonhap'] = $_POST['lydonhap'];
-        $id =  $this->PhieunhapModel->themPhieuNhapLayId($data);
-        echo $id;
+        $this->PhieunhapModel->themPhieuNhapLayId($data);
+        redirect('quanlynhap/index');
+
+    }
+
+    public function xem_chi_tiet($maphieunhap){
+        $data['sanpham'] = $this->SanphamModel->layDanhSach();
+        $data['phieunhap'] = $this->ChitietphieunhapModel->layDanhSach($maphieunhap);
+        $data['maphieunhap'] = $maphieunhap;
+        $this->view('backend/pages/quanly/chitietphieunhap', $data);
+    }
+
+    public function them_chi_tiet(){
+        $data['masanpham'] = $_POST['masanpham'];
+        $data['soluong'] = $_POST['soluong'];
+        $data['dongia'] = $_POST['dongia'];
+        $data['maphieunhap'] = $_POST['maphieunhap'];
+        $this->ChitietphieunhapModel->them($data);
+        redirect('quanlynhap/xem-chi-tiet/'.$data['maphieunhap']);
     }
     
     public function sua(){
@@ -39,10 +57,14 @@ class Quanlynhap extends Controller{
         redirect('quanlynhap/index');
     }
 
+    public function xoachitiet($machitiet, $ma){
+        $this->ChitietphieunhapModel->xoa($machitiet);
+        redirect('quanlynhap/xem-chi-tiet/'. $ma);
+    }
+
     public function capnhat($maphieunhap){
         $data['nhacungcap'] = $this->NhacungcapModel->layDanhSach2();
         $data['phieunhap'] =  $this->PhieunhapModel->layPhieuNhap($maphieunhap);        
         $this->view('backend/pages/quanly/capnhatphieunhap',  $data);
-
     }
 }

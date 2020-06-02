@@ -7,22 +7,21 @@ class KhuyenmaiModel {
     }
 
     public function themKhuyenMai($data){
-        $sql = "insert into khuyenmaisanpham(khuyenmai, ngaybatdau, ngayketthuc) values(:khuyenmai, :ngaybatdau, :ngayketthuc)";
+        $sql = "insert into khuyenmaisanpham(khuyenmai, ngaybatdau, masanpham) values(:khuyenmai, :ngaybatdau, :masanpham)";
         $this->db->query($sql);
         $this->db->bind(':khuyenmai', $data['khuyenmai']);
         $this->db->bind(':ngaybatdau', $data['ngaybatdau']);
-        $this->db->bind(':ngayketthuc', $data['ngayketthuc']);
+        $this->db->bind(':masanpham', $data['masanpham']);
         $this->db->execute();
     }
 
     public function suaKhuyenMai($data)
     {
-        $sql = "update nhacungcap set khuyenmai = :khuyenmai, ngaybatdau = :ngaybatdau, ngayketthuc =:ngayketthuc where ma =:ma";
+        $sql = "update khuyenmaisanpham set khuyenmai = :khuyenmai, ngaybatdau = :ngaybatdau where ma =:ma";
         $this->db->query($sql);
         $this->db->bind(':ma',$data['ma']);
         $this->db->bind(':khuyenmai', $data['khuyenmai']);
         $this->db->bind(':ngaybatdau', $data['ngaybatdau']);
-        $this->db->bind(':ngayketthuc', $data['ngayketthuc']);
         $this->db->execute();
     }
 

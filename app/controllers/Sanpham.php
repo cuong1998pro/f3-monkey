@@ -1,19 +1,20 @@
-
 <?php
 class Sanpham extends Controller
 {
     public function __construct()
     {
         $this->SanphamModel = $this->model('SanphamModel');
+        $this->AnhsanphamModel = $this->model('AnhsanphamModel');
         $this->DanhmucModel = $this->model('LoaisanphamModel');
         $this->ThuonghieuModel = $this->model('ThuonghieuModel');
         $this->ThongsosanphamModel = $this->model('ThongsosanphamModel');
+        $this->GiohangModel = $this->model('GiohangModel');
     }
-
 
     public function chi_tiet_san_pham($id)
     {
-        $data = $this->SanphamModel->layChiTietSanPham($id);
+        $data['thongtinsanpham'] = $this->SanphamModel->layChiTietSanPham($id);
+        $data['giohang'] = $this->GiohangModel->layGioHang();
         $this->view('frontend/product_detail', $data);
     }
 
@@ -33,34 +34,27 @@ class Sanpham extends Controller
 
     public function them()
     {
-        $data['ten'] = $_POST['ten'];
-        $data['anh'] = $_POST['anh'];
+        $data['ten'] = $_POST['ten'];       
         $data['madanhmuc'] = $_POST['madanhmuc'];
+        $data['mathuonghieu'] = $_POST['mathuonghieu'];
         $data['mota'] = $_POST['mota'];
-        $data['mausac'] = $_POST['mausac'];
-        $data['luachon'] = $_POST['luachon'];
-        $data['gianienyet'] = $_POST['gianienyet'];
-        $data['noidung'] = $_POST['noidung'];
         $data['tinhtrang'] = $_POST['tinhtrang'];
-        $data['khuyenmai'] = $_POST['khuyenmai'];
-        $data['thongtinchitiet'] = $_POST['thongtinchitiet'];
-        $data['thongsokythuat'] = $_POST['thongsokythuat'];
-        $this->SanphamModel->themSanPham($data);
+        $data['masanpham'] = $this->SanphamModel->themSanPham($data);
+        $data['anh'] = $data['masanpham'] . '-' . $this->AnhsanphamModel->layMaAnhMoi($data['masanpham']) . '.jpg';
+        uploadImage($data['anh'], 'sanpham/');
+        $this->AnhsanphamModel->themAnhsanpham($data); 
         redirect('sanpham/index');
     }
 
     public function sua()
     {
-        $data['ma'] = $_POST['ma'];
         $data['ten'] = $_POST['ten'];
+        $data['ma'] = $_POST['ma'];
         $data['madanhmuc'] = $_POST['madanhmuc'];
         $data['mathuonghieu'] = $_POST['mathuonghieu'];
-        $data['motasanpham'] = $_POST['noidung'];
+        $data['mota'] = $_POST['mota'];
         $data['tinhtrang'] = $_POST['tinhtrang'];
-        $data['khuyenmai'] = $_POST['khuyenmai'];
-        $data['thongtinchitiet'] = $_POST['thongtinchitiet'];
-        $data['thongsokythuat'] = $_POST['thongsokythuat'];
-        $this->TintucModel->suaSanPham($data);
+        $this->SanphamModel->suaSanPham($data);
         redirect('sanpham/index');
     }
 

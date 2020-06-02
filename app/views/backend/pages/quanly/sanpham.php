@@ -13,10 +13,14 @@
     <div class="modal" id="modalThemNCC">
         <div class="modal-content">
             <div class="form-header">Thêm sản phẩm</div>
-            <form class="myform" action="<?php echo URLROOT ?>/Sanpham/them" method="POST">
+            <form class="myform" action="<?php echo URLROOT ?>/Sanpham/them" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label class="mylabel">Tên sản phẩm <sup>*</sup></label>
                     <input type="text" name="ten" placeholder="Nhập sản phẩm ">
+                </div>
+                <div class="form-group">
+                    <label class="mylabel">Ảnh sản phẩm <sup>*</sup></label>
+                    <input type="file" name="anh" placeholder="Chọn ảnh sản phẩm ">
                 </div>
                 <div class="form-group">
                     <label class="mylabel">Danh mục <sup>*</sup></label>

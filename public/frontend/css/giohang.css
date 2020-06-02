@@ -11,6 +11,10 @@
 .san-pham img {
     height: 100%;
 }
+.grid h1{
+    line-height: 2;
+    margin:50px 0;
+}
 
 .san-pham .ten-san-pham {
     margin-left: 10px;
@@ -90,15 +94,17 @@ td .thong-tin-san-pham-2{
 
 .thong-tin-san-pham-2 .ten-san-pham {
     display: block;
-    text-align: right;
-    margin-right: 10px;
+    /*! text-align: right; */
+    /*! margin-right: 10px; */
 }
 
 .thong-tin-san-pham-2 .thanh-tien {
     font-size: 14px;
-    position: absolute;
-    top: 55px;
-    right: 10px;
+    /*! position: absolute; */
+    /*! top: 55px; */
+    /*! right: 10px; */
+    width: 200px;
+    padding-bottom: 20px;
 }
 
 .thong-tin-san-pham-2 img {

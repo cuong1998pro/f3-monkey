@@ -28,8 +28,8 @@
             <div class="menu-expander">Quản lý <i class="fa fa-chevron-down"></i></div>
             <ul class="sub-menu">
                 <li><a href="<?php echo URLROOT?>/quanlynhap"><i class="fa fa-truck-moving"></i> Quản lý nhập</a></li>
-                <li><a href="<?php echo URLROOT?>/dinhgia"><i class="fa fa-dollar-sign"></i>Quản lý giá </a></li>
-                <li><a href="<?php echo URLROOT?>/quanlykhuyenmai"><i class="fa fa-ad"></i> Quản lý khuyến mại</a></li>
+                <li><a href="<?php echo URLROOT?>/banggia"><i class="fa fa-dollar-sign"></i>Quản lý giá </a></li>
+                <!-- <li><a href="<?php echo URLROOT?>/quanlykhuyenmai"><i class="fa fa-ad"></i> Quản lý khuyến mại</a></li> -->
                 <!-- <li><a href="<?php echo URLROOT?>/quanlydoitra"><i class="fa fa-qrcode"></i> Quản lý đổi trả</a></li> -->
                 <li><a href="<?php echo URLROOT?>/quanlydonhang"><i class="fa fa-shopping-cart"></i> Quản lý đơn hàng</a></li>
             </ul>

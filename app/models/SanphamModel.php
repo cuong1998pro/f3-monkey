@@ -1,10 +1,8 @@
 <?php 
-
 require_once('AnhsanphamModel.php');
 require_once('BanggiaModel.php');
 require_once('KhuyenmaiModel.php');
 require_once('ThongsosanphamModel.php');
-
 
 class SanphamModel{
 
@@ -22,42 +20,31 @@ class SanphamModel{
     }
         //ten , anh, madanhmuc, mota, mausac, luachon, gianiemyet, noidung, tinhtrang, khuyenmai, thongtinchitiet, thongsokythuat 
     public function suaSanpham($data){
-        $sql = "UPDATE sanpham SET ten=:ten, anh=:anh, madanhmuc=:madanhmuc, mota=:mota, mausac=:mausac, luachon=:luachon, gianiemyet=:gianiemyet, noidung=:noidung, tinhtrang=:tinhtrang, khuyenmai=:khuyenmai, thongtinchitiet=:thongtinchitiet, thongsokythuat=:thongsokythuat  WHERE ma = :ma";
+        $sql = "UPDATE sanpham set ten = :ten , madanhmuc = :madanhmuc, mathuonghieu = :mathuonghieu, motasanpham = :mota, tinhtrang = :tinhtrang where ma = :ma";
         $this->db->query($sql);
+        $this->db->bind(':ma', $data['ma']);
         $this->db->bind(':ten', $data['ten']);
-        $this->db->bind(':anh', $data['anh']);
         $this->db->bind(':madanhmuc', $data['madanhmuc']);
+        $this->db->bind(':mathuonghieu', $data['mathuonghieu']);
         $this->db->bind(':mota', $data['mota']);
-        $this->db->bind(':mausac', $data['mausac']);
-        $this->db->bind(':luachon', $data['luachon']);
-        $this->db->bind(':gianiemyet', $data['gianiemyet']);
-        $this->db->bind(':noidung', $data['noidung']);
         $this->db->bind(':tinhtrang', $data['tinhtrang']);
-        $this->db->bind(':khuyenmai', $data['khuyenmai']);
-        $this->db->bind(':thongtinchitiet', $data['thongtinchitiet']);
-        $this->db->bind(':thongsokythuat', $data['thongsokythuat']);
         return ($this->db->execute());
     }
     public function themSanpham($data){
-        $sql = "INSERT INTO sanpham (ten , anh, madanhmuc, mota, mausac, luachon, gianiemyet, noidung, tinhtrang, khuyenmai, thongtinchitiet, thongsokythuat) VALUES (:ten , :anh, :madanhmuc, :mota, :mausac, :luachon, :gianiemyet, :noidung, :tinhtrang, :khuyenmai, :thongtinchitiet, :thongsokythuat)";
+        $sql = "INSERT INTO sanpham (ten , madanhmuc, mathuonghieu, motasanpham, tinhtrang) 
+        VALUES (:ten , :madanhmuc, :mathuonghieu, :mota, :tinhtrang)";
         $this->db->query($sql);
         $this->db->bind(':ten', $data['ten']);
-        $this->db->bind(':anh', $data['anh']);
         $this->db->bind(':madanhmuc', $data['madanhmuc']);
+        $this->db->bind(':mathuonghieu', $data['mathuonghieu']);
         $this->db->bind(':mota', $data['mota']);
-        $this->db->bind(':mausac', $data['mausac']);
-        $this->db->bind(':luachon', $data['luachon']);
-        $this->db->bind(':gianiemyet', $data['gianiemyet']);
-        $this->db->bind(':noidung', $data['noidung']);
         $this->db->bind(':tinhtrang', $data['tinhtrang']);
-        $this->db->bind(':khuyenmai', $data['khuyenmai']);
-        $this->db->bind(':thongtinchitiet', $data['thongtinchitiet']);
-        $this->db->bind(':thongsokythuat', $data['thongsokythuat']);
-        return ($this->db->execute());
+         ($this->db->execute());
+         return $this->db->lastInsertId();
     }
     public function xoaSanpham($maTintuc)
     {
-        $sql = "DELETE FROM sanpham WHERE ma = :ma";
+        $sql = "Delete from anhsanpham where masanpham = :ma;DELETE FROM sanpham WHERE ma = :ma; ";
         $this->db->query($sql);
         $this->db->bind(':ma', $maTintuc);
         return ($this->db->execute());
@@ -67,6 +54,49 @@ class SanphamModel{
         $sql = 'select sanpham.ma, sanpham.ten, motasanpham, danhmuc.ten as danhmuc, thuonghieu.ten as \'thuonghieu\', tinhtrang 
         from sanpham inner join thuonghieu on thuonghieu.ma = sanpham.mathuonghieu
         inner join danhmuc on danhmuc.ma = sanpham.madanhmuc';
+        $this->db->query($sql);
+        $dssanpham = $this->db->fetchAll();
+        foreach ($dssanpham as $sanpham) {
+            $sanpham->anh = $this->AnhsanphamModel->layMotAnh($sanpham->ma)->anh;
+        }
+        return $dssanpham;
+        
+    }
+
+    public function layDanhSachTheoDanhMuc($duongdan )
+    {
+        $sql = "select sanpham.ma, sanpham.ten, motasanpham, danhmuc.ten as danhmuc, thuonghieu.ten as 'thuonghieu', tinhtrang 
+        from sanpham inner join thuonghieu on thuonghieu.ma = sanpham.mathuonghieu
+        inner join danhmuc on danhmuc.ma = sanpham.madanhmuc where danhmuc.link like '$duongdan' ";
+        $this->db->query($sql);
+        $dssanpham = $this->db->fetchAll();
+        foreach ($dssanpham as $sanpham) {
+            $sanpham->anh = $this->AnhsanphamModel->layMotAnh($sanpham->ma)->anh;
+            $sanpham->giagoc = strval(number_format($this->BanggiaModel->layGia($sanpham->ma)->gia)) . 'đ';
+            $sanpham->giaban = number_format($this->BanggiaModel->layGia($sanpham->ma)->gia - $this->BanggiaModel->layGia($sanpham->ma)->giamgia) . 'đ';
+        }
+        return $dssanpham;
+    }
+    public function layDanhSachTheoThuongHieu($duongdan)
+    {
+        $sql = "select sanpham.ma, sanpham.ten, motasanpham, danhmuc.ten as danhmuc, thuonghieu.ten as 'thuonghieu', tinhtrang 
+        from sanpham inner join thuonghieu on thuonghieu.ma = sanpham.mathuonghieu
+        inner join danhmuc on danhmuc.ma = sanpham.madanhmuc where thuonghieu.link like '$duongdan'";
+        $this->db->query($sql);
+        $dssanpham = $this->db->fetchAll();
+        foreach ($dssanpham as $sanpham) {
+            $sanpham->anh = $this->AnhsanphamModel->layMotAnh($sanpham->ma)->anh;
+            $sanpham->giagoc = strval(number_format($this->BanggiaModel->layGia($sanpham->ma)->gia)) . 'đ';
+            $sanpham->giaban = number_format($this->BanggiaModel->layGia($sanpham->ma)->gia - $this->BanggiaModel->layGia($sanpham->ma)->giamgia) . 'đ';
+        }
+        return $dssanpham;
+    }
+
+    public function layDanhSachTheoTuKhoa($tukhoa)
+    {
+        $sql = "select sanpham.ma, sanpham.ten, motasanpham, danhmuc.ten as danhmuc, thuonghieu.ten as 'thuonghieu', tinhtrang 
+        from sanpham inner join thuonghieu on thuonghieu.ma = sanpham.mathuonghieu
+        inner join danhmuc on danhmuc.ma = sanpham.madanhmuc where thuonghieu.ten like '%$tukhoa%' or danhmuc.ten like '%$tukhoa%' or sanpham.ten like '%$tukhoa%'";
         $this->db->query($sql);
         $dssanpham = $this->db->fetchAll();
         foreach ($dssanpham as $sanpham) {
@@ -83,14 +113,18 @@ class SanphamModel{
         $this->db->query($sql);
         return $this->db->fetchAll();
     }
+
     public function laySanphamTheoDanhMuc($madanhmuc){
         $sql = 'select * from sanpham where madanhmuc = '.$madanhmuc .' order by ma desc limit 10 ';
         $this->db->query($sql);
         $dssanpham = $this->db->fetchAll();
         foreach($dssanpham as $sanpham){
             $sanpham->anh = $this->AnhsanphamModel->layMotAnh($sanpham->ma)->anh;
-            $sanpham->giagoc =strval( number_format($this->BanggiaModel->layGia($sanpham->ma)->gia)).'đ' ;
-            $sanpham->giaban = number_format($this->BanggiaModel->layGia($sanpham->ma)->gia - $this->BanggiaModel->layGia($sanpham->ma)->giamgia).'đ';
+            if (($this->BanggiaModel->layGia($sanpham->ma))) {
+
+                $sanpham->giagoc =strval( number_format($this->BanggiaModel->layGia($sanpham->ma)->gia)).'đ' ;
+                $sanpham->giaban = number_format($this->BanggiaModel->layGia($sanpham->ma)->gia - $this->BanggiaModel->layGia($sanpham->ma)->giamgia).'đ';
+            }
         }
         return $dssanpham;
     }
@@ -114,8 +148,10 @@ class SanphamModel{
         $this->db->query($sql);
         $sanpham = $this->db->first();
         $sanpham->anh = $this->AnhsanphamModel->layDanhSach($sanpham->ma);
-        $sanpham->giagoc =strval( number_format($this->BanggiaModel->layGia($sanpham->ma)->gia)).'đ' ;
-        $sanpham->giaban = number_format($this->BanggiaModel->layGia($sanpham->ma)->gia - $this->BanggiaModel->layGia($sanpham->ma)->giamgia).'đ';
+        if(($this->BanggiaModel->layGia($sanpham->ma))){
+            $sanpham->giagoc = strval(number_format($this->BanggiaModel->layGia($sanpham->ma)->gia)) . 'đ';
+            $sanpham->giaban = number_format($this->BanggiaModel->layGia($sanpham->ma)->gia - $this->BanggiaModel->layGia($sanpham->ma)->giamgia) . 'đ';
+        }
         $sanpham->khuyenmai = $this->KhuyenmaiModel->layDanhSach($sanpham->ma);
         $sanpham->dsthongsokythuat = $this->ThongsosanphamModel->layDanhSach($sanpham->ma);
         return $sanpham;

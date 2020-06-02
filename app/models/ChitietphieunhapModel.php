@@ -1,54 +1,56 @@
 <?php
+require_once('AnhsanphamModel.php');
 class ChitietphieunhapModel
 {
     public function __construct()
     {
         $this->db = new Database;
+        $this->AnhsanphamModel = new AnhsanphamModel();
     }
-    public function themNCC($data)
+    public function them($data)
     {
-        $sql = "insert into nhacungcap(ten, sodienthoai, diachi, email, nguoilienhe) values(:ten, :sodienthoai, :diachi,:email, :nguoilienhe)";
+        $sql = "insert into chitietphieunhap(maphieunhap, masanpham, soluong, dongia) 
+                values(:maphieunhap, :masanpham, :soluong, :dongia)";
         $this->db->query($sql);
-        $this->db->bind(':ten', $data['ten']);
-        $this->db->bind(':sodienthoai', $data['sodienthoai']);
-        $this->db->bind(':diachi', $data['diachi']);
-        $this->db->bind(':email', $data['email']);
-        $this->db->bind(':nguoilienhe', $data['nguoilienhe']);
+        $this->db->bind(':maphieunhap', $data['maphieunhap']);
+        $this->db->bind(':masanpham', $data['masanpham']);
+        $this->db->bind(':soluong', $data['soluong']);
+        $this->db->bind(':dongia', $data['dongia']);
         $this->db->execute();
     }
 
-    public function suaNCC($data)
+    public function sua($data)
     {
-        $sql = "update nhacungcap set ten = :ten, sodienthoai = :sodienthoai, diachi =:diachi, email= :email, nguoilienhe=:nguoilienhe where ma =:ma";
+        $sql = "update chitietphieunhap set maphieunhap = :maphieunhap, masanpham = :masanpham, 
+                soluong =:soluong, dongia= :dongia where ma =:ma";
         $this->db->query($sql);
         $this->db->bind(':ma', $data['ma']);
-        $this->db->bind(':ten', $data['ten']);
-        $this->db->bind(':sodienthoai', $data['sodienthoai']);
-        $this->db->bind(':diachi', $data['diachi']);
-        $this->db->bind(':email', $data['email']);
-        $this->db->bind(':nguoilienhe', $data['nguoilienhe']);
+        $this->db->bind(':maphieunhap', $data['maphieunhap']);
+        $this->db->bind(':masanpham', $data['masanpham']);
+        $this->db->bind(':soluong', $data['soluong']);
+        $this->db->bind(':dongia', $data['dongia']);
         $this->db->execute();
     }
 
-    public function xoaNCC($maNCC)
+    public function xoa($machitietphieunhap)
     {
-        $sql = "DELETE FROM nhacungcap WHERE ma =:ma";
+        $sql = "DELETE FROM chitietphieunhap WHERE ma =:ma";
         $this->db->query($sql);
-        $this->db->bind(':ma', $maNCC);
+        $this->db->bind(':ma', $machitietphieunhap);
         $this->db->execute();
     }
 
     public function layDanhSach($maphieunhap)
     {
-        $sql = 'select * from chitietphieunhap inner join sanpham on sanpham.ma = chitietphieunhap.masanpham where maphieunhap = '. $maphieunhap;
+        $sql = 'select *, chitietphieunhap.ma as \'machitiet\'  from chitietphieunhap inner join sanpham on sanpham.ma = chitietphieunhap.masanpham
+                 where maphieunhap = ' . $maphieunhap;
         $this->db->query($sql);
-        return $this->db->fetchAll();
+        $ctpn =  $this->db->fetchAll();
+        foreach ($ctpn as $sanpham) {
+            $sanpham->anh = $this->AnhsanphamModel->layMotAnh($sanpham->ma)->anh;
+        }
+        return $ctpn;
     }
 
-    public function layNhaCungCap($maNCC)
-    {
-        $sql = 'select * from nhacungcap where ma = ' . $maNCC . ';';
-        $this->db->query($sql);
-        return $this->db->first();
-    }
+   
 }

@@ -1,7 +1,7 @@
 <?php require_once FRONTEND_HEADER ?>
 <div class="app__container">
     <div class="grid">
-        <div class="grid__row app__content">
+        <!-- <div class="grid__row app__content">
             <div class="grid__column-12">
                 <div class="home-filter">
                     <span class="home-filter-label">Sắp xếp theo</span>
@@ -19,7 +19,7 @@
 
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="grid__row app__content">
             <div class="home-product">
                 <div class="grid__row">

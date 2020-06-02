@@ -7,7 +7,8 @@ class Khuyenmai extends Controller{
 
     public function index($masanpham)
     {
-        $data =  $this->KhuyenmaiModel->layDanhSach($masanpham);
+        $data['khuyenmai'] =  $this->KhuyenmaiModel->layDanhSach($masanpham);
+        $data['masanpham'] = $masanpham;
         $this->view('backend/pages/quanly/khuyenmai',  $data);
     }
 
@@ -15,27 +16,33 @@ class Khuyenmai extends Controller{
     {
         $data['khuyenmai'] = $_POST['khuyenmai'];
         $data['ngaybatdau'] = $_POST['ngaybatdau'];
-        $data['ngayketthuc'] = $_POST['ngayketthuc'];
+        $data['masanpham'] = $masanpham;
+        $data =  $this->KhuyenmaiModel->themKhuyenMai($data);
         redirect('khuyenmai/index/'.$masanpham);
     }
 
-    public function capnhat($maanh)
+    public function capnhat($masanpham)
     {
-        $data =  $this->KhuyenmaiModel->layHinhAnh($maanh);
+        $data['khuyenmai'] =  $this->KhuyenmaiModel->layKhuyenMai($masanpham);
+        $data['masanpham'] = $data['khuyenmai']->masanpham;
         $this->view('backend/pages/quanly/capnhatkhuyenmai',  $data);
     }
 
-    public function sua($masanpham)
+    public function sua($ma)
     {
-        $data['anh'] = $_POST['tenanhcu'];
-        uploadImage($data['anh'], 'sanpham/');
-        redirect('khuyenmai/index'.$masanpham);
+        $data['khuyenmai'] = $_POST['khuyenmai'];
+        $data['ngaybatdau'] = $_POST['ngaybatdau'];
+        $data['masanpham'] = $_POST['masanpham'];;
+        $masp = $data['masanpham'];
+        $data['ma'] = $ma;
+        $data =  $this->KhuyenmaiModel->suaKhuyenMai($data);
+        redirect('khuyenmai/index/' . $masp);
     }
 
     public function xoa($masanpham, $ma)
     {
         $this->KhuyenmaiModel->xoakhuyenmai($ma);
-        redirect('khuyenmai/index'.$masanpham);
+        redirect('khuyenmai/index/'.$masanpham);
     }
     
 }

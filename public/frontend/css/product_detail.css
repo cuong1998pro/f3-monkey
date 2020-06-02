@@ -75,6 +75,7 @@ ul.breadcrumb li a:hover {
     font-weight: 400;
     /*! display: block; */
     display: block;
+    width: 400px;
 }
 
 .thong-tin-chi-tiet {
@@ -241,7 +242,7 @@ input[type=number] {
     vertical-align: top;
     text-align: center;
     margin-left: 20px;
-    padding-top: 13px;
+    /*! padding-top: 13px; */
 }
 
 .thong-tin-chung {

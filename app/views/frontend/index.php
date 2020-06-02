@@ -36,7 +36,7 @@
         <div class="grid__row app__content">
             <?php foreach ($data['banner'] as $i => $banner) : ?>
                 <div class="banner-image">
-                    <a href="<?php echo URLROOT . '/page/' . $banner->link ?>">
+                    <a href="<?php echo URLROOT . '/webshop/' . $banner->link ?>">
                         <img src="<?php echo URLROOT . '/backend/images/' . $banner->anh ?>" width="100%" alt="">
                     </a>
                 </div>
@@ -51,9 +51,9 @@
                     </h2>
                     <div class="category-nav-container">
                         <?php foreach ($danhmuc->dsthuonghieu as $thuonghieu) : ?>
-                            <a href="<?php echo URLROOT . '/page/thuong-hieu/' . $thuonghieu->link ?>" class="category-nav-link"><?php echo $thuonghieu->ten ?> </a>
+                            <a href="<?php echo URLROOT . '/webshop/thuonghieu/' . $thuonghieu->link ?>" class="category-nav-link"><?php echo $thuonghieu->ten ?> </a>
                         <?php endforeach; ?>
-                        <a href="<?php echo URLROOT . '/page/thuong-hieu/all' ?>" class="category-nav-link">Xem tất cả </a>
+                        <a href="<?php echo URLROOT . '/webshop/thuong-hieu/all' ?>" class="category-nav-link">Xem tất cả </a>
                     </div>
 
                 </div>
@@ -66,8 +66,8 @@
                                 <div class="home-product-item__img" style="background-image: url(<?php echo URLROOT.'/backend/images/sanpham/'.$sanpham->anh?>) ;"></div>
                                 <h5 class="home-product-item__name"><?php echo $sanpham->ten?></h5>
                                 <div class="home-product-item__price">
-                                    <span class="home-product-item__price-old"><?php echo $sanpham->giagoc?></span>
-                                    <span class="home-product-item__price-new"><?php echo $sanpham->giaban?></span>
+                                    <span class="home-product-item__price-old"><?php echo isset($sanpham->giagoc)? $sanpham->giagoc:0?></span>
+                                    <span class="home-product-item__price-new"><?php echo isset($sanpham->giaban)? $sanpham->giaban:0?></span>
                                 </div>
                                 <div class="home-product-item__action">
                                     <span class="home-product-item__like home-product-item__like--liked">

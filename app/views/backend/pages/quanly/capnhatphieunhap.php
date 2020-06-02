@@ -8,7 +8,7 @@
         <div class="modal-content">
             <div class="form-header">Thêm phiếu nhập</div>
             <form class="myform" action="<?php echo URLROOT ?>/quanlynhap/sua" method="POST" enctype="multipart/form-data">
-
+                <input type="hidden" value="<?php echo $data['phieunhap']->ma?>" name="ma">
                 <div class="form-group">
                     <label class="mylabel">Chọn nhà cung cấp <sup>*</sup></label>
                     <select name="manhacungcap" id="">

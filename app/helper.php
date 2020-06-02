@@ -25,6 +25,5 @@ function uploadImage($tenanh="", $tenthumuc="")
 function getCurrentTime()
 {
   date_default_timezone_set("Asia/Ho_Chi_Minh");
-  $CurrentTime = time();
-  return strftime("%d/%m/%Y %H:%M", $CurrentTime);
+  return date("Y/m/d H:M");
 }

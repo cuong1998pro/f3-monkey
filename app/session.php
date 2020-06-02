@@ -21,4 +21,6 @@
         unset($_SESSION[$name. '_class']);
       }
     }
+
+    
   }

@@ -6,7 +6,7 @@
         <ul class="category-list">
             <?php foreach($data['danhmuc'] as $danhmuc):?>
             <li class="category-item">
-                <a href="<?php echo URLROOT.'/page/danh-muc/'.$danhmuc->link?>" class="category-item-link"><?php echo $danhmuc->ten?></a>
+                <a href="<?php echo URLROOT.'/webshop/danhmuc/'.$danhmuc->link?>" class="category-item-link"><?php echo $danhmuc->ten?></a>
             </li>
             <?php endforeach;?>
         </ul>

@@ -4,7 +4,7 @@
     <div class="modal-content">
         <div class="form-header">Cập nhật thông tin sản phẩm</div>
         <form class="myform" action="<?php echo URLROOT ?>/sanpham/sua" method="post">
-            <input type="hidden" name="ma" value="<?php echo $data['sanpham']->ten ?>">
+            <input type="hidden" name="ma" value="<?php echo $data['sanpham']->ma ?>">
             <div class="form-group">
                 <label class="mylabel">Tên sản phẩm <sup>*</sup></label>
                 <input type="text" name="ten" placeholder="Nhập tên sản phẩm " value="<?php echo $data['sanpham']->ten ?>">
@@ -31,7 +31,7 @@
             </div>
             <div class="form-group">
                 <label class="mylabel">Mô tả <sup>*</sup></label>
-                <textarea id="my-textarea" name="mota" rows="2" placeholder="Nhập địa chỉ"></textarea>
+                <textarea id="my-textarea" name="mota" rows="2" placeholder="Nhập địa chỉ"><?php echo $data['sanpham']->motasanpham ?></textarea>
                 <script>
                     CKEDITOR.replace('mota');
                 </script>

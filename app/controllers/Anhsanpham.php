@@ -30,9 +30,10 @@ class Anhsanpham extends Controller
 
     public function sua()
     {
+        $data['masanpham'] = $_POST['ma'];
         $data['anh'] = $_POST['tenanhcu'];
         uploadImage($data['anh'], 'sanpham/');
-        redirect('anhsanpham/index');
+        redirect('anhsanpham/index/'.$data['masanpham']);
     }
 
     public function xoa($ma)

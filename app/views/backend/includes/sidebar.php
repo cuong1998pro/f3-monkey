@@ -31,7 +31,7 @@
                 <li><a href="<?php echo URLROOT?>/banggia"><i class="fa fa-dollar-sign"></i>Quản lý giá </a></li>
                 <!-- <li><a href="<?php echo URLROOT?>/quanlykhuyenmai"><i class="fa fa-ad"></i> Quản lý khuyến mại</a></li> -->
                 <!-- <li><a href="<?php echo URLROOT?>/quanlydoitra"><i class="fa fa-qrcode"></i> Quản lý đổi trả</a></li> -->
-                <li><a href="<?php echo URLROOT?>/quanlydonhang"><i class="fa fa-shopping-cart"></i> Quản lý đơn hàng</a></li>
+                <li><a href="<?php echo URLROOT?>/donhang"><i class="fa fa-shopping-cart"></i> Quản lý đơn hàng</a></li>
             </ul>
         </li>
         <li>
